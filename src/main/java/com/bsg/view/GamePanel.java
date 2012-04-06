@@ -329,6 +329,7 @@ public class GamePanel extends JFrame {
 			Player p = (Player)o;
 			handList.setListData(p.getHand().toArray());
 			
+			playerDrawString.setText(p.getDrawString());
 		}
 	}
 
@@ -919,8 +920,9 @@ public class GamePanel extends JFrame {
 		dealPilotingButton = new JButton();
 		dealEngineeringButton = new JButton();
 		dealTrecheryButton = new JButton();
-		generateHandEmailButton = new JButton();
+		playerDrawString = new JLabel();
 		discardSkillCardButton = new JButton();
+		generateHandEmailButton = new JButton();
 		giveToPlayerButton = new JButton();
 		playIntoSkillCheckButton = new JButton();
 		skillCheckPanel = new JPanel();
@@ -1722,16 +1724,7 @@ public class GamePanel extends JFrame {
 						}
 					});
 					dealCardsPanel.add(dealTrecheryButton, cc.xy(3, 11));
-
-					//---- generateHandEmailButton ----
-					generateHandEmailButton.setText("Generate Hand Email");
-					generateHandEmailButton.addActionListener(new ActionListener() {
-						@Override
-						public void actionPerformed(ActionEvent e) {
-							generateHandEmailButtonActionPerformed(e);
-						}
-					});
-					dealCardsPanel.add(generateHandEmailButton, cc.xy(1, 15));
+					dealCardsPanel.add(playerDrawString, cc.xy(1, 15));
 
 					//---- discardSkillCardButton ----
 					discardSkillCardButton.setText("Discard Card");
@@ -1742,6 +1735,16 @@ public class GamePanel extends JFrame {
 						}
 					});
 					dealCardsPanel.add(discardSkillCardButton, cc.xywh(5, 15, 3, 1));
+
+					//---- generateHandEmailButton ----
+					generateHandEmailButton.setText("Generate Hand Email");
+					generateHandEmailButton.addActionListener(new ActionListener() {
+						@Override
+						public void actionPerformed(ActionEvent e) {
+							generateHandEmailButtonActionPerformed(e);
+						}
+					});
+					dealCardsPanel.add(generateHandEmailButton, cc.xy(1, 17));
 
 					//---- giveToPlayerButton ----
 					giveToPlayerButton.setText("Give to Another Player");
@@ -2112,8 +2115,9 @@ public class GamePanel extends JFrame {
 	private JButton dealPilotingButton;
 	private JButton dealEngineeringButton;
 	private JButton dealTrecheryButton;
-	private JButton generateHandEmailButton;
+	private JLabel playerDrawString;
 	private JButton discardSkillCardButton;
+	private JButton generateHandEmailButton;
 	private JButton giveToPlayerButton;
 	private JButton playIntoSkillCheckButton;
 	private JPanel skillCheckPanel;

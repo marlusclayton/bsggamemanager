@@ -132,6 +132,10 @@ public class Player {
 	public String toString() {
 		return String.format("%s (%s%s%s%s [%d])", playerName, isPresident ? "President " : "", isAdmiral ? "Admiral " : "", isCAG ? "CAG " : "", character, hand.size());
 	}
+	
+	public String getTitles() {
+		return String.format("%s%s%s", isPresident ? "President " : "", isAdmiral ? "Admiral " : "", isCAG ? "CAG " : "");
+	}
 
 	public void setLocation(String location) {
 		currLocation = location;
@@ -147,5 +151,9 @@ public class Player {
 
 	public void setRevealed(boolean isRevealed) {
 		this.isRevealed = isRevealed;
+	}
+	
+	public String getDrawString() {
+		return isRevealed ? "**Two Cards**" : character.getDraw();
 	}
 }

@@ -64,7 +64,7 @@ public class Dradis {
 		players = new ArrayList<DradisPlayer>();
 		
 		for (int i = 0; i < p.size(); ++i) {
-			players.add(new DradisPlayer(p.get(i).toString(), i == subturn - 1));
+			players.add(new DradisPlayer(p.get(i), i == subturn - 1));
 		}
 	}
 	
