@@ -41,7 +41,6 @@ public class GameState {
 	private static final Logger LOGGER = LoggerFactory.getLogger(GameState.class);
 
 	private static final Matcher<LoyaltyCard> CYLON_MATCHER = new Predicate<LoyaltyCard>() {
-
 		@Override
 		public boolean apply(LoyaltyCard lc) {
 			return lc.getType() == LoyaltyCardType.CYLON;
