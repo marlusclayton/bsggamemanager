@@ -8,22 +8,19 @@ public class DoesNotBelongInDeckException extends Exception {
 	private static final long serialVersionUID = -1861384954418929182L;
 
 	public DoesNotBelongInDeckException() {
-		// TODO Auto-generated constructor stub
+		super();
 	}
 
-	public DoesNotBelongInDeckException(String arg0) {
-		super(arg0);
-		// TODO Auto-generated constructor stub
+	public DoesNotBelongInDeckException(String msg) {
+		super(msg);
 	}
 
-	public DoesNotBelongInDeckException(Throwable arg0) {
-		super(arg0);
-		// TODO Auto-generated constructor stub
+	public DoesNotBelongInDeckException(Throwable cause) {
+		super(cause);
 	}
 
-	public DoesNotBelongInDeckException(String arg0, Throwable arg1) {
-		super(arg0, arg1);
-		// TODO Auto-generated constructor stub
+	public DoesNotBelongInDeckException(String msg, Throwable cause) {
+		super(msg, cause);
 	}
 
 }
