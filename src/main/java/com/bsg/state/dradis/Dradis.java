@@ -4,7 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.bsg.Player;
+import com.bsg.cards.destination.DestinationCard;
 import com.bsg.state.GameState;
+
+import static ch.lambdaj.Lambda.*;
 
 public class Dradis {
 
@@ -15,6 +18,10 @@ public class Dradis {
 	int fuel;
 	int morale;
 	int population;
+	
+	int distance;
+	List<String> destinations;
+	String destination_list;
 	
 	String jp_start;
 	String jp_red1;
@@ -33,6 +40,7 @@ public class Dradis {
 	
 	public Dradis(GameState gs) {
 		setTurn(gs);
+		setDistance(gs);
 		setResources(gs);
 		setJumpTrack(gs);
 		setPlayers(gs);
@@ -45,6 +53,12 @@ public class Dradis {
 		boarders_2 = gs.getNumBoardersAt(2);
 		boarders_3 = gs.getNumBoardersAt(3);
 		boarders_lose = gs.getNumBoardersAt(4);
+	}
+	
+	private void setDistance(GameState gs) {
+		distance = gs.getDistance();
+		destinations = extract(gs.getTravelledList(), on(DestinationCard.class).getName());
+		destination_list = join(destinations);
 	}
 	
 	private void setTurn(GameState gs) {

@@ -223,6 +223,7 @@ public class GamePanel extends JFrame {
 				if (gs.getDestinationDeck() != null)
 					destinationList.setListData(gs.getDestinationDeck().getDeckContents().toArray());
 				distanceTraveledLabelVal.setText(String.valueOf(gs.getDistance()));
+				travelledList.setListData(gs.getTravelledList().toArray());
 				
 				//boarders
 				boarders_0.setText(String.valueOf(gs.getNumBoardersAt(0)));
@@ -785,7 +786,9 @@ public class GamePanel extends JFrame {
 
 	private void destinationListMouseClicked(MouseEvent e) {
 		if (e.getClickCount() == 2) {
-			DestinationCard dc = (DestinationCard) destinationList.getSelectedValue();
+			JList source = (JList) e.getSource();
+			
+			DestinationCard dc = (DestinationCard) source.getSelectedValue();
 			
 			StringWriter sw = new StringWriter();
 			try {
@@ -796,6 +799,23 @@ public class GamePanel extends JFrame {
 			}
 			new TextWindow(sw.toString()).setVisible(true);
 		}
+	}
+
+	private void buryButtonActionPerformed(ActionEvent e) {
+		int idx = destinationList.getSelectedIndex();
+		
+		
+		if (idx != 0) {
+			int res = JOptionPane.showConfirmDialog(this, String.format("Are you sure you want to bury '%s'?", ((DestinationCard) destinationList.getSelectedValue()).getName()), "Bury Card?", JOptionPane.YES_NO_OPTION);
+			if (res != JOptionPane.YES_OPTION)
+				return;
+		}
+		
+		gs.getDestinationDeck().bury(idx);
+		
+		refreshDisplay();
+		
+		
 	}
 
 
@@ -873,6 +893,8 @@ public class GamePanel extends JFrame {
 		distanceTraveledLabelVal = new JLabel();
 		travelListScrollPane = new JScrollPane();
 		destinationList = new JList();
+		scrollPane4 = new JScrollPane();
+		travelledList = new JList();
 		jumpButton = new JButton();
 		buryButton = new JButton();
 		playerTablePanel = new JPanel();
@@ -1423,6 +1445,20 @@ public class GamePanel extends JFrame {
 					}
 					distancePanel.add(travelListScrollPane, cc.xywh(5, 1, 1, 7));
 
+					//======== scrollPane4 ========
+					{
+
+						//---- travelledList ----
+						travelledList.addMouseListener(new MouseAdapter() {
+							@Override
+							public void mouseClicked(MouseEvent e) {
+								destinationListMouseClicked(e);
+							}
+						});
+						scrollPane4.setViewportView(travelledList);
+					}
+					distancePanel.add(scrollPane4, cc.xywh(1, 3, 2, 5));
+
 					//---- jumpButton ----
 					jumpButton.setText("Jump");
 					jumpButton.addActionListener(new ActionListener() {
@@ -1435,6 +1471,12 @@ public class GamePanel extends JFrame {
 
 					//---- buryButton ----
 					buryButton.setText("Bury");
+					buryButton.addActionListener(new ActionListener() {
+						@Override
+						public void actionPerformed(ActionEvent e) {
+							buryButtonActionPerformed(e);
+						}
+					});
 					distancePanel.add(buryButton, cc.xy(7, 5));
 				}
 				gameStatePanel.add(distancePanel, cc.xy(3, 5, CellConstraints.FILL, CellConstraints.FILL));
@@ -2075,6 +2117,8 @@ public class GamePanel extends JFrame {
 	private JLabel distanceTraveledLabelVal;
 	private JScrollPane travelListScrollPane;
 	private JList destinationList;
+	private JScrollPane scrollPane4;
+	private JList travelledList;
 	private JButton jumpButton;
 	private JButton buryButton;
 	private JPanel playerTablePanel;

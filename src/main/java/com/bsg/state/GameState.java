@@ -61,6 +61,8 @@ public class GameState {
 	List<Location> availableLocations;
 	List<DestinationCard> availableDestinations;
 	
+	List<DestinationCard> destinationsTravelledTo;
+	
 	LoyaltyDeck loyaltyDeck;
 	Deck<CrisisCard> crisisDeck;
 	Deck<DestinationCard> destinationDeck;
@@ -109,6 +111,7 @@ public class GameState {
 		
 		usedCharacters = new HashSet<Character>();
 		jumpTrack = new JumpTrack();
+		destinationsTravelledTo = new ArrayList<DestinationCard>();
 		
 		skillCardDecks = new HashMap<SkillCardType, Deck<SkillCard>>();
 		
@@ -398,9 +401,20 @@ public class GameState {
 	}
 
 	public void jumpToTopCard() {
-		distance += destinationDeck.peekAtTop().getDistance();
-		destinationDeck.bury();
+		DestinationCard dc = destinationDeck.deal();
+		distance += dc.getDistance();
+		destinationsTravelledTo.add(dc);
+		try {
+			destinationDeck.discard(dc);
+		} catch (DoesNotBelongInDeckException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
+	}
+	
+	public List<DestinationCard> getTravelledList() {
+		return new ArrayList<DestinationCard>(destinationsTravelledTo);
 	}
 	
 	public int getDistance() {
