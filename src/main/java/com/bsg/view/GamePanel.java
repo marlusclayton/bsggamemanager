@@ -5,6 +5,7 @@
 package com.bsg.view;
 
 import java.awt.Container;
+import java.awt.event.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
@@ -69,8 +70,11 @@ public class GamePanel extends JFrame {
 	private static final Logger LOGGER = LoggerFactory.getLogger(GamePanel.class);
 	
 	private GameState gs;
+	
 	private Mustache handMustache;
 	private Mustache dradisMustache;
+	private Mustache crisisMustache;
+	
 	private GamePanel self;
 	
 	public GamePanel(GameState gs) {
@@ -94,6 +98,7 @@ public class GamePanel extends JFrame {
 		MustacheFactory mf = new DefaultMustacheFactory();
 		handMustache = mf.compile("config/templates/hand.template");
 		dradisMustache = mf.compile("config/templates/dradis.template");
+		crisisMustache = mf.compile("config/templates/crisis.template");
 		
 		refreshDisplay();
 	}
@@ -753,6 +758,27 @@ public class GamePanel extends JFrame {
 		refreshDisplay();
 	}
 
+	private void crisisDeckMouseClicked(MouseEvent e) {
+		JList list = (JList) e.getSource();
+		if (e.getClickCount() == 2) {
+			CrisisCard cc = (CrisisCard) list.getSelectedValue();
+			StringWriter sw = new StringWriter();
+			try {
+				crisisMustache.execute(sw, cc).flush();
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			new TextWindow(sw.toString()).setVisible(true);
+			
+		} 
+	}
+
+	private void reshuffleCrisisDeckButtonActionPerformed(ActionEvent e) {
+		gs.getCrisisDeck().shuffleInPlace();
+		
+		refreshDisplay();
+	}
 
 
 
@@ -917,7 +943,6 @@ public class GamePanel extends JFrame {
 		crisisDiscardList = new JList();
 		playCrisisCardButton = new JButton();
 		buryCrisisCardButton = new JButton();
-		exportCrisisCardButton = new JButton();
 		reshuffleCrisisDeckButton = new JButton();
 		shipsPanel = new JPanel();
 		CellConstraints cc = new CellConstraints();
@@ -1881,12 +1906,26 @@ public class GamePanel extends JFrame {
 								crisisDeckListValueChanged(e);
 							}
 						});
+						crisisDeckList.addMouseListener(new MouseAdapter() {
+							@Override
+							public void mouseClicked(MouseEvent e) {
+								crisisDeckMouseClicked(e);
+							}
+						});
 						scrollPane2.setViewportView(crisisDeckList);
 					}
 					crisisDeckPanel.add(scrollPane2, cc.xywh(1, 3, 3, 3, CellConstraints.FILL, CellConstraints.FILL));
 
 					//======== scrollPane3 ========
 					{
+
+						//---- crisisDiscardList ----
+						crisisDiscardList.addMouseListener(new MouseAdapter() {
+							@Override
+							public void mouseClicked(MouseEvent e) {
+								crisisDeckMouseClicked(e);
+							}
+						});
 						scrollPane3.setViewportView(crisisDiscardList);
 					}
 					crisisDeckPanel.add(scrollPane3, cc.xywh(5, 3, 3, 3));
@@ -1911,13 +1950,15 @@ public class GamePanel extends JFrame {
 					});
 					crisisDeckPanel.add(buryCrisisCardButton, cc.xy(3, 7));
 
-					//---- exportCrisisCardButton ----
-					exportCrisisCardButton.setText("Export Crisis Card");
-					crisisDeckPanel.add(exportCrisisCardButton, cc.xy(5, 7));
-
 					//---- reshuffleCrisisDeckButton ----
 					reshuffleCrisisDeckButton.setText("Reshuffle Crisis Card");
-					crisisDeckPanel.add(reshuffleCrisisDeckButton, cc.xy(7, 7));
+					reshuffleCrisisDeckButton.addActionListener(new ActionListener() {
+						@Override
+						public void actionPerformed(ActionEvent e) {
+							reshuffleCrisisDeckButtonActionPerformed(e);
+						}
+					});
+					crisisDeckPanel.add(reshuffleCrisisDeckButton, cc.xy(5, 7));
 				}
 				crisisCardPanel.add(crisisDeckPanel, cc.xy(1, 1, CellConstraints.FILL, CellConstraints.FILL));
 			}
@@ -2079,7 +2120,6 @@ public class GamePanel extends JFrame {
 	private JList crisisDiscardList;
 	private JButton playCrisisCardButton;
 	private JButton buryCrisisCardButton;
-	private JButton exportCrisisCardButton;
 	private JButton reshuffleCrisisDeckButton;
 	private JPanel shipsPanel;
 	// JFormDesigner - End of variables declaration  //GEN-END:variables

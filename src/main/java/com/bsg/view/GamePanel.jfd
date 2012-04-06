@@ -4285,6 +4285,14 @@
                   <boolean>true</boolean> 
                  </object> 
                 </void> 
+                <void method="addEvent"> 
+                 <object class="com.jformdesigner.model.FormEvent"> 
+                  <string>java.awt.event.MouseListener</string> 
+                  <string>mouseClicked</string> 
+                  <string>crisisDeckMouseClicked</string> 
+                  <boolean>true</boolean> 
+                 </object> 
+                </void> 
                </object> 
               </void> 
              </object> 
@@ -4326,6 +4334,14 @@
                 <string>javax.swing.JList</string> 
                 <void property="name"> 
                  <string>crisisDiscardList</string> 
+                </void> 
+                <void method="addEvent"> 
+                 <object class="com.jformdesigner.model.FormEvent"> 
+                  <string>java.awt.event.MouseListener</string> 
+                  <string>mouseClicked</string> 
+                  <string>crisisDeckMouseClicked</string> 
+                  <boolean>true</boolean> 
+                 </object> 
                 </void> 
                </object> 
               </void> 
@@ -4413,10 +4429,18 @@
               <string>javax.swing.JButton</string> 
               <void method="setProperty"> 
                <string>text</string> 
-               <string>Export Crisis Card</string> 
+               <string>Reshuffle Crisis Card</string> 
               </void> 
               <void property="name"> 
-               <string>exportCrisisCardButton</string> 
+               <string>reshuffleCrisisDeckButton</string> 
+              </void> 
+              <void method="addEvent"> 
+               <object class="com.jformdesigner.model.FormEvent"> 
+                <string>java.awt.event.ActionListener</string> 
+                <string>actionPerformed</string> 
+                <string>reshuffleCrisisDeckButtonActionPerformed</string> 
+                <boolean>true</boolean> 
+               </object> 
               </void> 
              </object> 
              <object class="com.jformdesigner.model.FormLayoutConstraints"> 
@@ -4424,29 +4448,6 @@
               <void method="setProperty"> 
                <string>gridX</string> 
                <int>5</int> 
-              </void> 
-              <void method="setProperty"> 
-               <string>gridY</string> 
-               <int>7</int> 
-              </void> 
-             </object> 
-            </void> 
-            <void method="add"> 
-             <object class="com.jformdesigner.model.FormComponent"> 
-              <string>javax.swing.JButton</string> 
-              <void method="setProperty"> 
-               <string>text</string> 
-               <string>Reshuffle Crisis Card</string> 
-              </void> 
-              <void property="name"> 
-               <string>reshuffleCrisisDeckButton</string> 
-              </void> 
-             </object> 
-             <object class="com.jformdesigner.model.FormLayoutConstraints"> 
-              <class>com.jgoodies.forms.layout.CellConstraints</class> 
-              <void method="setProperty"> 
-               <string>gridX</string> 
-               <int>7</int> 
               </void> 
               <void method="setProperty"> 
                <string>gridY</string> 
