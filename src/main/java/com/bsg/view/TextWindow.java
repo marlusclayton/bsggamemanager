@@ -74,6 +74,7 @@ public class TextWindow extends JFrame implements ClipboardOwner {
 
 					//---- text ----
 					text.setEditable(false);
+					text.setFont(new Font("Courier New", Font.PLAIN, 14));
 					scrollPane1.setViewportView(text);
 				}
 				contentPanel.add(scrollPane1, cc.xywh(1, 1, 3, 5));
