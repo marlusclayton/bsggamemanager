@@ -1,7 +1,7 @@
 [pre]
 [b][u]TURN {{turn}}.{{subturn}}[/u][/b]
 {{#players}}
-  {{#is_current_turn}}==>{{/is_current_turn}}{{^is_current_turn}}  *{{/is_current_turn}}{{{player_name}}} ({{{character_name_with_titles}}} [{{hand_size}}])     {{draw}})
+  {{#is_current_turn}}==>{{/is_current_turn}}{{^is_current_turn}}  *{{/is_current_turn}}{{{player_name}}} ({{{character_name_with_titles}}} [{{hand_size}}])     {{draw}}
 {{/players}}
 
 
