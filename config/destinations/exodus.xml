@@ -4,20 +4,19 @@
 		<name>Algae Planet</name>
 		<distance>1</distance>
 		<fuelloss>1</fuelloss>
-		<other>Food +1</other>
+		<special>Food +1</special>
 	</destination>
 	<destination>
 		<name>Derelict Basestar</name>
 		<distance>2</distance>
 		<fuelloss>1</fuelloss>
-		<other>Deploy: B(1), Civ(2x4)</other>
-		<special>Damage the basestar once.</special>
+		<special>Deploy: B(1), Civ(2x4); Damage the Basestar Once</special>
 	</destination>
 	<destination>
 		<name>Radioactive Cloud</name>
 		<distance>2</distance>
 		<fuelloss>1</fuelloss>
-		<other>Population -1</other>
+		<special>Population -1</special>
 	</destination>
 	<destination>
 		<name>Dying Star</name>
@@ -35,7 +34,7 @@
 		<name>Cylon Raiders</name>
 		<distance>3</distance>
 		<fuelloss>2</fuelloss>
-		<other>Deploy: R(3x4)</other>
+		<special>Deploy: R(3x4)</special>
 	</destination>
 	<destination>
 		<name>Gas Giant</name>

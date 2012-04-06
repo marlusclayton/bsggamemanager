@@ -2,5 +2,4 @@ DESTINATION: {{name}}
 
 Distance - {{distance}}
 Fuel Loss - {{fuelLoss}}
-{{#other}}Other Stuff - {{other}}{{/other}}
-{{#special}}Special Things - {{special}}{{/special}}
+{{#special}}Special Things - {{{special}}}{{/special}}

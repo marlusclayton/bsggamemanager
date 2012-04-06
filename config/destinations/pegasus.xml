@@ -4,14 +4,13 @@
 		<name>Mining Asteroid</name>
 		<distance>2</distance>
 		<fuelloss>1</fuelloss>
-		<other>Vipers +2</other>
-		<special>Search for and immediately resolve "Scar" card. Shuffle Crisis deck</special>
+		<special>Activate 2 Vipers; Search for and immediately resolve "Scar" crisis card.  Shuffle Crisis deck</special>
 	</destination>
 	<destination>
 		<name>Binary Star</name>
 		<distance>2</distance>
 		<fuelloss>1</fuelloss>
-		<other>Deploy: Civ (1), Civ (4)</other>
+		<special>Deploy: Civ (1), Civ (4)</special>
 	</destination>
 	<destination>
 		<name>Gas Cloud</name>
@@ -23,20 +22,18 @@
 		<name>A Civilian Convoy</name>
 		<distance>3</distance>
 		<fuelloss>3</fuelloss>
-		<other>Population +1</other>
-		<special>Admiral may lose 1 morale for +1 fuel</special>
+		<special>Population +1; Admiral may lose 1 morale for +1 fuel</special>
 	</destination>
 	<destination>
 		<name>Misjump</name>
 		<distance>0</distance>
 		<fuelloss>0</fuelloss>
-		<other>Civilian -1</other>
-		<special>Then discard this dest and draw a new one to resolve</special>
+		<special>Civilian -1; Then discard this dest and draw a new one to resolve</special>
 	</destination>
 	<destination>
 		<name>Deep Space</name>
 		<distance>2</distance>
 		<fuelloss>1</fuelloss>
-		<other>Morale -1</other>
+		<special>Morale -1</special>
 	</destination>
 </destinations>

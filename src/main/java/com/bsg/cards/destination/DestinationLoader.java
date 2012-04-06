@@ -60,13 +60,11 @@ public class DestinationLoader {
 			String name = getTextValue(el, "name");
 			String distance = getTextValue(el, "distance");
 			String fuelLoss = getTextValue(el, "fuelloss");
-			String other = getTextValue(el, "other");
 			String special = getTextValue(el, "special");
 			
 			DestinationCard dc = new DestinationCard(name, 
 					Integer.parseInt(distance),
 					Integer.parseInt(fuelLoss),
-					other,
 					special,
 					expansion);
 			

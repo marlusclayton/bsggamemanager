@@ -9,15 +9,13 @@ public class DestinationCard extends Card implements Item {
 	private final String name;
 	private final int distance;
 	private final int fuelLoss;
-	private final String other;
 	private final String special;
 	private final Expansion expansion;
 	
-	public DestinationCard(String name, int distance, int fuelLoss, String other, String special, Expansion expansion) {
+	public DestinationCard(String name, int distance, int fuelLoss, String special, Expansion expansion) {
 		this.name = name;
 		this.distance = distance;
 		this.fuelLoss = fuelLoss;
-		this.other = other;
 		this.special = special;
 		this.expansion = expansion;
 	}
@@ -41,13 +39,6 @@ public class DestinationCard extends Card implements Item {
 	 */
 	public int getFuelLoss() {
 		return fuelLoss;
-	}
-
-	/**
-	 * @return the other
-	 */
-	public String getOther() {
-		return other;
 	}
 
 	/**
