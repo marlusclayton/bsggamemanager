@@ -3,12 +3,14 @@ BSG Game Manager
 
 This is a project for folks administering a play by forum game of the Battlestar Galactica board game.  It is still a work in progress and not fit for general consumption now.
 
+When it's complete, the application will keep track of all aspects of the board game including player's skill cards and current loyalty, crisis cards, ships, jump track and all other elements of the BSG board game.  The application will also output state and other information according to user entered templates.  All game elements (characters, cards, etc) will be loaded from crafted XML files so end users will be able to add their own characters, crisis cards and even locations on the board to use.
+
 Work left to do:
 
 -General bug fixes
 -Ships
 -Quorum Cards
-
+-Saving (*gulp*)
 
 
 *This project is not affiliated with or endorsed by Fantasy Flight Games, USA Television, Syfy, nor NBC Universal
