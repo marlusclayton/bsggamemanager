@@ -6,9 +6,8 @@ package com.bsg.view;
 
 import java.awt.Container;
 import java.awt.event.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.util.EnumSet;
 import java.util.Set;
@@ -45,6 +44,7 @@ import com.bsg.Expansion;
 import com.bsg.Player;
 import com.bsg.cards.DoesNotBelongInDeckException;
 import com.bsg.cards.crisis.CrisisCard;
+import com.bsg.cards.destination.DestinationCard;
 import com.bsg.cards.loyalty.LoyaltyCardType;
 import com.bsg.cards.loyalty.LoyaltyType;
 import com.bsg.cards.skill.SkillCard;
@@ -74,6 +74,7 @@ public class GamePanel extends JFrame {
 	private Mustache handMustache;
 	private Mustache dradisMustache;
 	private Mustache crisisMustache;
+	private Mustache destinationMustache;
 	
 	private GamePanel self;
 	
@@ -99,6 +100,7 @@ public class GamePanel extends JFrame {
 		handMustache = mf.compile("config/templates/hand.template");
 		dradisMustache = mf.compile("config/templates/dradis.template");
 		crisisMustache = mf.compile("config/templates/crisis.template");
+		destinationMustache = mf.compile("config/templates/destination.template");
 		
 		refreshDisplay();
 	}
@@ -780,6 +782,21 @@ public class GamePanel extends JFrame {
 		refreshDisplay();
 	}
 
+	private void destinationListMouseClicked(MouseEvent e) {
+		if (e.getClickCount() == 2) {
+			DestinationCard dc = (DestinationCard) destinationList.getSelectedValue();
+			
+			StringWriter sw = new StringWriter();
+			try {
+				destinationMustache.execute(sw, dc).flush();
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			new TextWindow(sw.toString()).setVisible(true);
+		}
+	}
+
 
 
 
@@ -1392,6 +1409,14 @@ public class GamePanel extends JFrame {
 
 					//======== travelListScrollPane ========
 					{
+
+						//---- destinationList ----
+						destinationList.addMouseListener(new MouseAdapter() {
+							@Override
+							public void mouseClicked(MouseEvent e) {
+								destinationListMouseClicked(e);
+							}
+						});
 						travelListScrollPane.setViewportView(destinationList);
 					}
 					distancePanel.add(travelListScrollPane, cc.xywh(5, 1, 1, 7));
