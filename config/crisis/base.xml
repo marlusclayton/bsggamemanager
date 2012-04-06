@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<crisiscards expansion="BASE">
+	<crisiscard name="A Traitor Accused " type="NORMAL">
+	POL/LEA: Difficulty: 8  Current Player Chooses: Pass: No Effect; Fail: the current player chooses a character to send to the &quot;Brig.&quot;; OR The current player discards 5 skill cards	
+	ACTIVATE RAIDERS, +1 JUMP
+	</crisiscard>
+	<crisiscard name="Admiral Grilled" type="NORMAL">
+	POL/LEA: Difficulty: 9  Current Player Chooses: Pass: No Effect; Fail: -1 morale, and the Admiral discards 2 Skill Cards.; OR -1 morale	
+	ACTIVATE RAIDERS, +1 JUMP
+	</crisiscard>
+	<crisiscard name="Ambush" type="ATTACK">
+			
+		1. BASESTARS LAUNCH NUKES
+		2. BASESTARS: 1x4
+		     HEAVIES: 
+		     RAIDERS: 4x[1,4]
+		      VIPERS: 2x5
+		     CIVVIES: 1x[3,5,6]
+		3. Training new Pilots: Keep this card in play until the fleet jumps. Each unmanned viper suffers a -2 penalty to its attack rolls
+		
+		</crisiscard>
+	<crisiscard name="Analyze Enemy Fighter" type="NORMAL">
+	TAC/ENG: Difficulty: 7  Current Player Chooses: Pass: Repair 1 destroyed raptor; Fail: -1 population; OR Roll a die. If 4 or lower, -1 population and the current player discards 2 Skill Cards.	
+	ACTIVATE RAIDERS, +1 JUMP
+	</crisiscard>
+	<crisiscard name="Besieged" type="ATTACK">
+			
+		1. ACTIVATE RAIDERS
+		2. BASESTARS: 1x5
+		     HEAVIES: 1x4
+		     RAIDERS: 4x6
+		      VIPERS: 2x6
+		     CIVVIES: 1x[1,2,6]
+		3. Heavy Casualties: The 4 raiders that were just setup are immediately activated
+		
+		</crisiscard>
+	<crisiscard name="Boarding Parties" type="ATTACK">
+			
+		1. ACTIVATE HEAVIES
+		2. BASESTARS: 1x2
+		     HEAVIES: 2x[1,3]
+		     RAIDERS: 4x2
+		      VIPERS: 
+		     CIVVIES: 1x4,2x5
+		3. Surprise Assault: There are no vipers in this setup
+		
+		</crisiscard>
+	<crisiscard name="Bomb Threat" type="NORMAL">
+	POL/LEA/TAC: Difficulty: 13  Current Player Chooses: Pass: No Effect; Fail: -1 morale and draw civilian ship and destroy it.; OR Roll a die. If 4 or lower, trigger the &quot;Fail&quot; effect of this card.	
+	ACTIVATE RAIDERS, +1 JUMP
+	</crisiscard>
+	<crisiscard name="Build Cylon Detector" type="NORMAL">
+	Admiral Chooses: Discard 1 Nuke Token. If you do not have any Nuke tokens, you may not choose this option. OR -1 morale, and the Admiral discards 2 Skill Cards	
+	ACTIVATE HEAVIES, NO JUMP
+	</crisiscard>
+	<crisiscard name="Colonial Day" type="NORMAL">
+	POL/TAC: Difficulty: 10  Current Player Chooses-- Pass: +1 morale; Fail: -2 morale; OR -1 Morale	
+	BASESTARS LAUNCH NUKES, +1 JUMP
+	</crisiscard>
+	<crisiscard name="Crash Landing" type="NORMAL">
+	TAC/PIL: Difficulty: 6  Pass: No Effect; Fail: The Admiral may spend 1 fuel. If he does not, -1 morale, and the current player is sent to &quot;Sickbay.&quot;	
+	ACTIVATE HEAVIES, NO JUMP
+	</crisiscard>
+	<crisiscard name="Crippled Raider" type="NORMAL">
+	TAC/ENG: Difficulty: 10  Current Player Chooses: Pass: Increase the Jump Prep track by 1.; Fail: -1 population; OR Roll a die. If 4 or lower, place 3 raiders in front of Galactica and 1 civilian ship behind it.	
+	ACTIVATE RAIDERS, +1 JUMP
+	</crisiscard>
+	<crisiscard name="Cylon Accusation" type="NORMAL">
+	POL/LEA/TAC: Difficulty: 10  Pass: No Effect; Fail: The current player is placed in the &quot;Brig&quot; location.	
+	ACTIVATE RAIDERS, NO JUMP
+	</crisiscard>
+	<crisiscard name="Cylon Screenings" type="NORMAL">
+	POL/LEA: Difficulty: 9  Current Player Chooses: Pass: No Effect; Fail: -1 morale, and the current player looks at 1 random Loyalty Card belonging to the President or Admiral.; OR Each player discards 2 Skill Cards.	
+	ACTIVATE RAIDERS, NO JUMP
+	</crisiscard>
+	<crisiscard name="Cylon Swarm" type="ATTACK">
+			
+		1. BASESTARS LAUNCH NUKES
+		2. BASESTARS: 1x1
+		     HEAVIES: 1x2
+		     RAIDERS: 5x1
+		      VIPERS: 1x[5,6]
+		     CIVVIES: 1x[4,5,6]
+		3. Massive Deployment:: Keep this card in play until the fleet jumps. Each time a basestar launches raiders or heavy raiders, it launches 1 additional ship of the same type.
+		
+		</crisiscard>
+	<crisiscard name="Cylon Tracking Device" type="NORMAL">
+	TAC/PIL/ENG: Difficulty: 10  Pass: No Effect; Fail: Destroy 1 raptor and place a basestar in front of Galactica and 2 civilian ships behind it.	
+	ACTIVATE RAIDERS, NO JUMP
+	</crisiscard>
+	<crisiscard name="Cylon Virus" type="NORMAL">
+	TAC/ENG: Difficulty: 13  Pass: No Effect; Fail: All characters in the &quot;FTL Control&quot; location are sent to &quot;Sickbay.&quot; Then place 1 centurion marker at the start of the Boarding Party track.	
+	BASESTARS LAUNCH RAIDERS, NO JUMP
+	</crisiscard>
+	<crisiscard name="Declare Martial Law " type="NORMAL">
+	Admiral Chooses: -1 morale; Admiral receives the President title OR -1 population, and the Admiral discards 2 skill cards	
+	BASESTARS LAUNCH NUKES, NO JUMP
+	</crisiscard>
+	<crisiscard name="Detector Sabotage " type="NORMAL">
+	LEA/TAC: Difficulty: 8  Pass: No Effect; Fail: All characters in the &quot;Research Lab&quot; location are sent to &quot;Sickbay.&quot; Keep this card in play. Players may not look at other players' Loyalty Cards.	
+	ACTIVATE HEAVIES, +1 JUMP
+	</crisiscard>
+	<crisiscard name="Elections Loom" type="NORMAL">
+	POL/LEA: Difficulty: 8  Partial: 5 Pass: No Effect; 5+ -1 morale; Fail: -1 morale, and the President discards 4 Skill Cards.	
+	ACTIVATE HEAVIES, +1 JUMP
+	</crisiscard>
+	<crisiscard name="Food Shortage" type="NORMAL">
+	President Chooses: -2 food OR -1 food. The President: -2 Skill Cards; Current Player: -3 Skill Cards	
+	ACTIVATE RAIDERS, +1 JUMP
+	</crisiscard>
+	<crisiscard name="Food Shortage" type="NORMAL">
+	President Chooses: -2 food OR -1 food. The President: -2 Skill Cards; Current Player: -3 Skill Cards	
+	ACTIVATE RAIDERS, +1 JUMP
+	</crisiscard>
+	<crisiscard name="Food Shortage" type="NORMAL">
+	President Chooses: -2 food OR -1 food. The President: -2 Skill Cards; Current Player: -3 Skill Cards	
+	ACTIVATE RAIDERS, +1 JUMP
+	</crisiscard>
+	<crisiscard name="Food Shortage" type="NORMAL">
+	President Chooses: -2 food OR -1 food. The President: -2 Skill Cards; Current Player: -3 Skill Cards	
+	ACTIVATE RAIDERS, +1 JUMP
+	</crisiscard>
+	<crisiscard name="Forced Water Mining" type="NORMAL">
+	POL/LEA/TAC/ENG: Difficulty: 17  Current Player Chooses: Pass: +1 food; Fail: -1 population, -1 morale; OR +1 food, -1 morale, and each player discards 1 random Skill Card.	
+	ACTIVATE RAIDERS, +1 JUMP
+	</crisiscard>
+	<crisiscard name="Fulfiller of Prophecy" type="NORMAL">
+	POL/LEA: Difficulty: 6  Current Player Chooses-- Pass: the current player draws 1 politics Skill Card; Fail: -1 population; OR Current player discards 1 Skill Card. After the Activate Cylon Ships step, return to the Resolve Crisis step (Draw a new Crisis Card and resolve it.)	
+	BASESTARS LAUNCH NUKES, NO JUMP
+	</crisiscard>
+	<crisiscard name="Guilt by Collusion" type="NORMAL">
+	LEA/TAC: Difficulty: 9  Pass: The current player may choose a character to move to the &quot;Brig.&quot;; Fail: -1 morale	
+	ACTIVATE RAIDERS, +1 JUMP
+	</crisiscard>
+	<crisiscard name="Hangar Accident" type="NORMAL">
+	TAC/PIL/ENG: Difficulty: 10  Partial: 7 Pass: No Effect; 7+: -1 population; Fail: -1 population and damage 2 vipers in the &quot;Reserves.&quot;	
+	ACTIVATE HEAVIES, +1 JUMP
+	</crisiscard>
+	<crisiscard name="Heavy Assault" type="ATTACK">
+			
+		1. ACTIVATE RAIDERS
+		2. BASESTARS: 1x[1,2]
+		     HEAVIES: 
+		     RAIDERS: 
+		      VIPERS: 1x6
+		     CIVVIES: 1x[4,5,6]
+		3. Heavy Bombardment: Each basestar immediately attacks Galactica
+		
+		</crisiscard>
+	<crisiscard name="Informing the Public" type="NORMAL">
+	POL/LEA: Difficulty: 7  Current Player Chooses: Pass: Current player looks at 1 random Loyalty Card belonging to any player; Fail: -2 morale; OR Roll a die. On a 4 or lower, -1 morale and -1 population	
+	ACTIVATE RAIDERS, +1 JUMP
+	</crisiscard>
+	<crisiscard name="Jammed Assault" type="ATTACK">
+			
+		1. ACTIVATE RAIDERS
+		2. BASESTARS: 1x3
+		     HEAVIES: 2x3
+		     RAIDERS: 4x2
+		      VIPERS: 1x[5,6]
+		     CIVVIES: 1x[1,4,5,6]
+		3. Communications Jamming: Keep this card in play until the fleet jumps. Players may not activate the &quot;Communications&quot; location
+		
+		</crisiscard>
+	<crisiscard name="Jump Computer Failure" type="NORMAL">
+	TAC/ENG: Difficulty: 7  Pass: No Effect; Fail: -1 population and move the fleet token 1 space towards the start of the Jump Prep track	
+	BASESTARS LAUNCH RAIDERS, NO JUMP
+	</crisiscard>
+	<crisiscard name="Keep Tabs on Visitor" type="NORMAL">
+	POL/LEA/TAC: Difficulty: 12  Current Player Chooses: Pass: No Effect; Fail: Roll a die. If 4 or lower, -2 population; OR The current player discards 4 random Skill Cards.	
+	ACTIVATE RAIDERS, +1 JUMP
+	</crisiscard>
+	<crisiscard name="Legendary Discovery" type="NORMAL">
+	TAC/PIL: Difficulty: 14  Pass: Place this card next to the Kobol Objective card. It counts as 1 distance; Fail: -1 food and destroy 1 raptor.	
+	BASESTARS LAUNCH RAIDERS, NO JUMP
+	</crisiscard>
+	<crisiscard name="Loss of a Friend" type="NORMAL">
+	POL/LEA: Difficulty: 9  Partial: 7 Pass: No Effect; 7+: The current player discards 2 Skill Cards.; Fail: -1 morale, and the current player discards 2 Skill Cards.	
+	ACTIVATE HEAVIES, +1 JUMP
+	</crisiscard>
+	<crisiscard name="Low Supplies" type="NORMAL">
+	POL/LEA: Difficulty: 7  Pass: No Effect; Fail: -1 morale. If food is less than 6, -1 additional morale.	
+	ACTIVATE RAIDERS, NO JUMP
+	</crisiscard>
+	<crisiscard name="Mandatory Testing" type="NORMAL">
+	POL/LEA: Difficulty: 13  Partial: 9 Pass: The President looks at 1 random Loyalty card of the current player; 9+: No Effect; Fail: -1 morale	
+	ACTIVATE HEAVIES, +1 JUMP
+	</crisiscard>
+	<crisiscard name="Missing G4 Explosives" type="NORMAL">
+	LEA/TAC: Difficulty: 7  Pass: No Effect; Fail: -1 food, and all characters in the &quot;Armory&quot; location are sent to the &quot;Brig.&quot;	
+	ACTIVATE RAIDERS, NO JUMP
+	</crisiscard>
+	<crisiscard name="Network Computers" type="NORMAL">
+	POL/TAC/ENG: Difficulty: 11  Current Player Chooses: Pass: Increase the Jump Prep track by 1.; Fail: -1 population and place 1 centurion marker at the star of the Boarding Party track.; OR -1 population and decrease the Jump Prep track by 1.	
+	ACTIVATE RAIDERS, +1 JUMP
+	</crisiscard>
+	<crisiscard name="Prison Labor" type="NORMAL">
+	POL/LEA/TAC: Difficulty: 10  Pass: No Effect; Fail: -1 morale, -1 food	
+	ACTIVATE RAIDERS, NO JUMP
+	</crisiscard>
+	<crisiscard name="Prisoner Revolt" type="NORMAL">
+	POL/LEA/TAC: Difficulty: 11  Partial: 6 Pass: No Effect; 6+: -1 population; Fail: -1 population, and the President chooses another player to receive the President title.	
+	ACTIVATE HEAVIES, +1 JUMP
+	</crisiscard>
+	<crisiscard name="Raiding Party" type="ATTACK">
+			
+		1. ACTIVATE RAIDERS
+		2. BASESTARS: 1x3
+		     HEAVIES: 2x4
+		     RAIDERS: 3x3,2x4
+		      VIPERS: 2x6
+		     CIVVIES: 1x5,2x6
+		3. FTL Failure: Move the fleet token 1 space towards the start of the Jump Prep track
+		
+		</crisiscard>
+	<crisiscard name="Requested Resignation" type="NORMAL">
+	Admiral Chooses: The President and Admiral both discard 2 Skill Cards OR The President may choose to give the President title to the Admiral, or move to the &quot;Brig&quot; location	
+	BASESTARS LAUNCH NUKES, NO JUMP
+	</crisiscard>
+	<crisiscard name="Rescue Caprica Survivors" type="NORMAL">
+	President Chooses:-1 fuel, -1 food, +1 population OR -1 morale	
+	ACTIVATE RAIDERS, +1 JUMP
+	</crisiscard>
+	<crisiscard name="Rescue Mission (A)" type="NORMAL">
+	Admiral Chooses: -1 morale; Current Player is sent to &quot;Sickbay&quot; OR -1 fuel and destroy 1 raptor	
+	BASESTARS LAUNCH NUKES, +1 JUMP
+	</crisiscard>
+	<crisiscard name="Rescue Mission (B)" type="NORMAL">
+	Admiral Chooses: -1 morale; Current Player is sent to &quot;Sickbay&quot; OR -1 fuel and destroy 1 raptor	
+	ACTIVATE RAIDERS, +1 JUMP
+	</crisiscard>
+	<crisiscard name="Rescue the Fleet" type="NORMAL">
+	Admiral Chooses:-2 population OR -1 morale.  1 basestar &amp; 3 raiders at  [1] and 3 civilian ships  at [4]	
+	ACTIVATE RAIDERS, +1 JUMP
+	</crisiscard>
+	<crisiscard name="Resistance" type="NORMAL">
+	POL/LEA/TAC: Difficulty: 12  Partial: 9 Pass: No Effect; 9+: -1 food; Fail: -1 food, -1 fuel	
+	ACTIVATE HEAVIES, +1 JUMP
+	</crisiscard>
+	<crisiscard name="Riots(A)" type="NORMAL">
+	Admiral Chooses: -1 food, -1 morale OR -1 population, -1 fuel	
+	BASESTARS LAUNCH NUKES, +1 JUMP
+	</crisiscard>
+	<crisiscard name="Riots(B)" type="NORMAL">
+	Admiral Chooses: -1 food, -1 morale OR -1 population, -1 fuel	
+	BASESTARS LAUNCH RAIDERS, NO JUMP
+	</crisiscard>
+	<crisiscard name="Scouting for Fuel" type="NORMAL">
+	TAC/PIL: Difficulty: 12  Current Player Chooses: Pass: +1 fuel; Fail: -1 fuel and destroy 1 raptor; OR Roll a die. If 4 or lower, -1 fuel.	
+	ACTIVATE RAIDERS, +1 JUMP
+	</crisiscard>
+	<crisiscard name="Scouting for Water" type="NORMAL">
+	TAC/PIL: Difficulty: 9  Current Player Chooses: Pass: +1 food; Fail: -1 fuel and destroy 1 raptor; OR -1 food	
+	ACTIVATE RAIDERS, +1 JUMP
+	</crisiscard>
+	<crisiscard name="Security Breach" type="NORMAL">
+	LEA/TAC: Difficulty: 6  Pass: No Effect; Fail: -1 morale, and all characters in the &quot;Command&quot; location are sent to &quot;Sickbay.&quot;	
+	BASESTARS LAUNCH RAIDERS, NO JUMP
+	</crisiscard>
+	<crisiscard name="Send Survey Team" type="NORMAL">
+	TAC/PIL/ENG: Difficulty: 15  Current Player Chooses: Pass: No Effect; Fail: The current player is sent to &quot;Sickbay&quot; and destroy 1 raptor; OR Roll a die. If 5 or less, -1 fuel.	
+	ACTIVATE RAIDERS, +1 JUMP
+	</crisiscard>
+	<crisiscard name="Sleep Deprivation" type="NORMAL">
+	Admiral Chooses:All undamaged vipers on the game board to the &quot;Reserves.&quot;  Current Player to &quot;Sickbay&quot;  OR -1 morale	
+	BASESTARS LAUNCH NUKES, +1 JUMP
+	</crisiscard>
+	<crisiscard name="Surrounded " type="ATTACK">
+			
+		1. BASESTARS LAUNCH NUKES
+		2. BASESTARS: 1x2
+		     HEAVIES: 1x3
+		     RAIDERS: 4x1,3x3
+		      VIPERS: 1x[5,6]
+		     CIVVIES: 1x[4,5,6]
+		3. Panic: The current player must discard 3 Skill Cards
+		
+		</crisiscard>
+	<crisiscard name="Tactical Strike" type="ATTACK">
+			
+		1. ACTIVATE RAIDERS
+		2. BASESTARS: 1x6
+		     HEAVIES: 1x1
+		     RAIDERS: 5x6
+		      VIPERS: 2x5
+		     CIVVIES: 1x[3,4,5]
+		3. Hangar Assault: Damage 2 vipers in the reserves
+		
+		</crisiscard>
+	<crisiscard name="Terrorist Bomber" type="NORMAL">
+	LEA/TAC: Difficulty: 9  Pass: No Effect; Fail: -1 morale, and the current player is sent to &quot;Sickbay.&quot;	
+	ACTIVATE HEAVIES, +1 JUMP
+	</crisiscard>
+	<crisiscard name="Terrorist Investigations" type="NORMAL">
+	POL/LEA: Difficulty: 12  Partial: 6 Pass: Current player looks at 1 random Loyalty Card belonging to any player; 6+: No effect; Fail: -1 morale	
+	ACTIVATE HEAVIES, +1 JUMP
+	</crisiscard>
+	<crisiscard name="The Olympic Carrier" type="NORMAL">
+	POL/LEA/PIL: Difficulty: 11  Partial: 8 Pass: No Effect; 8+: -1 population; Fail: -1 morale, -1 population	
+	ACTIVATE HEAVIES, +1 JUMP
+	</crisiscard>
+	<crisiscard name="Thirty-Three" type="ATTACK">
+			
+		1. ACTIVATE RAIDERS
+		2. BASESTARS: 1x1
+		     HEAVIES: 
+		     RAIDERS: 
+		      VIPERS: 1x[5,6]
+		     CIVVIES: 1x[3,4,5,6]
+		3. Relentless Pursuit: Keep in play until a civilian ship or basestar is destroyed. If this card is in play when the fleet jumps, shuffle it back into the Crisis deck
+		
+		</crisiscard>
+	<crisiscard name="Unexpected Reunion" type="NORMAL">
+	POL/LEA/TAC: Difficulty: 8  Pass: No Effect; Fail: -1 morale, and the current player discards his hand of Skill Cards.	
+	ACTIVATE RAIDERS, NO JUMP
+	</crisiscard>
+	<crisiscard name="Unidentified Ship" type="NORMAL">
+	TAC/PIL: Difficulty: 10  Pass: No Effect; Fail: -1 Population	
+	BASESTARS LAUNCH RAIDERS, NO JUMP
+	</crisiscard>
+	<crisiscard name="Water Sabotaged" type="NORMAL">
+	POL/LEA/TAC: Difficulty: 13  Current Player Chooses: Pass: No Effect; Fail: -2 food; OR - 1 food	
+	ACTIVATE RAIDERS, +1 JUMP
+	</crisiscard>
+	<crisiscard name="Water Shortage ( C)" type="NORMAL">
+	President Chooses: -1 food OR President: -2 Skill Cards; Current Player: -3 Skill Cards	
+	BASESTARS LAUNCH NUKES, NO JUMP
+	</crisiscard>
+	<crisiscard name="Water Shortage (A)" type="NORMAL">
+	President Chooses: -1 food OR President: -2 Skill Cards; Current Player: -3 Skill Cards	
+	BASESTARS LAUNCH NUKES, +1 JUMP
+	</crisiscard>
+	<crisiscard name="Water Shortage (A)" type="NORMAL">
+	President Chooses: -1 food OR President: -2 Skill Cards; Current Player: -3 Skill Cards	
+	BASESTARS LAUNCH NUKES, +1 JUMP
+	</crisiscard>
+	<crisiscard name="Water Shortage (A)" type="NORMAL">
+	President Chooses: -1 food OR President: -2 Skill Cards; Current Player: -3 Skill Cards	
+	BASESTARS LAUNCH NUKES, +1 JUMP
+	</crisiscard>
+	<crisiscard name="Water Shortage (B)" type="NORMAL">
+	President Chooses: -1 food OR President: -2 Skill Cards; Current Player: -3 Skill Cards	
+	ACTIVATE RAIDERS, +1 JUMP
+	</crisiscard>
+	<crisiscard name="Weapon Malfunction" type="NORMAL">
+	TAC/PIL/ENG: Difficulty: 11  Pass: No Effect; Fail: Damage 2 vipers in space areas. All characters in the &quot;Weapon's Control&quot; location are sent to &quot;Sickbay.&quot;	
+	BASESTARS LAUNCH RAIDERS, NO JUMP
+	</crisiscard>
+	<crisiscard name="Witch Hunt" type="NORMAL">
+	POL/LEA: Difficulty: 10  Partial: 6 Pass: No Effect; 6+: -1 morale; Fail: -1 morale. Current player chooses a character and moves him to &quot;Sickbay.&quot;	
+	ACTIVATE HEAVIES, +1 JUMP
+	</crisiscard>
+</crisiscards>

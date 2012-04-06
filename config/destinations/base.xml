@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<destinations expansion="BASE">
+	<destination>
+		<name>Asteroid Field</name>
+		<distance>3</distance>
+		<fuelloss>2</fuelloss>
+		<other>Civilian -1</other>
+	</destination>
+	<destination>
+		<name>Icy Moon</name>
+		<distance>1</distance>
+		<fuelloss>1</fuelloss>
+		<special>Admiral may risk 1 Raptor:  Roll 1-2 ‚Üí lose Raptor; 3-8 ‚Üí +1 Food</special>
+	</destination>
+	<destination>
+		<name>Tylium Planet</name>
+		<distance>1</distance>
+		<fuelloss>1</fuelloss>
+		<special>Admiral may risk 1 Raptor:  Roll 1-2 ‚Üí lose Raptor; 3-8 ‚Üí +2 fuel.</special>
+	</destination>
+	<destination>
+		<name>Desolate Moon</name>
+		<distance>3</distance>
+		<fuelloss>3</fuelloss>
+	</destination>
+	<destination>
+		<name>Asteroid Field</name>
+		<distance>3</distance>
+		<fuelloss>2</fuelloss>
+		<other>Civilian -1</other>
+	</destination>
+	<destination>
+		<name>Barren Planet</name>
+		<distance>2</distance>
+		<fuelloss>2</fuelloss>
+	</destination>
+	<destination>
+		<name>Cylon Refinery</name>
+		<distance>2</distance>
+		<fuelloss>1</fuelloss>
+		<special>Admiral may risk 2 Vipers:  Roll 1-5 ‚Üí damage 2 Vipers; 6-8 +2 fuel.</special>
+	</destination>
+	<destination>
+		<name>Remote Planet</name>
+		<distance>2</distance>
+		<fuelloss>1</fuelloss>
+		<other>Raptor -1</other>
+	</destination>
+	<destination>
+		<name>Tylium Planet</name>
+		<distance>1</distance>
+		<fuelloss>1</fuelloss>
+		<special>Admiral may risk 1 Raptor:  Roll 1-2 ‚Üí lose Raptor; 3-8 ‚Üí +2 fuel.</special>
+	</destination>
+	<destination>
+		<name>Remote Planet</name>
+		<distance>2</distance>
+		<fuelloss>1</fuelloss>
+		<other>Raptor -1</other>
+	</destination>
+	<destination>
+		<name>Barren Planet</name>
+		<distance>2</distance>
+		<fuelloss>2</fuelloss>
+	</destination>
+	<destination>
+		<name>Deep Space</name>
+		<distance>2</distance>
+		<fuelloss>1</fuelloss>
+		<other>Morale -1</other>
+	</destination>
+	<destination>
+		<name>Cylon Ambush</name>
+		<distance>3</distance>
+		<fuelloss>1</fuelloss>
+		<other>Deploy: B(1), R(3x1), Civ(3x4)</other>
+	</destination>
+	<destination>
+		<name>Tylium Planet</name>
+		<distance>1</distance>
+		<fuelloss>1</fuelloss>
+		<special>Admiral may risk 1 Raptor:  Roll 1-2 ‚Üí lose Raptor; 3-8 ‚Üí +2 fuel.</special>
+	</destination>
+	<destination>
+		<name>Icy Moon</name>
+		<distance>1</distance>
+		<fuelloss>1</fuelloss>
+		<special>Admiral may risk 1 Raptor:  Roll 1-2 ‚Üí lose Raptor; 3-8 ‚Üí +1 Food</special>
+	</destination>
+	<destination>
+		<name>Barren Planet</name>
+		<distance>2</distance>
+		<fuelloss>2</fuelloss>
+	</destination>
+	<destination>
+		<name>Ragnar Anchorage</name>
+		<distance>1</distance>
+		<fuelloss>0</fuelloss>
+		<special>Admiral may repair up to 3 Vipers and 1 Raptor (damaged or destroyed ships).</special>
+	</destination>
+	<destination>
+		<name>Tylium Planet</name>
+		<distance>1</distance>
+		<fuelloss>1</fuelloss>
+		<special>Admiral may risk 1 Raptor:  Roll 1-2 ‚Üí lose Raptor; 3-8 ‚Üí +2 fuel.</special>
+	</destination>
+	<destination>
+		<name>Barren Planet</name>
+		<distance>2</distance>
+		<fuelloss>2</fuelloss>
+	</destination>
+	<destination>
+		<name>Deep Space</name>
+		<distance>2</distance>
+		<fuelloss>1</fuelloss>
+		<other>Morale -1</other>
+	</destination>
+	<destination>
+		<name>Remote Planet</name>
+		<distance>2</distance>
+		<fuelloss>1</fuelloss>
+		<other>Raptor -1</other>
+	</destination>
+</destinations>
+

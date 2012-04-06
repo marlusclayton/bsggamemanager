@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<destinations expansion="PEGASUS">
+	<destination>
+		<name>Mining Asteroid</name>
+		<distance>2</distance>
+		<fuelloss>1</fuelloss>
+		<other>Vipers +2</other>
+		<special>Search for and immediately resolve "Scar" card. Shuffle Crisis deck</special>
+	</destination>
+	<destination>
+		<name>Binary Star</name>
+		<distance>2</distance>
+		<fuelloss>1</fuelloss>
+		<other>Deploy: Civ (1), Civ (4)</other>
+	</destination>
+	<destination>
+		<name>Gas Cloud</name>
+		<distance>1</distance>
+		<fuelloss>0</fuelloss>
+		<special>Admiral looks at top 3 Crisis Cards, then places them on the top or bottom in any order</special>
+	</destination>
+	<destination>
+		<name>A Civilian Convoy</name>
+		<distance>3</distance>
+		<fuelloss>3</fuelloss>
+		<other>Population +1</other>
+		<special>Admiral may lose 1 morale for +1 fuel</special>
+	</destination>
+	<destination>
+		<name>Misjump</name>
+		<distance>0</distance>
+		<fuelloss>0</fuelloss>
+		<other>Civilian -1</other>
+		<special>Then discard this dest and draw a new one to resolve</special>
+	</destination>
+	<destination>
+		<name>Deep Space</name>
+		<distance>2</distance>
+		<fuelloss>1</fuelloss>
+		<other>Morale -1</other>
+	</destination>
+</destinations>

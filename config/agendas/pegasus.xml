@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<agendas expansion="PEGASUS">
+	<agenda title="Prove Their Worth" type="SYMPATHETIC">You win the game if: the humans have won AND at least 5 raptors/vipers are damaged or destroyed.</agenda>
+	<agenda title="Join the Colonials" type="SYMPATHETIC">You win the game if: the humans have won AND you are Infiltrating and not in the "Brig" or "Detention."</agenda>
+	<agenda title="Guide Them to Destiny" type="SYMPATHETIC">You win the game if: the humans have won AND population and morale values are within 2 of each other.</agenda>
+	<agenda title="The Illusion of Hope" type="SYMPATHETIC">You win the game if: the cylons have won AND 6 or more units of distance have been travelled.</agenda>
+	<agenda title="Convert the Infidels" type="SYMPATHETIC">You win the game if: the humans have won AND all resources are at 3 or lower.</agenda>
+	<agenda title="Salvage their Equipment" type="SYMPATHETIC">You win the game if: the cylons have won AND 2 or fewer Galactica locations are damaged.</agenda>
+	
+	<agenda title="Siege Warfare" type="HOSTILE">You win the game if: the cylons have won AND every resource is at half or lower (in the red).</agenda>
+	<agenda title="Genocide" type="HOSTILE">You win the game if: the cylons have won AND both food and population are at 2 or lower.</agenda>
+	<agenda title="Mutual Annihilation" type="HOSTILE">You win the game if: the humans have won AND you have played a Super Crisis Card.</agenda>
+	<agenda title="Grant Mercy" type="HOSTILE">You win the game if: the humans have won AND population, morale, or food is at 2 or lower.</agenda>
+	<agenda title="Reduce Them to Ruins" type="HOSTILE">You win the game if: The cylons have won AND 4 or more Galactica and/or Pegasus locations are damaged AND Morale is at 3 or lower</agenda>
+	<agenda title="Show Their True Nature" type="HOSTILE">You win the game if: The cylons have won AND either you are in the "Brig" or "Detention" or you have been executed at least once.</agenda>
+	
+</agendas>

@@ -1,0 +1,16 @@
+Hello {{character}},
+
+Your skill card hand is:
+
+{{#hand}}
+ - {{type}}-{{strength}} ({{name}})
+{{/hand}}
+
+Your loyalty card hand is:
+
+{{#loyalty_cards}}
+ - {{title}}:
+ 	{{{text}}}
+{{/loyalty_cards}}
+
+Let me know if there are any problems!

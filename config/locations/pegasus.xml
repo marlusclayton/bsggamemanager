@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<locations expansion="PEGASUS">
+	<area name="Pegasus">
+		<location name="Pegasus CIC" />
+		<location name="Airlock" />
+		<location name="Main Batteries" />
+		<location name="Engine Room" />
+	</area>
+</locations>

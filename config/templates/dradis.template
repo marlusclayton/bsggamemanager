@@ -1,0 +1,21 @@
+[pre]
+[b][u]TURN {{turn}}.{{subturn}}[/u][/b]
+{{#players}}
+  {{#is_current_turn}}==>{{/is_current_turn}}{{^is_current_turn}}  *{{/is_current_turn}}{{player}}
+{{/players}}
+
+
+[b][u]Fleet Status[/u][/b]
+
+[b]Fuel[/b]:       {{fuel}}/8        [b]Distance:[/b] 0/8
+[b]Food[/b]:       {{food}}/8        [b]Vipers:[/b]
+[b]Morale[/b]:     {{morale}}/10      [b]Mark VIIs:[/b]
+[b]Population[/b]: {{population}}/12 [b]Raptors:[/b]
+
+[b]Jump Prep[/b]
+[ {{jp_start}} ] - [ {{jp_red1}} ] - [ {{jp_red2}} ] - [ {{jp_risk3}} Risk 3 ] - [ {{jp_risk1}} Risk 1 ] - [ {{jp_autojump}} Auto Jump ]
+
+[b]Boarding Party[/b]
+[ {{boarders_0}} ] - [ {{boarders_1}} ] - [ {{boarders_2}} ] - [ {{boarders_3}} ] - [ Humans Lose ]
+
+[/pre]

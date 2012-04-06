@@ -1,0 +1,11 @@
+{{types}} = {{strength}}{{#partial}}, Partial = {{.}}{{/partial}}
+
+{{#positiveCards}}
+{{type}}-{{strength}} ({{name}})
+{{/positiveCards}}
+
+{{#negativeCards}}
+{{type}}-{{strength}} ({{name}})
+{{/negativeCards}}
+
+{{positivesTotal}} - {{negativesTotal}} = {{total}} ({{result}})

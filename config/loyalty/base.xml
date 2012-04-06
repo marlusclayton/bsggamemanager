@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<loyalty expansion="BASE">
+	<loyaltycard type="CYLON" title="You Are A Cylon - Can Send A Character to Sickbay">Reveal this card.  If you are not in the "Brig," you may choose a character on Galactica.  That character must discard 5 Skill Cards and is moved to "Sickbay"</loyaltycard>
+	<loyaltycard type="CYLON" title="You Are A Cylon - Can Damage Galactica">Reveal this card.  If you are not in the "Brig," you may draw up to 5 Galactica damage tokens.  Choose 2 of them to resolve and discard the others.</loyaltycard>
+	<loyaltycard type="CYLON" title="You Are A Cylon - Can Reduce Morale by 1">Reveal this card.  If you are not in the "Brig," you may reduce morale by 1.</loyaltycard>
+	<loyaltycard type="CYLON" title="You Are A Cylon - Can Send A Character to the Brig">Reveal this card.  If you are not in the "Brig," you may choose a character on Galactica.  Move that character to the "Brig."</loyaltycard>
+	<loyaltycard type="SYMPATHIZER" title="You Are A Sympathizer">IMMEDIATELY REVEAL THIS CARD  If at least 1 resource is half full or lower, you are moved to the "Brig."  Otherwise, you become a revealed Cylon player.  You do not receieve a Super Crisis Card and may not activate the "Cylon Fleet" location.</loyaltycard>
+</loyalty>

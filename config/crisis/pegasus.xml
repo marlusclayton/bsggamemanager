@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<crisiscards expansion="PEGASUS">
+	<crisiscard name="A Verdict of Guilty" type="NORMAL">
+	Admiral Chooses: Current player is executed and the Admiral discards 3 Skill Cards OR Damage Galactica twice	
+	BASESTARS LAUNCH NUKES, +1 JUMP
+	</crisiscard>
+	<crisiscard name="An Offer of Peace" type="NORMAL">
+	POL/LEA: Difficulty: 12  Partial: 6 Pass: No Effect; 6+ Shuffle 2 Treachery Cards into the Destiny deck; Fail: -1 morale and shuffle in 2 Treachery Cards	
+	BASESTARS LAUNCH RAIDERS, NO JUMP
+	</crisiscard>
+	<crisiscard name="Assassination Plot" type="NORMAL">
+	President Chooses: The Admiral and the current player must both discard 3 Skill Cards and draw 3 Treachery Cards OR Admiral is executed	
+	BASESTARS LAUNCH NUKES, +1 JUMP
+	</crisiscard>
+	<crisiscard name="Civilian Ship Nuked" type="NORMAL">
+	President Chooses: Draw 1 civilian ship and destroy it. Then each player discards 1 Skill Card and draws 1 Treachery Card OR Draw and destroy 2 civilian ships	
+	ACTIVATE RAIDERS, +1 JUMP
+	</crisiscard>
+	<crisiscard name="Code Blue" type="NORMAL">
+	POL/LEA/TAC: Difficulty: 13  Current Player Chooses: Pass: The current player looks at 1 random Loyalty Card of any player; Fail: -1 morale and current player is sent to the ‚ÄúBrig‚Äù OR Each player discards 2 Skill Cards and draws 2 Treachery Cards	
+	ACTIVATE HEAVIES, +1 JUMP
+	</crisiscard>
+	<crisiscard name="Defending a Prisoner" type="NORMAL">
+	POL/LEA: Difficulty: 11  Pass: No Effect; Fail: -1 morale and roll a die. If 4 or lower, the current player is executed	
+	ACTIVATE HEAVIES, +1 JUMP
+	</crisiscard>
+	<crisiscard name="Dogfight" type="ATTACK">
+			
+		1. ACTIVATE RAIDERS
+		2. BASESTARS: 1x3
+		     HEAVIES: 
+		     RAIDERS: 2x[3,4]
+		      VIPERS: 1x[5,6]
+		     CIVVIES: 1x6
+		3. Constant Barrage: Keep this card in play until the fleet jumps or no raiders remain on the board. Each time raiders are activated, launch two raiders from each basestar (do not activate the new raiders)
+		
+		</crisiscard>
+	<crisiscard name="Food Hoarding in the Fleet" type="NORMAL">
+	President Chooses: -1 morale and roll a die. If 3 or less, draw and destroy 1 civilian ship OR -2 food	
+	ACTIVATE RAIDERS, +1 JUMP
+	</crisiscard>
+	<crisiscard name="Medical Breakthrough" type="NORMAL">
+	POL/LEA/ENG: Difficulty: 12  Partial: 6 Pass: Each human player draws 1 Skill Cards; 6+ No Effect; Fail: -1 morale and each player discards 1 Skill Card and draws 1 Treachery Card	
+	ACTIVATE HEAVIES, NO JUMP
+	</crisiscard>
+	<crisiscard name="Pressure the Supply Ships" type="NORMAL">
+	Admiral Chooses: +1 food and -1 morale. The Admiral discards 2 Skill Cards and draws 2 Treachery Cards OR -2 food	
+	ACTIVATE RAIDERS, +1 JUMP
+	</crisiscard>
+	<crisiscard name="Reunite the Fleet" type="NORMAL">
+	POL/LEA: Difficulty: 10  Current Player Chooses: Pass: +1 population; Fail: -1 morale and each player discards 1 Skill Card and draws 1 Treachery Card OR Current player discards 2 random Skill Cards and draws 2 Treachery Cards	
+	ACTIVATE RAIDERS, NO JUMP
+	</crisiscard>
+	<crisiscard name="Review Galactica's Log" type="NORMAL">
+	POL/LEA/TAC: Difficulty: 14  Partial: 6 Pass: No Effect; 6+ The Admiral must discard 3 Skill Cards; Fail: -1 morale and the Admiral must discard 5 Skill Cards	
+	ACTIVATE RAIDERS, +1 JUMP
+	</crisiscard>
+	<crisiscard name="Sabotage Investigated" type="NORMAL">
+	TAC/ENG: Difficulty: 9  Pass: -1 food; Fail: -1 morale, -1 fuel, -1 food	
+	ACTIVATE HEAVIES, +1 JUMP
+	</crisiscard>
+	<crisiscard name="Scar" type="ATTACK">
+			
+		1. ACTIVATE RAIDERS
+		2. BASESTARS: 
+		     HEAVIES: 
+		     RAIDERS: 
+		      VIPERS: 1x[5,6]
+		     CIVVIES: 2x4
+		3. Personal Vendetta: Keep this card in play until the fleet jumps or Scar is destroyed. Whenever raiders are activated, activate the Scar raider twice. Scar may only be destroyed by a roll of 7 or 8. Scar deploys in Sector 2
+		
+		</crisiscard>
+	<crisiscard name="Standoff with Pegasus" type="NORMAL">
+	POL/LEA/TAC/PIL: Difficulty: 22  Pass: Current player may move 1 character from the ‚ÄúBrig‚Äù to any other Galactica location; Fail: -1 population, -1 morale, and damage 1 viper in a space area (if able)	
+	BASESTARS LAUNCH RAIDERS, NO JUMP
+	</crisiscard>
+	<crisiscard name="Suspicious Election Results" type="NORMAL">
+	Give the President title to the character (aside from the current President) highest in the line of succession OR Admiral discards 1 random Skill Card and draws 1 Treachery Card	
+	ACTIVATE RAIDERS, NO JUMP
+	</crisiscard>
+	<crisiscard name="The Black Market" type="NORMAL">
+	POL/LEA/TAC: Difficulty: 13  CPC: Pass: +1 food; Fail: -2 food, -1 morale OR -1 food and each player discards 1 Skill Card and draws 1 Treachery Card	
+	ACTIVATE RAIDERS, +1 JUMP
+	</crisiscard>
+	<crisiscard name="The Guardians" type="ATTACK">
+			
+		1. BASESTARS LAUNCH NUKES
+		2. BASESTARS: 1x1
+		     HEAVIES: 1x3
+		     RAIDERS: 2x[2,6]
+		      VIPERS: 1x[5,6]
+		     CIVVIES: 1x4
+		3. Raptor Crew Captured: Keep this card in play until the fleet jumps. When a basestar is destroyed, lose 1 morale and destroy 1 raptor
+		
+		</crisiscard>
+	<crisiscard name="Training Snafu" type="NORMAL">
+	LEA/PIL: Difficulty: 8  Pass: No Effect; Fail: Damage 3 vipers in space areas or in the ‚ÄúReserves‚Äù	
+	BASESTARS LAUNCH NUKES, +1 JUMP
+	</crisiscard>
+	<crisiscard name="Unsettling Stories" type="NORMAL">
+	POL/LEA: Difficulty: 9  Pass: No Effect; Fail -1 Morale, and each player discards 1 Skill Card and draws 1 Treachery Card.  OR -1 Morale	
+	ACTIVATE RAIDERS, +1 JUMP
+	</crisiscard>
+</crisiscards>

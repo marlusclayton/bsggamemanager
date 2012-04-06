@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<characters expansion="BASE">
+	<character>
+		<name>Laura Roslin</name>
+		<shortname>Roslin</shortname>
+		<type>Political Leader</type>
+		<draw>3 POL, 2 LEA</draw>
+		<setup>President's Office</setup>
+	</character>
+	<character>
+		<name>Gaius Baltar</name>
+		<shortname>Baltar</shortname>
+		<type>Political Leader</type>
+		<draw>2 POL, 1 LEA, 1 ENG</draw>
+		<setup>Research Lab</setup>
+	</character>
+	<character>
+		<name>Tom Zarek</name>
+		<shortname>Zarek</shortname>
+		<type>Political Leader</type>
+		<draw>2 POL, 2 LEA, 1 TAC</draw>
+		<setup>Administration</setup>
+	</character>
+	<character>
+		<name>William Adama</name>
+		<shortname>Adama</shortname>
+		<type>Military Leader</type>
+		<draw>3 LEA, 2 TAC</draw>
+		<setup>Admiral's Quarters</setup>
+	</character>
+	<character>
+		<name>Saul Tigh</name>
+		<shortname>Tigh</shortname>
+		<type>Military Leader</type>
+		<draw>2 LEA, 3 TAC</draw>
+		<setup>Command</setup>
+	</character>
+	<character>
+		<name>Karl "Helo" Agathon</name>
+		<shortname>Helo</shortname>
+		<type>Military Leader</type>
+		<draw>2 LEA, 2 TAC, 1 PIL</draw>
+		<setup>Stranded</setup>
+	</character>
+	<character>
+		<name>Kara "Starbuck" Thrace</name>
+		<shortname>Starbuck</shortname>
+		<type>Pilot</type>
+		<draw>2 TAC, 2 PIL, 1 LEA/ENG</draw>
+		<setup>Hangar Deck</setup>
+	</character>
+	<character>
+		<name>Sharon "Boomer" Valerii</name>
+		<shortname>Boomer</shortname>
+		<type>Pilot</type>
+		<draw>2 TAC, 2 PIL, 1 ENG</draw>
+		<setup>Armory</setup>
+	</character>
+	<character>
+		<name>Lee "Apollo" Adama</name>
+		<shortname>Apollo</shortname>
+		<type>Pilot</type>
+		<draw>1 TAC, 2 PIL, 2 LEA/POL</draw>
+		<setup>Launch and Pilot a Viper</setup>
+	</character>
+	<character>
+		<name>"Chief" Galen Tyrol</name>
+		<shortname>Chief</shortname>
+		<type>Engineer</type>
+		<draw>1 POL, 2 LEA, 2 ENG</draw>
+		<setup>Hangar Deck</setup>
+	</character>
+</characters>

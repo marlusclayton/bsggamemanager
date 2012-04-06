@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<crisiscards expansion="BASE">
+	{{#clist}}
+	<crisiscard name="{{name}}" type="{{#isCA}}ATTACK{{/isCA}}{{^isCA}}NORMAL{{/isCA}}">
+		{{#isCA}}
+			
+		1. {{activate}}
+		2. BASESTARS: {{ca_basestars}}
+		     HEAVIES: {{ca_heavies}}
+		     RAIDERS: {{ca_raiders}}
+		      VIPERS: {{ca_vipers}}
+		     CIVVIES: {{ca_civvies}}
+		3. {{desc}}
+		
+	{{/isCA}}
+	{{#isSkillCheck}}{{scPos}}: Difficulty: {{scDiff}} {{scPart}} {{#scCons}}HAS CONSEQUENCES!{{/scCons}}{{/isSkillCheck}}{{^isCA}}{{desc}}
+	
+	{{activate}}, {{jump}}
+	{{/isCA}}
+	</crisiscard>
+	{{/clist}}
+</crisicards>

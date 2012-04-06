@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<characters expansion="PEGASUS">
+	<character>
+		<name>Helna Cain</name>
+		<shortname>Cain</shortname>
+		<type>Military Leader</type>
+		<draw>2 LEA, 2 TAC, 1 TAC/LEA</draw>
+		<setup>Pegasus CIC or Command</setup>
+	</character>
+	<character>
+		<name>Ellen Tigh</name>
+		<shortname>Ellen Tigh</shortname>
+		<type>Political Leader</type>
+		<draw>2 POL, 2 LEA, 1 TRE</draw>
+		<setup>Admiral's Quarters</setup>
+	</character>
+	<character>
+		<name>Louanne "Kat" Katraine</name>
+		<shortname>Kat</shortname>
+		<type>Pilot</type>
+		<draw>1 LEA, 2 TAC, 2 PIL</draw>
+		<setup>Hangar Deck</setup>
+	</character>
+	<character>
+		<name>Anastasia "Dee" Dualla</name>
+		<shortname>Dee</shortname>
+		<type>Support</type>
+		<draw>1 LEA, 3 TAC, 1 ENG</draw>
+		<setup>Communications</setup>
+	</character>
+	<character>
+		<name>Leoben Conoy</name>
+		<shortname>Leoben</shortname>
+		<type>Cylon Leader</type>
+		<draw>1 POL, 1 TRE/ENG</draw>
+		<setup>Human Fleet</setup>
+	</character>
+	<character>
+		<name>"Caprica" Six</name>
+		<shortname>Six</shortname>
+		<type>Cylon Leader</type>
+		<draw>1 LEA, 1 TRE/ENG</draw>
+		<setup>Caprica</setup>
+	</character>
+	<character>
+		<name>Cavil</name>
+		<shortname>Cavil</shortname>
+		<type>Cylon Leader</type>
+		<draw>1 TAC, 1 TRE/ENG</draw>
+		<setup>Cylon Fleet</setup>
+	</character>
+</characters>

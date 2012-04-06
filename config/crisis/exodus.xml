@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<crisiscards expansion="EXODUS">
+	<crisiscard name="Airlock Leak" type="NORMAL">
+	TAC/ENG: Difficulty: 6  Pass: No Effect; Fail: Damage Galactica and the current player is sent to ‚ÄúSickbay.‚Äù	
+	ACTIVATE HEAVIES, NO JUMP
+	</crisiscard>
+	<crisiscard name="Ambushed by the Press" type="NORMAL">
+	-1 Morale OR The President must discard all of his Skill Cards	
+	ACTIVATE RAIDERS, +1 JUMP
+	</crisiscard>
+	<crisiscard name="Appoint Head of Security" type="NORMAL">
+	Admiral Chooses: Return all undamaged vipers on the game board to the ‚ÄúReserves‚Äù. Then the Admiral must discard 2 random Skill Cards. OR -1 Morale and damage Galactica once.	
+	BASESTARS LAUNCH RAIDERS, NO JUMP
+	</crisiscard>
+	<crisiscard name="Centurion Assault" type="NORMAL">
+	TAC/PIL: Difficulty: 9  Pass: No Effect; Fail: Destroy 1 raptor and the current player is sent to ‚ÄúSickbay.‚Äù	
+	BASESTARS LAUNCH RAIDERS, NO JUMP
+	</crisiscard>
+	<crisiscard name="Consult the Prisoner" type="NORMAL">
+	POL/TAC/ENG: Difficulty: 13  CPC: Pass: Increase the Jump Preparation track by 1: Fail: Each player discards 1 Skill Card and the current player is sent to the ‚ÄúBrig.‚Äù OR The Admiral discards 2 Skill Cards and the current player discards 3 Skill Cards.	
+	BASESTARS LAUNCH NUKES, +1 JUMP
+	</crisiscard>
+	<crisiscard name="Controversial Manuscript" type="NORMAL">
+	President Chooses: -1 Morale OR +1 Morade and damage Galactica twice	
+	ACTIVATE RAIDERS, +1 JUMP
+	</crisiscard>
+	<crisiscard name="Cylon Genocide" type="NORMAL">
+	POL/LEA/TAC/ENG: Difficulty: 21  CPC: Pass: Destroy all Cylon ships currently on the main game board; Fail: -1 Morale, then Activate Basestars, Launch Raiders, Activate Heavy Raiders. OR Roll a die.  If 4 or lower, the current player is sent to the ‚ÄúBrig.‚Äù	
+	ACTIVATE RAIDERS, +1 JUMP
+	</crisiscard>
+	<crisiscard name="Divisive Behavior" type="NORMAL">
+	POL/LEA/TAC: Difficulty: 10  HAS CONSEQUENCES!Pass: No effect; Fail -1 Morale; Consequence: The current player chooses another player to send to ‚ÄúSickbay.‚Äù	
+	ACTIVATE HEAVIES, +1 JUMP
+	</crisiscard>
+	<crisiscard name="Familiar Face" type="NORMAL">
+	POL/LEA/TAC: Difficulty: 12  CPC: Pass: The Admiral may choose a character to send to the ‚ÄúBrig‚Äù; Fail: -1 Morale and the Admiral must discard all of his Skill Cards. OR -1 Morale.	
+	ACTIVATE RAIDERS, +1 JUMP
+	</crisiscard>
+	<crisiscard name="Guilty Conscience" type="NORMAL">
+	POL/LEA: Difficulty: 7  Pass: No Effect; Fail: The Current player discards 3 random Skill Cards.	
+	ACTIVATE HEAVIES, +1 JUMP
+	</crisiscard>
+	<crisiscard name="Haunted by the Past" type="NORMAL">
+	POL/LEA: Difficulty: 12  HAS CONSEQUENCES!Pass: No Effect; Fail: Each player must discard 1 random Skill Card; Consequence: The current player gives any Title Cards he has to the player (aside from himself) highest on the Line of Succession.	
+	ACTIVATE HEAVIES, +1 JUMP
+	</crisiscard>
+	<crisiscard name="Hera Rescued" type="NORMAL">
+	POL/LEA: Difficulty: 10  CPC: Pass: No Effect; Fail: -1 Morale and destroy 1 raptor. OR -1 Morale.	
+	ACTIVATE RAIDERS, +1 JUMP
+	</crisiscard>
+	<crisiscard name="Hidden Explosives" type="NORMAL">
+	Admiral Chooses: Destroy 1 raptor and the current player is sent to ‚ÄúSickbay‚Äù OR -1 Morale	
+	ACTIVATE RAIDERS, +1 JUMP
+	</crisiscard>
+	<crisiscard name="Hidden Identity" type="NORMAL">
+	POL/LEA/TAC: Difficulty: 12  Pass: No Effect; Fail: -1 Morale. Current player is sent to the ‚ÄúBrig.‚Äù	
+	BASESTARS LAUNCH RAIDERS, NO JUMP
+	</crisiscard>
+	<crisiscard name="In the Ring" type="NORMAL">
+	POL/LEA/TAC: Difficulty: 12  HAS CONSEQUENCES!Pass: +1 Morale; Fail: -1 Morale and the current player is sent to ‚ÄúSickbay‚Äù; Consequence: The current player chooses another player to send to ‚ÄúSickbay.‚Äù	
+	ACTIVATE HEAVIES, +1 JUMP
+	</crisiscard>
+	<crisiscard name="Interrogation" type="NORMAL">
+	Admiral Chooses: The Admiral chooses another player to send to ‚ÄúSickbay‚Äù.  The Admiral may then look at 1 of that character's Loyalty Cards at random OR The Admiral discards 2 Skill Cards; then the current player discards 3 Skill Cards.	
+	BASESTARS LAUNCH NUKES, NO JUMP
+	</crisiscard>
+	<crisiscard name="Joe's Bar" type="NORMAL">
+	POL/LEA/ENG: Difficulty: 12  Pass: +1 Morale; Fail: -1 Morale and the current player is sent to the ‚ÄúBrig.‚Äù	
+	ACTIVATE RAIDERS, +1 JUMP
+	</crisiscard>
+	<crisiscard name="Labor Dispute" type="NORMAL">
+	-2 Morale OR -1 Fuel and decrease Jump Prep track by 1	
+	BASESTARS LAUNCH NUKES, NO JUMP
+	</crisiscard>
+	<crisiscard name="Medal of Distinction" type="NORMAL">
+	Admiral Chooses: +1 Morale, place 2 civilian ships on the game board and then activate Raiders OR -1 Morale	
+	BASESTARS LAUNCH NUKES, +1 JUMP
+	</crisiscard>
+	<crisiscard name="Mysterious Guide" type="NORMAL">
+	POL/LEA: Difficulty: 11  CPC: Pass: Increase the Jump Preparation track by 1; Fail: -1 Fuel and the current player discards all of his Skill Cards. OR -1 Morale.	
+	ACTIVATE RAIDERS, NO JUMP
+	</crisiscard>
+	<crisiscard name="Mysterious Message" type="NORMAL">
+	POL/ENG: Difficulty: 9  CPC: Pass: The current player may search the Destiny deck and choose 2 cards to discard.  He then reshuffles the Destiny deck; Fail: Launch Raiders, Activate Basestars. OR Activate Basestars.	
+	ACTIVATE RAIDERS, +1 JUMP
+	</crisiscard>
+	<crisiscard name="Power Failure" type="NORMAL">
+	LEA/TAC/ENG: Difficulty: 14  HAS CONSEQUENCES!Pass: No Effect; Fail: Reduce the Jump Preparation track by 1; Consequence: Damage Galactica once.	
+	ACTIVATE HEAVIES, NO JUMP
+	</crisiscard>
+	<crisiscard name="Raptor Malfunction" type="NORMAL">
+	TAC/PIL/ENG: Difficulty: 12  CPC: Pass: No Effect; Fail: Damage Galactica once and destroy 1 raptor. OR The current player is sent to ‚ÄúSickbay.‚Äù	
+	ACTIVATE RAIDERS, +1 JUMP
+	</crisiscard>
+	<crisiscard name="Set a Trap" type="NORMAL">
+	LEA/TAC: Difficulty: 10  CPC: Pass: Destroy a centurion on the Boarding Party track; Fail: Place a centurion at the start of  the Boarding Party track. The current player is sent to ‚ÄúSickbay.‚Äù OR Roll a die. If 4 or lower, place a centurion at the start of the Boarding Party track.	
+	ACTIVATE RAIDERS, NO JUMP
+	</crisiscard>
+	<crisiscard name="Strange Beacon" type="NORMAL">
+	PIL/ENG: Difficulty: 13  Pass: Choose 1 space are on the main game board and remove all Cylon ships in that area; Fail: Decrease the Jump Preparation track by 1.	
+	ACTIVATE RAIDERS, NO JUMP
+	</crisiscard>
+	<crisiscard name="Temple of the Five" type="NORMAL">
+	TAC/ENG: Difficulty: 9  Pass: The current player may draw 2 Skill Cards; Fail: Decrease the Jump Preparation track by 1.	
+	BASESTARS LAUNCH RAIDERS, NO JUMP
+	</crisiscard>
+	<crisiscard name="The Circle" type="NORMAL">
+	President Chooses: You must choose another player to receive the President title or the ucrrent player is executed. OR The Presdient discards 2 Skill Cards; then the current player discards 3 Skill Cards.	
+	ACTIVATE RAIDERS, +1 JUMP
+	</crisiscard>
+	<crisiscard name="The Passage" type="NORMAL">
+	TAC/PIL/ENG: Difficulty: 14  CPC: Pass: Increase the Jump Preparation track by 1; Fail: Destroy 2 Civilian ships. OR Roll a die. If 6 or lower, the current player is sent to ‚ÄúSickbay.‚Äù	
+	ACTIVATE RAIDERS, +1 JUMP
+	</crisiscard>
+	<crisiscard name="Threat of a Super Nova" type="NORMAL">
+	LEA/PIL/ENG: Difficulty: 10  HAS CONSEQUENCES!Pass: No Effect; Fail: -1 Population and damage Galactica; Consequence: Activate Basestars.	
+	ACTIVATE HEAVIES, +1 JUMP
+	</crisiscard>
+	<crisiscard name="Truth and Reconciliation" type="NORMAL">
+	President Chooses: -1 Morale and the President must choose a character to send to the &quot;Brig&quot; OR The Presdient discards 2 Skill Cards; then the current player discards 3 Skill Cards	
+	BASESTARS LAUNCH NUKES, +1 JUMP
+	</crisiscard>
+	<crisiscard name="Unexplained Deaths" type="NORMAL">
+	LEA/TAC: Difficulty: 8  Pass: No Effect; Fail: -1 Morale, -1 Population	
+	ACTIVATE RAIDERS, +1 JUMP
+	</crisiscard>
+	<crisiscard name="Unfair Bias" type="NORMAL">
+	POL/LEA/TAC: Difficulty: 12  Pass: No Effect; Fail: Damage Galactica and the current player discards his hand of Skill Cards.	
+	ACTIVATE RAIDERS, +1 JUMP
+	</crisiscard>
+	<crisiscard name="Unwelcome Faces" type="NORMAL">
+	Admiral Chooses: The Admiral must discard all of his Skill Cards and then choose a character to send to the ‚ÄúBrig‚Äù OR -1 Morale and damage Galactica once	
+	ACTIVATE RAIDERS, +1 JUMP
+	</crisiscard>
+	<crisiscard name="Widespread Starvation" type="NORMAL">
+	President Chooses: -2 Food OR -1 Food, -1 Population	
+	ACTIVATE RAIDERS, +1 JUMP
+	</crisiscard>
+</crisiscards>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<loyalty expansion="EXODUS">
+	<loyaltycard title="You Are A Cylon - Can Place A Centurion Token on the Boarding Track" type="CYLON">Reveal this card.  if you are not in the "Brig," you may place a centurion token at the start of the Boarding Party track.</loyaltycard>
+	<loyaltycard title="You Are A Cylon - Can Decrease the Jump Preparation Track by 2" type="CYLON">Reveal this card.  if you are not in the "Brig," you may decrease the Jump Preparation track by 2.</loyaltycard>
+	
+	
+	<loyaltycard title="You Are Not A Cylon - Personal Goal: Stand and Fight" type="GOAL">Reveal this card if 10 more more raiders are on the main game board.  If you are a human player and this card has not been revealed by the end of the game, lose: population.</loyaltycard>
+	<loyaltycard title="You Are Not A Cylon - Personal Goal: Sacrifice" type="GOAL">Reveal this card if 6 or more vipers are either damaged or destroyed. If you are a human player and this card has not been revealed by the end of the game, lose: fuel.</loyaltycard>
+	<loyaltycard title="You Are Not A Cylon - Personal Goal: Devastation" type="GOAL">Reveal this card if the Admiral has no remaning nuke tokens.  If you are a human player and this card has not been revealed by the end of the game, lose: morale.</loyaltycard>
+	<loyaltycard title="You Are Not A Cylon - Personal Goal: Self-Destruction" type="GOAL">Reveal this card if you are in the "Brig" or "Sickbay." If you are a human player and this card has not been revealed by the end of the game, lose: morale.</loyaltycard>
+	<loyaltycard title="You Are Not A Cylon - Personal Goal: Selfish" type="GOAL">You may discard any number of Skill Cards with a combined strength of 20 to reveal this card.  If you are a human player and this card has not been revealed by the end of the game, lose: fuel.</loyaltycard>
+	<loyaltycard title="You Are Not A Cylon - Personal Goal: Political Intrigue" type="GOAL">Reveal this card if the President is in the "Brig." If you are a human player and this card has not been revealed by the end of the game, lose: food.</loyaltycard>
+	<loyaltycard title="You Are Not A Cylon - Personal Goal: Acquire Power" type="GOAL">Reveal this card if you currently hold 2 or more Title Cards.  If you are a human player and this card has not been revealed by the end of the game, lose: food.</loyaltycard>
+	<loyaltycard title="You Are Not A Cylon - Personal Goal: Use Caution" type="GOAL">Reveal this card if a 1-distance Destination Card has been resolved.  If you are a human player and this card has not been revealed by the end of the game, lose: population.</loyaltycard>
+	
+	<loyaltycard title="You Are Not A Cylon - The Final Five" type="FINALFIVE">Whoever examines this card is sent the "Brig"</loyaltycard>
+	<loyaltycard title="You Are Not A Cylon - The Final Five" type="FINALFIVE">Whoever examines this card is executed.</loyaltycard>
+	<loyaltycard title="You Are Not A Cylon - The Final Five" type="FINALFIVE">If this card is examined, you are executed.</loyaltycard>
+	<loyaltycard title="You Are Not A Cylon - The Final Five" type="FINALFIVE">If this card is examined, cylon ships are activated: RADIERS, LAUNCH NUKES, HEAVY RADIERS</loyaltycard>
+	<loyaltycard title="You Are Not A Cylon - The Final Five" type="FINALFIVE">If this card is examined, damage Galactica twice.</loyaltycard>
+
+</loyalty>

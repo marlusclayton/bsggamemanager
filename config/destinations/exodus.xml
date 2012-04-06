@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<destinations expansion="EXODUS">
+	<destination>
+		<name>Algae Planet</name>
+		<distance>1</distance>
+		<fuelloss>1</fuelloss>
+		<other>Food +1</other>
+	</destination>
+	<destination>
+		<name>Derelict Basestar</name>
+		<distance>2</distance>
+		<fuelloss>1</fuelloss>
+		<other>Deploy: B(1), Civ(2x4)</other>
+		<special>Damage the basestar once.</special>
+	</destination>
+	<destination>
+		<name>Radioactive Cloud</name>
+		<distance>2</distance>
+		<fuelloss>1</fuelloss>
+		<other>Population -1</other>
+	</destination>
+	<destination>
+		<name>Dying Star</name>
+		<distance>2</distance>
+		<fuelloss>1</fuelloss>
+		<special>Damage Galactica once.</special>
+	</destination>
+	<destination>
+		<name>Lion's Head Nebula</name>
+		<distance>3</distance>
+		<fuelloss>4</fuelloss>
+		<special>After the Reset Jump Preparation Track step of this jump, advance the Jump Prep Track by 2.</special>
+	</destination>
+	<destination>
+		<name>Cylon Raiders</name>
+		<distance>3</distance>
+		<fuelloss>2</fuelloss>
+		<other>Deploy: R(3x4)</other>
+	</destination>
+	<destination>
+		<name>Gas Giant</name>
+		<distance>1</distance>
+		<fuelloss>0</fuelloss>
+		<special>Admiral may destroy 1 Viper to gain 1 Fuel</special>
+	</destination>
+</destinations>

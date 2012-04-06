@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<loyalty expansion="PEGASUS">
+	<loyaltycard type="CYLON" title="You Are A Cylon - Can Make Players Draw Treachery Cards">Reveal this card.  If you are not in the "Brig," each human player discards 1 random Skill Card and draws 1 Treachery Card.  Then you draw 2 Treachery Cards (after you discard down to 3 Skill Cards)</loyaltycard>
+	<loyaltycard type="SYMPATHETIC_CYLON" title="You are a Sympathetic Cylon">You become a revealed Cylon player, but do not receive a Super Crisis Card.  Draw 1 card from the Sympathetic Agenda deck (you win only by fulfilling this card's critera).  You may also Infiltrate as if you were a Cylon Leader.</loyaltycard>
+</loyalty>
