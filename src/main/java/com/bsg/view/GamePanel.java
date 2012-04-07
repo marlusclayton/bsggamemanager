@@ -986,6 +986,11 @@ public class GamePanel extends JFrame {
 		buryCrisisCardButton = new JButton();
 		reshuffleCrisisDeckButton = new JButton();
 		loyaltyCardPanel = new JPanel();
+		loyaltyCardInnerPanel = new JPanel();
+		scrollPane5 = new JScrollPane();
+		loyaltyCardCharacterList = new JList();
+		scrollPane6 = new JScrollPane();
+		loyaltyPanelHandList = new JList();
 		shipsPanel = new JPanel();
 		CellConstraints cc = new CellConstraints();
 
@@ -2039,8 +2044,29 @@ public class GamePanel extends JFrame {
 			//======== loyaltyCardPanel ========
 			{
 				loyaltyCardPanel.setLayout(new FormLayout(
-					"default, $lcgap, default",
-					"2*(default, $lgap), default"));
+					"379dlu",
+					"140dlu"));
+
+				//======== loyaltyCardInnerPanel ========
+				{
+					loyaltyCardInnerPanel.setBorder(new TitledBorder("Loyalty Card Hands"));
+					loyaltyCardInnerPanel.setLayout(new FormLayout(
+						"83dlu, $lcgap, 88dlu",
+						"2*(default, $lgap), default"));
+
+					//======== scrollPane5 ========
+					{
+						scrollPane5.setViewportView(loyaltyCardCharacterList);
+					}
+					loyaltyCardInnerPanel.add(scrollPane5, cc.xy(1, 1));
+
+					//======== scrollPane6 ========
+					{
+						scrollPane6.setViewportView(loyaltyPanelHandList);
+					}
+					loyaltyCardInnerPanel.add(scrollPane6, cc.xy(3, 1));
+				}
+				loyaltyCardPanel.add(loyaltyCardInnerPanel, cc.xy(1, 1, CellConstraints.FILL, CellConstraints.FILL));
 			}
 			mainTabbedPane.addTab("Loyalty Cards", loyaltyCardPanel);
 
@@ -2205,6 +2231,11 @@ public class GamePanel extends JFrame {
 	private JButton buryCrisisCardButton;
 	private JButton reshuffleCrisisDeckButton;
 	private JPanel loyaltyCardPanel;
+	private JPanel loyaltyCardInnerPanel;
+	private JScrollPane scrollPane5;
+	private JList loyaltyCardCharacterList;
+	private JScrollPane scrollPane6;
+	private JList loyaltyPanelHandList;
 	private JPanel shipsPanel;
 	// JFormDesigner - End of variables declaration  //GEN-END:variables
 }
