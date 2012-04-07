@@ -223,6 +223,10 @@ public class GamePanel extends JFrame {
 					break;
 				}
 				
+				//loyalty
+				if (gs.getLoyaltyDeck() != null)
+					loyaltyDeckList.setListData(gs.getLoyaltyDeck().getDeckContents().toArray());
+				
 				//destinations
 				if (gs.getDestinationDeck() != null)
 					destinationList.setListData(gs.getDestinationDeck().getDeckContents().toArray());
@@ -1035,6 +1039,9 @@ public class GamePanel extends JFrame {
 		loyaltyPanelHandList = new JList();
 		giveLoyaltyCardsButton = new JButton();
 		giveLoyaltyCardsComboBox = new JComboBox();
+		loyaltyDeckPanel = new JPanel();
+		scrollPane7 = new JScrollPane();
+		loyaltyDeckList = new JList();
 		shipsPanel = new JPanel();
 		CellConstraints cc = new CellConstraints();
 
@@ -2089,7 +2096,7 @@ public class GamePanel extends JFrame {
 			{
 				loyaltyCardPanel.setLayout(new FormLayout(
 					"379dlu",
-					"140dlu"));
+					"140dlu, $lgap, 129dlu"));
 
 				//======== loyaltyCardInnerPanel ========
 				{
@@ -2131,6 +2138,21 @@ public class GamePanel extends JFrame {
 					loyaltyCardInnerPanel.add(giveLoyaltyCardsComboBox, cc.xy(5, 3));
 				}
 				loyaltyCardPanel.add(loyaltyCardInnerPanel, cc.xy(1, 1, CellConstraints.FILL, CellConstraints.FILL));
+
+				//======== loyaltyDeckPanel ========
+				{
+					loyaltyDeckPanel.setBorder(new TitledBorder("Loyalty Deck"));
+					loyaltyDeckPanel.setLayout(new FormLayout(
+						"156dlu, $lcgap, default",
+						"2*(default, $lgap), 76dlu"));
+
+					//======== scrollPane7 ========
+					{
+						scrollPane7.setViewportView(loyaltyDeckList);
+					}
+					loyaltyDeckPanel.add(scrollPane7, cc.xywh(1, 1, 1, 5));
+				}
+				loyaltyCardPanel.add(loyaltyDeckPanel, cc.xy(1, 3, CellConstraints.FILL, CellConstraints.FILL));
 			}
 			mainTabbedPane.addTab("Loyalty Cards", loyaltyCardPanel);
 
@@ -2302,6 +2324,9 @@ public class GamePanel extends JFrame {
 	private JList loyaltyPanelHandList;
 	private JButton giveLoyaltyCardsButton;
 	private JComboBox giveLoyaltyCardsComboBox;
+	private JPanel loyaltyDeckPanel;
+	private JScrollPane scrollPane7;
+	private JList loyaltyDeckList;
 	private JPanel shipsPanel;
 	// JFormDesigner - End of variables declaration  //GEN-END:variables
 }

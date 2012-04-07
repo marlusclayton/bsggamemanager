@@ -420,4 +420,7 @@ public class GameState {
 		return distance;
 	}
 	
+	public LoyaltyDeck getLoyaltyDeck() {
+		return loyaltyDeck;
+	}
 }
