@@ -88,6 +88,13 @@ public class Player {
 		loyaltyCards.add(lc);
 	}
 	
+	public void removeLoyaltyCard(LoyaltyCard lc) {
+		LOGGER.info("Player {} is discarding {}", playerName, lc.getTitle());
+		if (!loyaltyCards.remove(lc)) {
+			LOGGER.warn("Unable to remove loyalty card from hand");
+		}
+	}
+	
 	public LoyaltyType getLoyalty() {
 		if ("Cylon Leader".equals(getCharacter().getType())) 
 			return LoyaltyType.CYLON_LEADER;
@@ -130,7 +137,7 @@ public class Player {
 	
 	@Override
 	public String toString() {
-		return String.format("%s (%s%s%s%s [%d])", playerName, isPresident ? "President " : "", isAdmiral ? "Admiral " : "", isCAG ? "CAG " : "", character, hand.size());
+		return String.format("%s (%s)", playerName, character.getShortName());
 	}
 	
 	public String getTitles() {
