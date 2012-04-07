@@ -415,7 +415,7 @@ public class GameState {
 	}
 	
 	public int getDistance() {
-		return sumFrom(destinationsTravelledTo).getDistance();
+		return sumFrom(destinationsTravelledTo, DestinationCard.class).getDistance();
 	}
 	
 	public LoyaltyDeck getLoyaltyDeck() {
