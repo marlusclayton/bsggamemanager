@@ -17,6 +17,7 @@ This project uses:
 - Apache Commons http://commons.apache.org/
 - Mustache.java https://github.com/spullara/mustache.java
 - JGoodies http://www.jgoodies.com/
+- LambdaJ http://code.google.com/p/lambdaj/
 
 
 
