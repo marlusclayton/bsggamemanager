@@ -127,12 +127,15 @@ public class GamePanel extends JFrame {
 			public void run() {				
 				//save skill card list selection
 				int skillCardCharSelectIdx = skillCardCharacterList.getSelectedIndex();
+				int loyaltyCardCharSelectIdx = loyaltyCardCharacterList.getSelectedIndex();
 				
 				//refresh character lists
 				characterList.setListData(gs.getPlayers().toArray());
 				skillCardCharacterList.setListData(gs.getPlayers().toArray());
 				handList.setListData(skillCardCharacterList.getSelectedValue() == null ? new Object[0] : ((Player)skillCardCharacterList.getSelectedValue()).getHand().toArray());
 				playersTable.setModel(new PlayerTableModel(gs, self )); //TODO: change me
+				loyaltyCardCharacterList.setListData(gs.getPlayers().toArray());
+				
 				
 				//set location thing
 				TableColumn tc = playersTable.getColumnModel().getColumn(PlayerTableModel.LOCATION_COLUMN);
@@ -234,6 +237,7 @@ public class GamePanel extends JFrame {
 				
 				//re-highlight
 				skillCardCharacterList.setSelectedIndex(skillCardCharSelectIdx);
+				loyaltyCardCharacterList.setSelectedIndex(loyaltyCardCharSelectIdx);
 			}
 			
 		});
@@ -816,6 +820,16 @@ public class GamePanel extends JFrame {
 		refreshDisplay();
 		
 		
+	}
+
+	private void loyaltyCardCharacterListValueChanged(ListSelectionEvent e) {
+		if (!loyaltyCardCharacterList.getValueIsAdjusting()) {
+			Object o = loyaltyCardCharacterList.getSelectedValue();
+			if (o == null)
+				return;
+			Player p = (Player)o;
+			loyaltyPanelHandList.setListData(p.getLoyaltyCards().toArray());
+		}
 	}
 
 
@@ -2051,11 +2065,20 @@ public class GamePanel extends JFrame {
 				{
 					loyaltyCardInnerPanel.setBorder(new TitledBorder("Loyalty Card Hands"));
 					loyaltyCardInnerPanel.setLayout(new FormLayout(
-						"83dlu, $lcgap, 88dlu",
+						"175dlu, 2*($lcgap, 95dlu)",
 						"2*(default, $lgap), default"));
 
 					//======== scrollPane5 ========
 					{
+
+						//---- loyaltyCardCharacterList ----
+						loyaltyCardCharacterList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+						loyaltyCardCharacterList.addListSelectionListener(new ListSelectionListener() {
+							@Override
+							public void valueChanged(ListSelectionEvent e) {
+								loyaltyCardCharacterListValueChanged(e);
+							}
+						});
 						scrollPane5.setViewportView(loyaltyCardCharacterList);
 					}
 					loyaltyCardInnerPanel.add(scrollPane5, cc.xy(1, 1));
@@ -2064,7 +2087,7 @@ public class GamePanel extends JFrame {
 					{
 						scrollPane6.setViewportView(loyaltyPanelHandList);
 					}
-					loyaltyCardInnerPanel.add(scrollPane6, cc.xy(3, 1));
+					loyaltyCardInnerPanel.add(scrollPane6, cc.xywh(3, 1, 3, 1, CellConstraints.DEFAULT, CellConstraints.FILL));
 				}
 				loyaltyCardPanel.add(loyaltyCardInnerPanel, cc.xy(1, 1, CellConstraints.FILL, CellConstraints.FILL));
 			}

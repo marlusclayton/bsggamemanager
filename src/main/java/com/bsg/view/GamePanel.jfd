@@ -4578,7 +4578,7 @@
              <class>com.jgoodies.forms.layout.FormLayout</class> 
              <void method="setProperty"> 
               <string>$columnSpecs</string> 
-              <string>83dlu, labelcompgap, 88dlu</string> 
+              <string>175dlu, labelcompgap, 95dlu, labelcompgap, 95dlu</string> 
              </void> 
              <void method="setProperty"> 
               <string>$rowSpecs</string> 
@@ -4606,8 +4606,20 @@
               <void method="add"> 
                <object class="com.jformdesigner.model.FormComponent"> 
                 <string>javax.swing.JList</string> 
+                <void method="setProperty"> 
+                 <string>selectionMode</string> 
+                 <int>0</int> 
+                </void> 
                 <void property="name"> 
                  <string>loyaltyCardCharacterList</string> 
+                </void> 
+                <void method="addEvent"> 
+                 <object class="com.jformdesigner.model.FormEvent"> 
+                  <string>javax.swing.event.ListSelectionListener</string> 
+                  <string>valueChanged</string> 
+                  <string>loyaltyCardCharacterListValueChanged</string> 
+                  <boolean>true</boolean> 
+                 </object> 
                 </void> 
                </object> 
               </void> 
@@ -4651,6 +4663,14 @@
               <void method="setProperty"> 
                <string>gridY</string> 
                <int>1</int> 
+              </void> 
+              <void method="setProperty"> 
+               <string>vAlign</string> 
+               <object class="com.jgoodies.forms.layout.CellConstraints" field="FILL"/> 
+              </void> 
+              <void method="setProperty"> 
+               <string>gridWidth</string> 
+               <int>3</int> 
               </void> 
              </object> 
             </void> 
