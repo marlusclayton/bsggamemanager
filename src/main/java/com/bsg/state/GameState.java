@@ -3,6 +3,7 @@ package com.bsg.state;
 import static ch.lambdaj.Lambda.filter;
 import static ch.lambdaj.Lambda.having;
 import static ch.lambdaj.Lambda.on;
+import static ch.lambdaj.Lambda.sumFrom;
 
 import java.util.ArrayList;
 import java.util.EnumSet;
@@ -83,8 +84,6 @@ public class GameState {
 	int food;
 	int morale;
 	int population;
-	
-	int distance;
 	
 	static final int halfFood = 4;
 	static final int halfFuel = 4;
@@ -401,7 +400,6 @@ public class GameState {
 
 	public void jumpToTopCard() {
 		DestinationCard dc = destinationDeck.deal();
-		distance += dc.getDistance();
 		destinationsTravelledTo.add(dc);
 		try {
 			destinationDeck.discard(dc);
@@ -417,7 +415,7 @@ public class GameState {
 	}
 	
 	public int getDistance() {
-		return distance;
+		return sumFrom(destinationsTravelledTo).getDistance();
 	}
 	
 	public LoyaltyDeck getLoyaltyDeck() {
@@ -428,5 +426,9 @@ public class GameState {
 		for (Player p : getPlayers()) {
 			p.giveLoyaltyCard(loyaltyDeck.dealTopCard());
 		}
+	}
+	
+	public void legendaryDiscovery() {
+		destinationsTravelledTo.add(new DestinationCard("Legendary Discovery", 1, 0, null, Expansion.BASE));
 	}
 }

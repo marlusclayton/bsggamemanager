@@ -869,6 +869,12 @@ public class GamePanel extends JFrame {
 		refreshDisplay();
 	}
 
+	private void legendaryDiscoveryActionPerformed(ActionEvent e) {
+		gs.legendaryDiscovery();
+		refreshDisplay();
+		
+	}
+
 
 
 
@@ -948,6 +954,7 @@ public class GamePanel extends JFrame {
 		travelledList = new JList();
 		jumpButton = new JButton();
 		buryButton = new JButton();
+		legendaryDiscovery = new JButton();
 		playerTablePanel = new JPanel();
 		scrollPane1 = new JScrollPane();
 		playersTable = new JTable();
@@ -1484,7 +1491,7 @@ public class GamePanel extends JFrame {
 					distancePanel.setBorder(new TitledBorder("Jumps and Distance"));
 					distancePanel.setLayout(new FormLayout(
 						"65dlu, $lcgap, default, $lcgap, 81dlu, $lcgap, 62dlu",
-						"2*(default, $lgap), 15dlu, $lgap, 30dlu"));
+						"2*(default, $lgap), 2*(15dlu, $lgap), 9dlu"));
 
 					//---- distanceTraveledLabel ----
 					distanceTraveledLabel.setText("Distance Traveled");
@@ -1506,7 +1513,7 @@ public class GamePanel extends JFrame {
 						});
 						travelListScrollPane.setViewportView(destinationList);
 					}
-					distancePanel.add(travelListScrollPane, cc.xywh(5, 1, 1, 7));
+					distancePanel.add(travelListScrollPane, cc.xywh(5, 1, 1, 9));
 
 					//======== scrollPane4 ========
 					{
@@ -1520,7 +1527,7 @@ public class GamePanel extends JFrame {
 						});
 						scrollPane4.setViewportView(travelledList);
 					}
-					distancePanel.add(scrollPane4, cc.xywh(1, 3, 2, 5));
+					distancePanel.add(scrollPane4, cc.xywh(1, 3, 2, 7));
 
 					//---- jumpButton ----
 					jumpButton.setText("Jump");
@@ -1541,6 +1548,16 @@ public class GamePanel extends JFrame {
 						}
 					});
 					distancePanel.add(buryButton, cc.xy(7, 5));
+
+					//---- legendaryDiscovery ----
+					legendaryDiscovery.setText("L. Discovery");
+					legendaryDiscovery.addActionListener(new ActionListener() {
+						@Override
+						public void actionPerformed(ActionEvent e) {
+							legendaryDiscoveryActionPerformed(e);
+						}
+					});
+					distancePanel.add(legendaryDiscovery, cc.xy(7, 7));
 				}
 				gameStatePanel.add(distancePanel, cc.xy(3, 5, CellConstraints.FILL, CellConstraints.FILL));
 
@@ -2259,6 +2276,7 @@ public class GamePanel extends JFrame {
 	private JList travelledList;
 	private JButton jumpButton;
 	private JButton buryButton;
+	private JButton legendaryDiscovery;
 	private JPanel playerTablePanel;
 	private JScrollPane scrollPane1;
 	private JTable playersTable;
