@@ -15,10 +15,10 @@ Work left to do:
 This project uses:
 
 - Apache Commons http://commons.apache.org/
-- Mustache.java https://github.com/spullara/mustache.java
 - JGoodies http://www.jgoodies.com/
 - LambdaJ http://code.google.com/p/lambdaj/
-
+- Mustache.java https://github.com/spullara/mustache.java
+- Slf4j http://www.slf4j.org/
 
 
 *This project is not affiliated with or endorsed by Fantasy Flight Games, USA Television, Syfy, nor NBC Universal
