@@ -209,4 +209,8 @@ public class LoyaltyDeck {
 		deck.add(lc);
 		Collections.shuffle(deck);
 	}
+	
+	public List<LoyaltyCard> getDeckContents() {
+		return new ArrayList<LoyaltyCard>(deck);
+	}
 }

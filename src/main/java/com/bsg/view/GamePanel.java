@@ -45,6 +45,7 @@ import com.bsg.Player;
 import com.bsg.cards.DoesNotBelongInDeckException;
 import com.bsg.cards.crisis.CrisisCard;
 import com.bsg.cards.destination.DestinationCard;
+import com.bsg.cards.loyalty.LoyaltyCard;
 import com.bsg.cards.loyalty.LoyaltyCardType;
 import com.bsg.cards.loyalty.LoyaltyType;
 import com.bsg.cards.skill.SkillCard;
@@ -127,12 +128,15 @@ public class GamePanel extends JFrame {
 			public void run() {				
 				//save skill card list selection
 				int skillCardCharSelectIdx = skillCardCharacterList.getSelectedIndex();
+				int loyaltyCardCharSelectIdx = loyaltyCardCharacterList.getSelectedIndex();
 				
 				//refresh character lists
 				characterList.setListData(gs.getPlayers().toArray());
 				skillCardCharacterList.setListData(gs.getPlayers().toArray());
 				handList.setListData(skillCardCharacterList.getSelectedValue() == null ? new Object[0] : ((Player)skillCardCharacterList.getSelectedValue()).getHand().toArray());
 				playersTable.setModel(new PlayerTableModel(gs, self )); //TODO: change me
+				loyaltyCardCharacterList.setListData(gs.getPlayers().toArray());
+				
 				
 				//set location thing
 				TableColumn tc = playersTable.getColumnModel().getColumn(PlayerTableModel.LOCATION_COLUMN);
@@ -219,6 +223,10 @@ public class GamePanel extends JFrame {
 					break;
 				}
 				
+				//loyalty
+				if (gs.getLoyaltyDeck() != null)
+					loyaltyDeckList.setListData(gs.getLoyaltyDeck().getDeckContents().toArray());
+				
 				//destinations
 				if (gs.getDestinationDeck() != null)
 					destinationList.setListData(gs.getDestinationDeck().getDeckContents().toArray());
@@ -234,6 +242,7 @@ public class GamePanel extends JFrame {
 				
 				//re-highlight
 				skillCardCharacterList.setSelectedIndex(skillCardCharSelectIdx);
+				loyaltyCardCharacterList.setSelectedIndex(loyaltyCardCharSelectIdx);
 			}
 			
 		});
@@ -552,8 +561,10 @@ public class GamePanel extends JFrame {
 		
 		gs.setExpansionsAndInitLists(exp);
 		characterComboBox.removeAllItems();
-		for (Character c : gs.getAvailableCharacters())
+		for (Character c : gs.getAvailableCharacters()) {
 			characterComboBox.addItem(c);
+		}
+		
 		
 		playerNameField.setEnabled(true);
 		characterComboBox.setEnabled(true);
@@ -595,6 +606,10 @@ public class GamePanel extends JFrame {
 			useFinalFiveCheckbox.setEnabled(true);
 			useCylonFleetCheckbox.setEnabled(true);
 		}
+		
+		giveLoyaltyCardsComboBox.removeAllItems();
+		for (Player p : gs.getPlayers()) 
+			giveLoyaltyCardsComboBox.addItem(p);
 		
 		startGameButton.setEnabled(true);
 		
@@ -818,6 +833,42 @@ public class GamePanel extends JFrame {
 		
 	}
 
+	private void loyaltyCardCharacterListValueChanged(ListSelectionEvent e) {
+		if (!loyaltyCardCharacterList.getValueIsAdjusting()) {
+			Object o = loyaltyCardCharacterList.getSelectedValue();
+			if (o == null)
+				return;
+			Player p = (Player)o;
+			loyaltyPanelHandList.setListData(p.getLoyaltyCards().toArray());
+		}
+	}
+
+	private void giveLoyaltyCardsButtonActionPerformed(ActionEvent e) {
+		Object o = loyaltyCardCharacterList.getSelectedValue();
+		if (o == null)
+			return;
+		
+		Player sourcePlayer = (Player)o;
+		Player targetPlayer = (Player)giveLoyaltyCardsComboBox.getSelectedItem();
+		
+		Object[] cards = loyaltyPanelHandList.getSelectedValues();
+		if (cards == null || cards.length == 0)
+			return;
+		
+		for (Object c : cards) {
+			LoyaltyCard lc = (LoyaltyCard) c;
+			sourcePlayer.removeLoyaltyCard(lc);
+			targetPlayer.giveLoyaltyCard(lc);
+		}
+		
+		refreshDisplay();
+	}
+
+	private void dealSleeperButtonActionPerformed(ActionEvent e) {
+		gs.dealSleeper();
+		refreshDisplay();
+	}
+
 
 
 
@@ -986,6 +1037,17 @@ public class GamePanel extends JFrame {
 		buryCrisisCardButton = new JButton();
 		reshuffleCrisisDeckButton = new JButton();
 		loyaltyCardPanel = new JPanel();
+		loyaltyCardInnerPanel = new JPanel();
+		scrollPane5 = new JScrollPane();
+		loyaltyCardCharacterList = new JList();
+		scrollPane6 = new JScrollPane();
+		loyaltyPanelHandList = new JList();
+		giveLoyaltyCardsButton = new JButton();
+		giveLoyaltyCardsComboBox = new JComboBox();
+		loyaltyDeckPanel = new JPanel();
+		scrollPane7 = new JScrollPane();
+		loyaltyDeckList = new JList();
+		dealSleeperButton = new JButton();
 		shipsPanel = new JPanel();
 		CellConstraints cc = new CellConstraints();
 
@@ -2039,8 +2101,74 @@ public class GamePanel extends JFrame {
 			//======== loyaltyCardPanel ========
 			{
 				loyaltyCardPanel.setLayout(new FormLayout(
-					"default, $lcgap, default",
-					"2*(default, $lgap), default"));
+					"379dlu",
+					"140dlu, $lgap, 129dlu"));
+
+				//======== loyaltyCardInnerPanel ========
+				{
+					loyaltyCardInnerPanel.setBorder(new TitledBorder("Loyalty Card Hands"));
+					loyaltyCardInnerPanel.setLayout(new FormLayout(
+						"175dlu, 2*($lcgap, 95dlu)",
+						"2*(default, $lgap), default"));
+
+					//======== scrollPane5 ========
+					{
+
+						//---- loyaltyCardCharacterList ----
+						loyaltyCardCharacterList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+						loyaltyCardCharacterList.addListSelectionListener(new ListSelectionListener() {
+							@Override
+							public void valueChanged(ListSelectionEvent e) {
+								loyaltyCardCharacterListValueChanged(e);
+							}
+						});
+						scrollPane5.setViewportView(loyaltyCardCharacterList);
+					}
+					loyaltyCardInnerPanel.add(scrollPane5, cc.xy(1, 1));
+
+					//======== scrollPane6 ========
+					{
+						scrollPane6.setViewportView(loyaltyPanelHandList);
+					}
+					loyaltyCardInnerPanel.add(scrollPane6, cc.xywh(3, 1, 3, 1, CellConstraints.DEFAULT, CellConstraints.FILL));
+
+					//---- giveLoyaltyCardsButton ----
+					giveLoyaltyCardsButton.setText("Give Loyalty Cards To");
+					giveLoyaltyCardsButton.addActionListener(new ActionListener() {
+						@Override
+						public void actionPerformed(ActionEvent e) {
+							giveLoyaltyCardsButtonActionPerformed(e);
+						}
+					});
+					loyaltyCardInnerPanel.add(giveLoyaltyCardsButton, cc.xy(3, 3));
+					loyaltyCardInnerPanel.add(giveLoyaltyCardsComboBox, cc.xy(5, 3));
+				}
+				loyaltyCardPanel.add(loyaltyCardInnerPanel, cc.xy(1, 1, CellConstraints.FILL, CellConstraints.FILL));
+
+				//======== loyaltyDeckPanel ========
+				{
+					loyaltyDeckPanel.setBorder(new TitledBorder("Loyalty Deck"));
+					loyaltyDeckPanel.setLayout(new FormLayout(
+						"156dlu, $lcgap, 73dlu",
+						"2*(default, $lgap), 71dlu"));
+
+					//======== scrollPane7 ========
+					{
+						scrollPane7.setViewportView(loyaltyDeckList);
+					}
+					loyaltyDeckPanel.add(scrollPane7, cc.xywh(1, 1, 1, 5));
+
+					//---- dealSleeperButton ----
+					dealSleeperButton.setText("Deal Sleeper");
+					dealSleeperButton.addActionListener(new ActionListener() {
+						@Override
+						public void actionPerformed(ActionEvent e) {
+							dealSleeperButtonActionPerformed(e);
+						}
+					});
+					loyaltyDeckPanel.add(dealSleeperButton, cc.xy(3, 1));
+				}
+				loyaltyCardPanel.add(loyaltyDeckPanel, cc.xy(1, 3, CellConstraints.FILL, CellConstraints.FILL));
 			}
 			mainTabbedPane.addTab("Loyalty Cards", loyaltyCardPanel);
 
@@ -2205,6 +2333,17 @@ public class GamePanel extends JFrame {
 	private JButton buryCrisisCardButton;
 	private JButton reshuffleCrisisDeckButton;
 	private JPanel loyaltyCardPanel;
+	private JPanel loyaltyCardInnerPanel;
+	private JScrollPane scrollPane5;
+	private JList loyaltyCardCharacterList;
+	private JScrollPane scrollPane6;
+	private JList loyaltyPanelHandList;
+	private JButton giveLoyaltyCardsButton;
+	private JComboBox giveLoyaltyCardsComboBox;
+	private JPanel loyaltyDeckPanel;
+	private JScrollPane scrollPane7;
+	private JList loyaltyDeckList;
+	private JButton dealSleeperButton;
 	private JPanel shipsPanel;
 	// JFormDesigner - End of variables declaration  //GEN-END:variables
 }

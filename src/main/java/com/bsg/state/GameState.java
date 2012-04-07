@@ -420,4 +420,13 @@ public class GameState {
 		return distance;
 	}
 	
+	public LoyaltyDeck getLoyaltyDeck() {
+		return loyaltyDeck;
+	}
+	
+	public void dealSleeper() {
+		for (Player p : getPlayers()) {
+			p.giveLoyaltyCard(loyaltyDeck.dealTopCard());
+		}
+	}
 }
