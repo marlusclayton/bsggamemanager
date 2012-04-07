@@ -985,6 +985,7 @@ public class GamePanel extends JFrame {
 		playCrisisCardButton = new JButton();
 		buryCrisisCardButton = new JButton();
 		reshuffleCrisisDeckButton = new JButton();
+		loyaltyCardPanel = new JPanel();
 		shipsPanel = new JPanel();
 		CellConstraints cc = new CellConstraints();
 
@@ -2035,6 +2036,15 @@ public class GamePanel extends JFrame {
 			mainTabbedPane.addTab("Crisis Cards", crisisCardPanel);
 
 
+			//======== loyaltyCardPanel ========
+			{
+				loyaltyCardPanel.setLayout(new FormLayout(
+					"default, $lcgap, default",
+					"2*(default, $lgap), default"));
+			}
+			mainTabbedPane.addTab("Loyalty Cards", loyaltyCardPanel);
+
+
 			//======== shipsPanel ========
 			{
 				shipsPanel.setLayout(new FormLayout(
@@ -2194,6 +2204,7 @@ public class GamePanel extends JFrame {
 	private JButton playCrisisCardButton;
 	private JButton buryCrisisCardButton;
 	private JButton reshuffleCrisisDeckButton;
+	private JPanel loyaltyCardPanel;
 	private JPanel shipsPanel;
 	// JFormDesigner - End of variables declaration  //GEN-END:variables
 }
