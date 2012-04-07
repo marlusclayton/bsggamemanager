@@ -864,6 +864,11 @@ public class GamePanel extends JFrame {
 		refreshDisplay();
 	}
 
+	private void dealSleeperButtonActionPerformed(ActionEvent e) {
+		gs.dealSleeper();
+		refreshDisplay();
+	}
+
 
 
 
@@ -1042,6 +1047,7 @@ public class GamePanel extends JFrame {
 		loyaltyDeckPanel = new JPanel();
 		scrollPane7 = new JScrollPane();
 		loyaltyDeckList = new JList();
+		dealSleeperButton = new JButton();
 		shipsPanel = new JPanel();
 		CellConstraints cc = new CellConstraints();
 
@@ -2143,14 +2149,24 @@ public class GamePanel extends JFrame {
 				{
 					loyaltyDeckPanel.setBorder(new TitledBorder("Loyalty Deck"));
 					loyaltyDeckPanel.setLayout(new FormLayout(
-						"156dlu, $lcgap, default",
-						"2*(default, $lgap), 76dlu"));
+						"156dlu, $lcgap, 73dlu",
+						"2*(default, $lgap), 71dlu"));
 
 					//======== scrollPane7 ========
 					{
 						scrollPane7.setViewportView(loyaltyDeckList);
 					}
 					loyaltyDeckPanel.add(scrollPane7, cc.xywh(1, 1, 1, 5));
+
+					//---- dealSleeperButton ----
+					dealSleeperButton.setText("Deal Sleeper");
+					dealSleeperButton.addActionListener(new ActionListener() {
+						@Override
+						public void actionPerformed(ActionEvent e) {
+							dealSleeperButtonActionPerformed(e);
+						}
+					});
+					loyaltyDeckPanel.add(dealSleeperButton, cc.xy(3, 1));
 				}
 				loyaltyCardPanel.add(loyaltyDeckPanel, cc.xy(1, 3, CellConstraints.FILL, CellConstraints.FILL));
 			}
@@ -2327,6 +2343,7 @@ public class GamePanel extends JFrame {
 	private JPanel loyaltyDeckPanel;
 	private JScrollPane scrollPane7;
 	private JList loyaltyDeckList;
+	private JButton dealSleeperButton;
 	private JPanel shipsPanel;
 	// JFormDesigner - End of variables declaration  //GEN-END:variables
 }

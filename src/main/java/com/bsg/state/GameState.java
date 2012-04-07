@@ -423,4 +423,10 @@ public class GameState {
 	public LoyaltyDeck getLoyaltyDeck() {
 		return loyaltyDeck;
 	}
+	
+	public void dealSleeper() {
+		for (Player p : getPlayers()) {
+			p.giveLoyaltyCard(loyaltyDeck.dealTopCard());
+		}
+	}
 }

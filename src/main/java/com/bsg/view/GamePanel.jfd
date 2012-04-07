@@ -4752,11 +4752,11 @@
              <class>com.jgoodies.forms.layout.FormLayout</class> 
              <void method="setProperty"> 
               <string>$columnSpecs</string> 
-              <string>156dlu, labelcompgap, default</string> 
+              <string>156dlu, labelcompgap, 73dlu</string> 
              </void> 
              <void method="setProperty"> 
               <string>$rowSpecs</string> 
-              <string>default, linegap, default, linegap, 76dlu</string> 
+              <string>default, linegap, default, linegap, 71dlu</string> 
              </void> 
             </object> 
             <void method="setProperty"> 
@@ -4791,6 +4791,37 @@
               <void method="setProperty"> 
                <string>gridHeight</string> 
                <int>5</int> 
+              </void> 
+             </object> 
+            </void> 
+            <void method="add"> 
+             <object class="com.jformdesigner.model.FormComponent"> 
+              <string>javax.swing.JButton</string> 
+              <void method="setProperty"> 
+               <string>text</string> 
+               <string>Deal Sleeper</string> 
+              </void> 
+              <void property="name"> 
+               <string>dealSleeperButton</string> 
+              </void> 
+              <void method="addEvent"> 
+               <object class="com.jformdesigner.model.FormEvent"> 
+                <string>java.awt.event.ActionListener</string> 
+                <string>actionPerformed</string> 
+                <string>dealSleeperButtonActionPerformed</string> 
+                <boolean>true</boolean> 
+               </object> 
+              </void> 
+             </object> 
+             <object class="com.jformdesigner.model.FormLayoutConstraints"> 
+              <class>com.jgoodies.forms.layout.CellConstraints</class> 
+              <void method="setProperty"> 
+               <string>gridX</string> 
+               <int>3</int> 
+              </void> 
+              <void method="setProperty"> 
+               <string>gridY</string> 
+               <int>1</int> 
               </void> 
              </object> 
             </void> 
