@@ -12,6 +12,13 @@ Work left to do:
 -Quorum Cards
 -Saving (*gulp*)
 
+This project uses:
+
+- Apache Commons http://commons.apache.org/
+- Mustache.java https://github.com/spullara/mustache.java
+- JGoodies http://www.jgoodies.com/
+
+
 
 *This project is not affiliated with or endorsed by Fantasy Flight Games, USA Television, Syfy, nor NBC Universal
 
