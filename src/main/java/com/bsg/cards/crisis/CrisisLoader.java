@@ -19,8 +19,9 @@ import org.xml.sax.SAXException;
 
 import com.bsg.Expansion;
 import com.bsg.InvalidConfigException;
+import com.bsg.utils.Loader;
 
-public class CrisisLoader {
+public class CrisisLoader extends Loader {
 	
 	private static final Logger LOGGER = LoggerFactory.getLogger(CrisisLoader.class);
 	
@@ -30,34 +31,13 @@ public class CrisisLoader {
 	
 	
 	public CrisisLoader(File xmlFile) throws SAXException, IOException, ParserConfigurationException, InvalidConfigException {
-		this.xmlFile = xmlFile;
-		
+		super(xmlFile);
 		cards = new ArrayList<CrisisCard>();
-		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-		
-		DocumentBuilder db = dbf.newDocumentBuilder();
-		doc = db.parse(xmlFile);
-		
 		parse();
 	}
 	
-	private void parse() throws InvalidConfigException {
-		Element root = doc.getDocumentElement();
-		String expansion_str = root.getAttribute("expansion");
-		LOGGER.info("Read expansion {}", expansion_str);
-		Expansion expansion = Expansion.valueOf(expansion_str);
-		if (expansion == null)
-			throw new InvalidConfigException(String.format("\"%s\" is not a valid expansion", expansion_str));
-		
-		NodeList nl = root.getElementsByTagName("crisiscard");
-		if (nl == null)
-			return;
-		
-		LOGGER.info("Read {} crisis cards", nl.getLength());
-
-		
-		for (int i = 0; i < nl.getLength(); ++i) {
-			Element el = (Element) nl.item(i);
+	@Override
+	protected void parseItem(Element el) throws InvalidConfigException {
 			
 			String name = el.getAttribute("name");
 			String type = el.getAttribute("type");
@@ -71,21 +51,16 @@ public class CrisisLoader {
 			CrisisCard cc = new CrisisCard(name, CrisisType.valueOf(type), description, expansion);
 			cards.add(cc);
 			LOGGER.info("Added crisis card {}", name);
-		}
+		
 	}
 	
 	public List<CrisisCard> getCards() {
 		return new ArrayList<CrisisCard>(cards);
 	}
-	
-	private static String getTextValue(Element ele, String tagName) {
-		String textVal = null;
-		NodeList nl = ele.getElementsByTagName(tagName);
-		if(nl != null && nl.getLength() > 0) {
-			Element el = (Element)nl.item(0);
-			textVal = el.getFirstChild().getNodeValue();
-		}
 
-		return textVal;
+	@Override
+	protected String getTagName() {
+		return "crisiscard";
 	}
+	
 }

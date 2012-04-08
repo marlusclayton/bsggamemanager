@@ -57,6 +57,17 @@ public abstract class Loader {
 		
 	}
 	
+	protected String getTextValue(Element ele, String tagName) {
+		String textVal = null;
+		NodeList nl = ele.getElementsByTagName(tagName);
+		if(nl != null && nl.getLength() > 0) {
+			Element el = (Element)nl.item(0);
+			textVal = el.getFirstChild().getNodeValue();
+		}
+
+		return textVal;
+	}
+	
 	protected abstract String getTagName();
 	protected abstract void parseItem(Element el) throws InvalidConfigException;
 	
