@@ -93,5 +93,9 @@ public class Deck<T extends Card> {
 		return deck.size();
 	}
 	
+	public int getDiscardSize() {
+		return discards.size();
+	}
+	
 	
 }
