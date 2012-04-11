@@ -23,6 +23,8 @@ import com.bsg.cards.destination.DestinationCard;
 import com.bsg.cards.destination.DestinationLoader;
 import com.bsg.cards.loyalty.LoyaltyCard;
 import com.bsg.cards.loyalty.LoyaltyCardLoader;
+import com.bsg.cards.quorum.QuorumCard;
+import com.bsg.cards.quorum.QuorumLoader;
 import com.bsg.characters.Character;
 import com.bsg.characters.CharacterLoader;
 import com.bsg.locations.Location;
@@ -55,6 +57,7 @@ public class Game {
 	private List<CrisisCard> crisisCards;
 	private List<Location> locations;
 	private List<DestinationCard> destinations;
+	private List<QuorumCard> quorumCards;
 	
 	private Game(String[] args) throws Exception {
 		setLookAndFeel();
@@ -105,9 +108,21 @@ public class Game {
 		loadCrisisCards();
 		loadLocations();
 		loadDestinations();
+		loadQuorum();
 		long loadTime = System.currentTimeMillis() - startTime;
 		
 		LOGGER.info("Total load time: {}ms", loadTime);
+	}
+	
+	private void loadQuorum() throws Exception {
+		quorumCards = new ArrayList<QuorumCard>();
+		
+		File quorumConfigDirectory = new File("config/quorum");
+		if (!quorumConfigDirectory.exists())
+			throw new InvalidConfigException("Quorum configuration does not exist");
+		
+		for (File curr: quorumConfigDirectory.listFiles(XML_FILE_FILTER))
+			quorumCards.addAll(new QuorumLoader(curr).getQuorumCards());
 	}
 	
 	private void loadDestinations() throws Exception {
