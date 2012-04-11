@@ -58,6 +58,14 @@ public class QuorumState {
 		return new ArrayList<QuorumCard>(hand);
 	}
 	
+	public List<QuorumCard> getActive() {
+		return new ArrayList<QuorumCard>(active);
+	}
+	
+	public List<QuorumCard> getRemoved() {
+		return new ArrayList<QuorumCard>(removed);
+	}
+	
 	public void removeQuorumCard(QuorumCard qc) {
 		checkHand(qc);
 		removed.add(qc);
