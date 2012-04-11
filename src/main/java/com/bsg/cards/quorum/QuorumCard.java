@@ -2,6 +2,7 @@ package com.bsg.cards.quorum;
 
 import com.bsg.Expansion;
 import com.bsg.Item;
+import com.bsg.Player;
 import com.bsg.cards.Card;
 
 public class QuorumCard extends Card implements Item {
@@ -11,6 +12,8 @@ public class QuorumCard extends Card implements Item {
 	private final QuorumType type;
 	private final Expansion expansion;
 	
+	private Player activeOn;
+	
 	public QuorumCard(String name, String text, QuorumType type, Expansion expansion) {
 		this.name = name;
 		this.text = text;
@@ -18,9 +21,17 @@ public class QuorumCard extends Card implements Item {
 		this.expansion = expansion;
 	}
 	
+	public void setActiveOn(Player activeOn) {
+		this.activeOn = activeOn;
+	}
+	
+	public Player getActiveOn() {
+		return activeOn;
+	}
+	
 	@Override
 	public String toString() {
-		return name;
+		return String.format("%s%s", name, activeOn != null ? " (active on " + activeOn.getCharacter().getShortName() + ")" : "");
 	}
 	
 	@Override
