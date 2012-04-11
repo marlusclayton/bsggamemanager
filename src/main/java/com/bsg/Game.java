@@ -49,6 +49,7 @@ public class Game {
 		put("dradis.template", "DRADIS template");
 		put("hand.template", "Hand template");
 		put("skillcheck.template", "Skill Check template");
+		put("quorum.template", "Quorum Card template");
 		
 	}};
 	

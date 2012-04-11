@@ -50,6 +50,14 @@ public class QuorumState {
 		deck.discard(qc);
 	}
 	
+	public Deck<QuorumCard> getDeck() {
+		return deck;
+	}
+	
+	public List<QuorumCard> getHand() {
+		return new ArrayList<QuorumCard>(hand);
+	}
+	
 	public void removeQuorumCard(QuorumCard qc) {
 		checkHand(qc);
 		removed.add(qc);

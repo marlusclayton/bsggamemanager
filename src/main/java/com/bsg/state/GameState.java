@@ -31,6 +31,7 @@ import com.bsg.cards.loyalty.LoyaltyCard;
 import com.bsg.cards.loyalty.LoyaltyCardType;
 import com.bsg.cards.loyalty.LoyaltyDeck;
 import com.bsg.cards.quorum.QuorumCard;
+import com.bsg.cards.quorum.QuorumState;
 import com.bsg.cards.skill.DestinyDeck;
 import com.bsg.cards.skill.SkillCard;
 import com.bsg.cards.skill.SkillCardInitializer;
@@ -68,7 +69,7 @@ public class GameState {
 	LoyaltyDeck loyaltyDeck;
 	Deck<CrisisCard> crisisDeck;
 	Deck<DestinationCard> destinationDeck;
-	Deck<QuorumCard> quorumDeck;
+	QuorumState quorum;
 	Map<SkillCardType, Deck<SkillCard>> skillCardDecks;
 	
 	Deck<SkillCard> polDeck;
@@ -394,11 +395,12 @@ public class GameState {
 	public void createDeck() {
 		crisisDeck = new Deck<CrisisCard>(availableCrisisCards);
 		destinationDeck = new Deck<DestinationCard>(availableDestinations);
-		quorumDeck = new Deck<QuorumCard>(availableQuorumCards);
+		quorum = new QuorumState(availableQuorumCards);
+		quorum.dealQuorumCard();
 	}
 	
-	public Deck<QuorumCard> getQuorumDeck() {
-		return quorumDeck;
+	public QuorumState getQuorumDeck() {
+		return quorum;
 	}
 	
 	public Deck<CrisisCard> getCrisisDeck() {

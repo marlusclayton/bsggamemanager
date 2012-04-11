@@ -228,8 +228,10 @@ public class GamePanel extends JFrame {
 					loyaltyDeckList.setListData(gs.getLoyaltyDeck().getDeckContents().toArray());
 				
 				//quorum
-				if (gs.getQuorumDeck() != null)
-					quorumCardDeckList.setListData(gs.getQuorumDeck().getDeckContents().toArray());
+				if (gs.getQuorumDeck() != null) {
+					quorumCardDeckList.setListData(gs.getQuorumDeck().getDeck().getDeckContents().toArray());
+					quorumCardHandList.setListData(gs.getQuorumDeck().getHand().toArray());
+				}
 				
 				//destinations
 				if (gs.getDestinationDeck() != null)
@@ -1048,8 +1050,19 @@ public class GamePanel extends JFrame {
 		buryCrisisCardButton = new JButton();
 		reshuffleCrisisDeckButton = new JButton();
 		quorumCardPanel = new JPanel();
+		JLabel quorumDeckLabel = new JLabel();
+		JLabel quorumHandLabel = new JLabel();
+		JLabel quorumCardActiveLabel = new JLabel();
+		JLabel quorumCardRemovedLabel = new JLabel();
 		scrollPane8 = new JScrollPane();
 		quorumCardDeckList = new JList();
+		scrollPane9 = new JScrollPane();
+		quorumCardHandList = new JList();
+		scrollPane10 = new JScrollPane();
+		quorumCardActiveList = new JList();
+		scrollPane11 = new JScrollPane();
+		quorumCardRemovedList = new JList();
+		button1 = new JButton();
 		loyaltyCardPanel = new JPanel();
 		loyaltyCardInnerPanel = new JPanel();
 		scrollPane5 = new JScrollPane();
@@ -2124,14 +2137,52 @@ public class GamePanel extends JFrame {
 				{
 					quorumCardPanel.setBorder(new TitledBorder("Quorum Cards"));
 					quorumCardPanel.setLayout(new FormLayout(
-						"184dlu, $lcgap, default",
-						"default, $lgap, 146dlu, $lgap, default"));
+						"3*(89dlu, $lcgap), 89dlu",
+						"default, $lgap, 146dlu, 2*($lgap, default)"));
+
+					//---- quorumDeckLabel ----
+					quorumDeckLabel.setText("Deck");
+					quorumCardPanel.add(quorumDeckLabel, cc.xy(1, 1));
+
+					//---- quorumHandLabel ----
+					quorumHandLabel.setText("Hand");
+					quorumCardPanel.add(quorumHandLabel, cc.xy(3, 1));
+
+					//---- quorumCardActiveLabel ----
+					quorumCardActiveLabel.setText("Active");
+					quorumCardPanel.add(quorumCardActiveLabel, cc.xy(5, 1));
+
+					//---- quorumCardRemovedLabel ----
+					quorumCardRemovedLabel.setText("Removed");
+					quorumCardPanel.add(quorumCardRemovedLabel, cc.xy(7, 1));
 
 					//======== scrollPane8 ========
 					{
 						scrollPane8.setViewportView(quorumCardDeckList);
 					}
 					quorumCardPanel.add(scrollPane8, cc.xy(1, 3, CellConstraints.DEFAULT, CellConstraints.FILL));
+
+					//======== scrollPane9 ========
+					{
+						scrollPane9.setViewportView(quorumCardHandList);
+					}
+					quorumCardPanel.add(scrollPane9, cc.xy(3, 3, CellConstraints.DEFAULT, CellConstraints.FILL));
+
+					//======== scrollPane10 ========
+					{
+						scrollPane10.setViewportView(quorumCardActiveList);
+					}
+					quorumCardPanel.add(scrollPane10, cc.xy(5, 3, CellConstraints.FILL, CellConstraints.FILL));
+
+					//======== scrollPane11 ========
+					{
+						scrollPane11.setViewportView(quorumCardRemovedList);
+					}
+					quorumCardPanel.add(scrollPane11, cc.xy(7, 3, CellConstraints.DEFAULT, CellConstraints.FILL));
+
+					//---- button1 ----
+					button1.setText("Deal Quorum Card");
+					quorumCardPanel.add(button1, cc.xy(1, 5));
 				}
 				crisisQuorumDeckPanel.add(quorumCardPanel, cc.xy(1, 3, CellConstraints.FILL, CellConstraints.FILL));
 			}
@@ -2376,6 +2427,13 @@ public class GamePanel extends JFrame {
 	private JPanel quorumCardPanel;
 	private JScrollPane scrollPane8;
 	private JList quorumCardDeckList;
+	private JScrollPane scrollPane9;
+	private JList quorumCardHandList;
+	private JScrollPane scrollPane10;
+	private JList quorumCardActiveList;
+	private JScrollPane scrollPane11;
+	private JList quorumCardRemovedList;
+	private JButton button1;
 	private JPanel loyaltyCardPanel;
 	private JPanel loyaltyCardInnerPanel;
 	private JScrollPane scrollPane5;
