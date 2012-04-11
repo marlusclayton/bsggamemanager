@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quorumcards expansion="PEGASUS">
+	<quorumcard>
+		<name>Assign Chief of Staff</name>
+		<text>Draw 2 Politics and assign to any other player. Before cards are added to a Skill check, this player may discard to make all Politics Cards in the check count as positive</text>
+		<type>PLAYER</type>
+	</quorumcard>
+	<quorumcard>
+		<name>Civilian Self Defense</name>
+		<text>Destroy 3 raiders or 1 heavy raider in the same space area as a civilian ship. Then roll: 2 or less destroys the civilian.</text>
+		<type>DISCARD</type>
+	</quorumcard>
+	<quorumcard>
+		<name>Consult the Oracle</name>
+		<text>Look at bottom card of any 1 deck. Then look at all Destiny and discard 2 of them. Then shuffle Destiny</text>
+		<type>DISCARD</type>
+	</quorumcard>
+	<quorumcard>
+		<name>Enact Production Quotas</name>
+		<text>+1 food then -1 morale</text>
+		<type>DISCARD</type>
+	</quorumcard>
+	<quorumcard>
+		<name>Eulogy</name>
+		<text>If at least 1 morale has been lost by execution, +1 morale</text>
+		<type>DISCARD</type>
+	</quorumcard>
+	<quorumcard>
+		<name>Execute Prisoner</name>
+		<text>Choose a character in the Brig. The character is executed</text>
+		<type>DISCARD</type>
+	</quorumcard>
+	<quorumcard>
+		<name>Probation</name>
+		<text>Give to any player. After he plays cards into a Skill check, President may discard to look at the cards he played</text>
+		<type>PLAYER</type>
+	</quorumcard>
+	<quorumcard>
+		<name>Resources for Galactica</name>
+		<text>Repair up to 1 location and 2 damaged vipers.</text>
+		<type>DISCARD</type>
+	</quorumcard>
+	<quorumcard>
+		<name>Unsavory Connections</name>
+		<text>Discard 2 random Skill Cards and draw 2 Treachery. Then either +1 food or +1 fuel</text>
+		<type>DISCARD</type>
+	</quorumcard>
+
+
+</quorumcards>
