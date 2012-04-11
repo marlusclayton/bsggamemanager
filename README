@@ -15,6 +15,7 @@ Work left to do:
 This project uses:
 
 - Apache Commons http://commons.apache.org/
+- JFormDesigner http://www.formdev.com/
 - JGoodies http://www.jgoodies.com/
 - LambdaJ http://code.google.com/p/lambdaj/
 - Mustache.java https://github.com/spullara/mustache.java
