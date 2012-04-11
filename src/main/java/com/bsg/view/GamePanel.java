@@ -227,6 +227,10 @@ public class GamePanel extends JFrame {
 				if (gs.getLoyaltyDeck() != null)
 					loyaltyDeckList.setListData(gs.getLoyaltyDeck().getDeckContents().toArray());
 				
+				//quorum
+				if (gs.getQuorumDeck() != null)
+					quorumCardDeckList.setListData(gs.getQuorumDeck().getDeckContents().toArray());
+				
 				//destinations
 				if (gs.getDestinationDeck() != null)
 					destinationList.setListData(gs.getDestinationDeck().getDeckContents().toArray());
@@ -1032,7 +1036,7 @@ public class GamePanel extends JFrame {
 		runningTotalLabel = new JLabel();
 		startSkillCheckButton = new JButton();
 		exportSkillCheckButton = new JButton();
-		crisisCardPanel = new JPanel();
+		crisisQuorumDeckPanel = new JPanel();
 		crisisDeckPanel = new JPanel();
 		JLabel crisisCardDeckLabel = new JLabel();
 		JLabel crisisCardDiscardLabel = new JLabel();
@@ -1043,6 +1047,9 @@ public class GamePanel extends JFrame {
 		playCrisisCardButton = new JButton();
 		buryCrisisCardButton = new JButton();
 		reshuffleCrisisDeckButton = new JButton();
+		quorumCardPanel = new JPanel();
+		scrollPane8 = new JScrollPane();
+		quorumCardDeckList = new JList();
 		loyaltyCardPanel = new JPanel();
 		loyaltyCardInnerPanel = new JPanel();
 		scrollPane5 = new JScrollPane();
@@ -2024,11 +2031,12 @@ public class GamePanel extends JFrame {
 			mainTabbedPane.addTab("Skill Cards", skillCardPanel);
 
 
-			//======== crisisCardPanel ========
+			//======== crisisQuorumDeckPanel ========
 			{
-				crisisCardPanel.setLayout(new FormLayout(
+				crisisQuorumDeckPanel.setBorder(null);
+				crisisQuorumDeckPanel.setLayout(new FormLayout(
 					"374dlu, $lcgap, default",
-					"190dlu, $lgap, 141dlu, $lgap, default"));
+					"190dlu, $lgap, 222dlu, $lgap, default"));
 
 				//======== crisisDeckPanel ========
 				{
@@ -2110,9 +2118,24 @@ public class GamePanel extends JFrame {
 					});
 					crisisDeckPanel.add(reshuffleCrisisDeckButton, cc.xy(5, 7));
 				}
-				crisisCardPanel.add(crisisDeckPanel, cc.xy(1, 1, CellConstraints.FILL, CellConstraints.FILL));
+				crisisQuorumDeckPanel.add(crisisDeckPanel, cc.xy(1, 1, CellConstraints.FILL, CellConstraints.FILL));
+
+				//======== quorumCardPanel ========
+				{
+					quorumCardPanel.setBorder(new TitledBorder("Quorum Cards"));
+					quorumCardPanel.setLayout(new FormLayout(
+						"184dlu, $lcgap, default",
+						"default, $lgap, 146dlu, $lgap, default"));
+
+					//======== scrollPane8 ========
+					{
+						scrollPane8.setViewportView(quorumCardDeckList);
+					}
+					quorumCardPanel.add(scrollPane8, cc.xy(1, 3, CellConstraints.DEFAULT, CellConstraints.FILL));
+				}
+				crisisQuorumDeckPanel.add(quorumCardPanel, cc.xy(1, 3, CellConstraints.FILL, CellConstraints.FILL));
 			}
-			mainTabbedPane.addTab("Crisis Cards", crisisCardPanel);
+			mainTabbedPane.addTab("Crisis/Quorum Cards", crisisQuorumDeckPanel);
 
 
 			//======== loyaltyCardPanel ========
@@ -2341,7 +2364,7 @@ public class GamePanel extends JFrame {
 	private JLabel runningTotalLabel;
 	private JButton startSkillCheckButton;
 	private JButton exportSkillCheckButton;
-	private JPanel crisisCardPanel;
+	private JPanel crisisQuorumDeckPanel;
 	private JPanel crisisDeckPanel;
 	private JScrollPane scrollPane2;
 	private JList crisisDeckList;
@@ -2350,6 +2373,9 @@ public class GamePanel extends JFrame {
 	private JButton playCrisisCardButton;
 	private JButton buryCrisisCardButton;
 	private JButton reshuffleCrisisDeckButton;
+	private JPanel quorumCardPanel;
+	private JScrollPane scrollPane8;
+	private JList quorumCardDeckList;
 	private JPanel loyaltyCardPanel;
 	private JPanel loyaltyCardInnerPanel;
 	private JScrollPane scrollPane5;

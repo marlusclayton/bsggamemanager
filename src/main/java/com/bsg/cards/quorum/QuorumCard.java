@@ -18,6 +18,10 @@ public class QuorumCard extends Card implements Item {
 		this.expansion = expansion;
 	}
 	
+	@Override
+	public String toString() {
+		return name;
+	}
 	
 	@Override
 	public Expansion getExpansion() {

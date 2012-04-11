@@ -65,7 +65,7 @@ public class Game {
 		loadConfig();
 		
 		
-		GamePanel panel = new GamePanel(new GameState(characters, loyalty, crisisCards, locations, destinations));
+		GamePanel panel = new GamePanel(new GameState(characters, loyalty, crisisCards, locations, destinations, quorumCards));
 		panel.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		panel.setVisible(true);
 	}

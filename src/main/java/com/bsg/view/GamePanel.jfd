@@ -4263,11 +4263,15 @@
            </void> 
            <void method="setProperty"> 
             <string>$rowSpecs</string> 
-            <string>190dlu, linegap, 141dlu, linegap, default</string> 
+            <string>190dlu, linegap, 222dlu, linegap, default</string> 
            </void> 
           </object> 
+          <void method="setProperty"> 
+           <string>border</string> 
+           <object class="com.jformdesigner.model.FormObject" field="NULL_VALUE"/> 
+          </void> 
           <void property="name"> 
-           <string>crisisCardPanel</string> 
+           <string>crisisQuorumDeckPanel</string> 
           </void> 
           <void method="add"> 
            <object class="com.jformdesigner.model.FormContainer"> 
@@ -4576,12 +4580,86 @@
             </void> 
            </object> 
           </void> 
+          <void method="add"> 
+           <object class="com.jformdesigner.model.FormContainer"> 
+            <string>javax.swing.JPanel</string> 
+            <object class="com.jformdesigner.model.FormLayoutManager"> 
+             <class>com.jgoodies.forms.layout.FormLayout</class> 
+             <void method="setProperty"> 
+              <string>$columnSpecs</string> 
+              <string>184dlu, labelcompgap, default</string> 
+             </void> 
+             <void method="setProperty"> 
+              <string>$rowSpecs</string> 
+              <string>default, linegap, 146dlu, linegap, default</string> 
+             </void> 
+            </object> 
+            <void method="setProperty"> 
+             <string>border</string> 
+             <object class="javax.swing.border.TitledBorder"> 
+              <string>Quorum Cards</string> 
+             </object> 
+            </void> 
+            <void property="name"> 
+             <string>quorumCardPanel</string> 
+            </void> 
+            <void method="add"> 
+             <object class="com.jformdesigner.model.FormContainer"> 
+              <string>javax.swing.JScrollPane</string> 
+              <object class="com.jformdesigner.model.FormLayoutManager"> 
+               <class>javax.swing.JScrollPane</class> 
+              </object> 
+              <void property="name"> 
+               <string>scrollPane8</string> 
+              </void> 
+              <void method="add"> 
+               <object class="com.jformdesigner.model.FormComponent"> 
+                <string>javax.swing.JList</string> 
+                <void property="name"> 
+                 <string>quorumCardDeckList</string> 
+                </void> 
+               </object> 
+              </void> 
+             </object> 
+             <object class="com.jformdesigner.model.FormLayoutConstraints"> 
+              <class>com.jgoodies.forms.layout.CellConstraints</class> 
+              <void method="setProperty"> 
+               <string>gridY</string> 
+               <int>3</int> 
+              </void> 
+              <void method="setProperty"> 
+               <string>vAlign</string> 
+               <object class="com.jgoodies.forms.layout.CellConstraints" field="FILL"/> 
+              </void> 
+             </object> 
+            </void> 
+           </object> 
+           <object class="com.jformdesigner.model.FormLayoutConstraints"> 
+            <class>com.jgoodies.forms.layout.CellConstraints</class> 
+            <void method="setProperty"> 
+             <string>gridX</string> 
+             <int>1</int> 
+            </void> 
+            <void method="setProperty"> 
+             <string>gridY</string> 
+             <int>3</int> 
+            </void> 
+            <void method="setProperty"> 
+             <string>hAlign</string> 
+             <object class="com.jgoodies.forms.layout.CellConstraints" field="FILL"/> 
+            </void> 
+            <void method="setProperty"> 
+             <string>vAlign</string> 
+             <object class="com.jgoodies.forms.layout.CellConstraints" field="FILL"/> 
+            </void> 
+           </object> 
+          </void> 
          </object> 
          <object class="com.jformdesigner.model.FormLayoutConstraints"> 
           <null/> 
           <void method="setProperty"> 
            <string>title</string> 
-           <string>Crisis Cards</string> 
+           <string>Crisis/Quorum Cards</string> 
           </void> 
          </object> 
         </void> 
