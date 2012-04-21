@@ -11,7 +11,7 @@ Compiling:
  - mvn clean compile assembly:single
  - the above command will build a JAR containing all dependencies in the target/ directory
  
-The config/ directory must be in the same directory as the JAR
+The config/ directory must be in running directory when launching the app
 
 Work left to do:
 
