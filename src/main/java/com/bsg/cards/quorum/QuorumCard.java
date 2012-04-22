@@ -25,6 +25,10 @@ public class QuorumCard extends Card implements Item {
 		this.activeOn = activeOn;
 	}
 	
+	public String getName() {
+		return name;
+	}
+	
 	public Player getActiveOn() {
 		return activeOn;
 	}

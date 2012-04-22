@@ -4726,6 +4726,14 @@
                 <void property="name"> 
                  <string>quorumCardDeckList</string> 
                 </void> 
+                <void method="addEvent"> 
+                 <object class="com.jformdesigner.model.FormEvent"> 
+                  <string>java.awt.event.MouseListener</string> 
+                  <string>mouseClicked</string> 
+                  <string>quorumCardListMouseClicked</string> 
+                  <boolean>true</boolean> 
+                 </object> 
+                </void> 
                </object> 
               </void> 
              </object> 
@@ -4759,6 +4767,14 @@
                 <string>javax.swing.JList</string> 
                 <void property="name"> 
                  <string>quorumCardHandList</string> 
+                </void> 
+                <void method="addEvent"> 
+                 <object class="com.jformdesigner.model.FormEvent"> 
+                  <string>java.awt.event.MouseListener</string> 
+                  <string>mouseClicked</string> 
+                  <string>quorumCardListMouseClicked</string> 
+                  <boolean>true</boolean> 
+                 </object> 
                 </void> 
                </object> 
               </void> 
@@ -4797,6 +4813,14 @@
                 <string>javax.swing.JList</string> 
                 <void property="name"> 
                  <string>quorumCardActiveList</string> 
+                </void> 
+                <void method="addEvent"> 
+                 <object class="com.jformdesigner.model.FormEvent"> 
+                  <string>java.awt.event.MouseListener</string> 
+                  <string>mouseClicked</string> 
+                  <string>quorumCardListMouseClicked</string> 
+                  <boolean>true</boolean> 
+                 </object> 
                 </void> 
                </object> 
               </void> 
@@ -4839,6 +4863,14 @@
                 <string>javax.swing.JList</string> 
                 <void property="name"> 
                  <string>quorumCardRemovedList</string> 
+                </void> 
+                <void method="addEvent"> 
+                 <object class="com.jformdesigner.model.FormEvent"> 
+                  <string>java.awt.event.MouseListener</string> 
+                  <string>mouseClicked</string> 
+                  <string>quorumCardListMouseClicked</string> 
+                  <boolean>true</boolean> 
+                 </object> 
                 </void> 
                </object> 
               </void> 
@@ -4902,6 +4934,14 @@
                 <string>javax.swing.JList</string> 
                 <void property="name"> 
                  <string>quorumCardDiscardedList</string> 
+                </void> 
+                <void method="addEvent"> 
+                 <object class="com.jformdesigner.model.FormEvent"> 
+                  <string>java.awt.event.MouseListener</string> 
+                  <string>mouseClicked</string> 
+                  <string>quorumCardListMouseClicked</string> 
+                  <boolean>true</boolean> 
+                 </object> 
                 </void> 
                </object> 
               </void> 
@@ -5051,6 +5091,14 @@
               </void> 
               <void property="name"> 
                <string>removeActiveQuorumCardButton</string> 
+              </void> 
+              <void method="addEvent"> 
+               <object class="com.jformdesigner.model.FormEvent"> 
+                <string>java.awt.event.ActionListener</string> 
+                <string>actionPerformed</string> 
+                <string>removeActiveQuorumCardButtonActionPerformed</string> 
+                <boolean>true</boolean> 
+               </object> 
               </void> 
              </object> 
              <object class="com.jformdesigner.model.FormLayoutConstraints"> 

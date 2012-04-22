@@ -80,6 +80,7 @@ public class GamePanel extends JFrame {
 	private Mustache dradisMustache;
 	private Mustache crisisMustache;
 	private Mustache destinationMustache;
+	private Mustache quorumMustache;
 	
 	private GamePanel self;
 	
@@ -106,6 +107,7 @@ public class GamePanel extends JFrame {
 		dradisMustache = mf.compile("config/templates/dradis.template");
 		crisisMustache = mf.compile("config/templates/crisis.template");
 		destinationMustache = mf.compile("config/templates/destination.template");
+		quorumMustache = mf.compile("config/templates/quorum.template");
 		
 		refreshDisplay();
 	}
@@ -925,10 +927,45 @@ public class GamePanel extends JFrame {
 	}
 
 	private void discardActiveQuorumCardButtonActionPerformed(ActionEvent e) {
-		QuorumCard qc = (QuorumCard) quorumCardHandList.getSelectedValue();
+		QuorumCard qc = (QuorumCard) quorumCardActiveList.getSelectedValue();
 		if (qc == null)
 			return;
 		
+		try {
+			gs.getQuorumDeck().deactivateQuorumCard(qc);
+		} catch (DoesNotBelongInDeckException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+		refreshDisplay();
+	}
+
+	private void quorumCardListMouseClicked(MouseEvent e) {
+		if (e.getClickCount() == 2) {
+			JList source = (JList) e.getSource();
+			QuorumCard qc = (QuorumCard) source.getSelectedValue();
+			
+			StringWriter sw = new StringWriter();
+			try {
+				quorumMustache.execute(sw, qc).flush();
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			new TextWindow(sw.toString()).setVisible(true);
+		}
+	}
+
+	private void removeActiveQuorumCardButtonActionPerformed(ActionEvent e) {
+		QuorumCard qc = (QuorumCard) quorumCardActiveList.getSelectedValue();
+		if (qc == null)
+			return;
+		
+		gs.getQuorumDeck().removeQuorumCard(qc);
+
+		
+		refreshDisplay();
 	}
 
 
@@ -2216,24 +2253,56 @@ public class GamePanel extends JFrame {
 
 					//======== scrollPane8 ========
 					{
+
+						//---- quorumCardDeckList ----
+						quorumCardDeckList.addMouseListener(new MouseAdapter() {
+							@Override
+							public void mouseClicked(MouseEvent e) {
+								quorumCardListMouseClicked(e);
+							}
+						});
 						scrollPane8.setViewportView(quorumCardDeckList);
 					}
 					quorumCardPanel.add(scrollPane8, cc.xywh(1, 3, 1, 5, CellConstraints.DEFAULT, CellConstraints.FILL));
 
 					//======== scrollPane9 ========
 					{
+
+						//---- quorumCardHandList ----
+						quorumCardHandList.addMouseListener(new MouseAdapter() {
+							@Override
+							public void mouseClicked(MouseEvent e) {
+								quorumCardListMouseClicked(e);
+							}
+						});
 						scrollPane9.setViewportView(quorumCardHandList);
 					}
 					quorumCardPanel.add(scrollPane9, cc.xywh(3, 3, 1, 5, CellConstraints.DEFAULT, CellConstraints.FILL));
 
 					//======== scrollPane10 ========
 					{
+
+						//---- quorumCardActiveList ----
+						quorumCardActiveList.addMouseListener(new MouseAdapter() {
+							@Override
+							public void mouseClicked(MouseEvent e) {
+								quorumCardListMouseClicked(e);
+							}
+						});
 						scrollPane10.setViewportView(quorumCardActiveList);
 					}
 					quorumCardPanel.add(scrollPane10, cc.xywh(5, 3, 1, 5, CellConstraints.FILL, CellConstraints.FILL));
 
 					//======== scrollPane11 ========
 					{
+
+						//---- quorumCardRemovedList ----
+						quorumCardRemovedList.addMouseListener(new MouseAdapter() {
+							@Override
+							public void mouseClicked(MouseEvent e) {
+								quorumCardListMouseClicked(e);
+							}
+						});
 						scrollPane11.setViewportView(quorumCardRemovedList);
 					}
 					quorumCardPanel.add(scrollPane11, cc.xy(7, 3, CellConstraints.DEFAULT, CellConstraints.FILL));
@@ -2244,6 +2313,14 @@ public class GamePanel extends JFrame {
 
 					//======== scrollPane12 ========
 					{
+
+						//---- quorumCardDiscardedList ----
+						quorumCardDiscardedList.addMouseListener(new MouseAdapter() {
+							@Override
+							public void mouseClicked(MouseEvent e) {
+								quorumCardListMouseClicked(e);
+							}
+						});
 						scrollPane12.setViewportView(quorumCardDiscardedList);
 					}
 					quorumCardPanel.add(scrollPane12, cc.xy(7, 7));
@@ -2290,6 +2367,12 @@ public class GamePanel extends JFrame {
 
 					//---- removeActiveQuorumCardButton ----
 					removeActiveQuorumCardButton.setText("Remove Active Card");
+					removeActiveQuorumCardButton.addActionListener(new ActionListener() {
+						@Override
+						public void actionPerformed(ActionEvent e) {
+							removeActiveQuorumCardButtonActionPerformed(e);
+						}
+					});
 					quorumCardPanel.add(removeActiveQuorumCardButton, cc.xy(5, 11));
 
 					//---- removeQuorumCardButton ----
