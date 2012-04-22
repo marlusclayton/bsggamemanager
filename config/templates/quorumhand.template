@@ -1,0 +1,5 @@
+Quorum hand is:
+
+{{#hand}}
+	 - [b]{{name}}[/b]: {{{text}}}
+{{/hand}}

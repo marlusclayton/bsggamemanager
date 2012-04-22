@@ -50,7 +50,7 @@ public class Game {
 		put("hand.template", "Hand template");
 		put("skillcheck.template", "Skill Check template");
 		put("quorum.template", "Quorum Card template");
-		
+		put("quorumhand.template", "Quorum Hand template");
 	}};
 	
 	private List<Character> characters;

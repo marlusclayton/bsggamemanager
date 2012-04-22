@@ -51,6 +51,7 @@ import com.bsg.cards.loyalty.LoyaltyCard;
 import com.bsg.cards.loyalty.LoyaltyCardType;
 import com.bsg.cards.loyalty.LoyaltyType;
 import com.bsg.cards.quorum.QuorumCard;
+import com.bsg.cards.quorum.QuorumHandMustacheObject;
 import com.bsg.cards.quorum.QuorumType;
 import com.bsg.cards.skill.SkillCard;
 import com.bsg.cards.skill.SkillCardType;
@@ -81,6 +82,7 @@ public class GamePanel extends JFrame {
 	private Mustache crisisMustache;
 	private Mustache destinationMustache;
 	private Mustache quorumMustache;
+	private Mustache quorumHandMustache;
 	
 	private GamePanel self;
 	
@@ -108,6 +110,7 @@ public class GamePanel extends JFrame {
 		crisisMustache = mf.compile("config/templates/crisis.template");
 		destinationMustache = mf.compile("config/templates/destination.template");
 		quorumMustache = mf.compile("config/templates/quorum.template");
+		quorumHandMustache = mf.compile("config/templates/quorumhand.template");
 		
 		refreshDisplay();
 	}
@@ -957,16 +960,20 @@ public class GamePanel extends JFrame {
 		}
 	}
 
-	private void removeActiveQuorumCardButtonActionPerformed(ActionEvent e) {
-		QuorumCard qc = (QuorumCard) quorumCardActiveList.getSelectedValue();
-		if (qc == null)
-			return;
+	private void generateQuorumHandEmailButtonActionPerformed(ActionEvent e) {
+		QuorumHandMustacheObject qhmo = new QuorumHandMustacheObject(gs.getQuorumDeck().getHand());
 		
-		gs.getQuorumDeck().removeQuorumCard(qc);
-
+		StringWriter sw = new StringWriter();
+		try {
+			quorumHandMustache.execute(sw, qhmo).flush();
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
 		
-		refreshDisplay();
+		new TextWindow(sw.toString()).setVisible(true);
 	}
+
+	
 
 
 
@@ -1156,6 +1163,7 @@ public class GamePanel extends JFrame {
 		playQuorumCardButton = new JButton();
 		discardActiveQuorumCardButton = new JButton();
 		discardQuorumCardButton = new JButton();
+		generateQuorumHandEmailButton = new JButton();
 		loyaltyCardPanel = new JPanel();
 		loyaltyCardInnerPanel = new JPanel();
 		scrollPane5 = new JScrollPane();
@@ -2362,6 +2370,16 @@ public class GamePanel extends JFrame {
 						}
 					});
 					quorumCardPanel.add(discardQuorumCardButton, cc.xy(3, 11));
+
+					//---- generateQuorumHandEmailButton ----
+					generateQuorumHandEmailButton.setText("Generate Hand Email");
+					generateQuorumHandEmailButton.addActionListener(new ActionListener() {
+						@Override
+						public void actionPerformed(ActionEvent e) {
+							generateQuorumHandEmailButtonActionPerformed(e);
+						}
+					});
+					quorumCardPanel.add(generateQuorumHandEmailButton, cc.xy(3, 13));
 				}
 				crisisQuorumDeckPanel.add(quorumCardPanel, cc.xy(1, 3, CellConstraints.FILL, CellConstraints.FILL));
 			}
@@ -2618,6 +2636,7 @@ public class GamePanel extends JFrame {
 	private JButton playQuorumCardButton;
 	private JButton discardActiveQuorumCardButton;
 	private JButton discardQuorumCardButton;
+	private JButton generateQuorumHandEmailButton;
 	private JPanel loyaltyCardPanel;
 	private JPanel loyaltyCardInnerPanel;
 	private JScrollPane scrollPane5;
