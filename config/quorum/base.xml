@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quorumcards expansion="BASE">
+	<quorumcard>
+		<name>Accept Prophecy</name>
+		<text>Draw 1 card (any color). Next time a player activates Administration or chooses the President with the Admiral's Quarters, difficulty +2, then discard this card.</text>
+		<type>GAME</type>
+	</quorumcard>
+	<quorumcard>
+		<name>Arrest Order</name>
+		<text>Send a character to the Brig.</text>
+		<type>DISCARD</type>
+	</quorumcard>
+	<quorumcard>
+		<name>Assign Arbitrator</name>
+		<text>Draw  2 politics (yellow) and pick any other player.  When anyone activates Admiral's Quarters, Arbitrator can discard this card to move difficulty +/-3, then discard this card.</text>
+		<type>PLAYER</type>
+	</quorumcard>
+	<quorumcard>
+		<name>Assign Mission Specialist</name>
+		<text>Draw 2 politics (yellow) and assign Specialist.  On next Jump, Specialist chooses 3 destination cards and picks 1, instead of Admiral, then discard this card.</text>
+		<type>PLAYER</type>
+	</quorumcard>
+	<quorumcard>
+		<name>Assign Vice President</name>
+		<text>Draw 2 politics (yellow) and name VP.  Only VP can become President  via Administration</text>
+		<type>PLAYER</type>
+	</quorumcard>
+	<quorumcard>
+		<name>Authorization of Brutal Force</name>
+		<text>Destroy 3 Raiders, 1 Heavy, or 1 Centurion.  Roll 1-2 -> -1 Population</text>
+		<type>DISCARD</type>
+	</quorumcard>
+	<quorumcard>
+		<name>Encourage Mutiny</name>
+		<text>Pick non-Admiral player.  Target:  Roll 1-2 ‚Üí -1 morale; 3-8 -> become Admiral</text>
+		<type>DISCARD</type>
+	</quorumcard>
+	<quorumcard>
+		<name>Food Rationing</name>
+		<text>Roll 6-8 -> +1 Food</text>
+		<type>REMOVE</type>
+	</quorumcard>
+	<quorumcard>
+		<name>Inspirational Speech</name>
+		<text>Roll 6-8 -> +1 Morale</text>
+		<type>REMOVE</type>
+	</quorumcard>
+	<quorumcard>
+		<name>Presidential Pardon</name>
+		<text>Move any other character from the Brig to any other location on Galactica.</text>
+		<type>DISCARD</type>
+	</quorumcard>
+	<quorumcard>
+		<name>Release Cylon Mugshots</name>
+		<text>Pick player and view 1 random Loyalty card.  Roll 1-3 -> -1 morale.</text>
+		<type>DISCARD</type>
+	</quorumcard>
+
+</quorumcards>

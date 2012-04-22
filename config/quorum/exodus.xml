@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quorumcards expansion="EXODUS">
+	<quorumcard>
+		<name>Establish Dogville</name>
+		<text>Gain 1 Population and lose 1 Morale. </text>
+		<type>DISCARD</type>
+	</quorumcard>
+	<quorumcard>
+		<name>Presidential Order</name>
+		<text>Choose any player, give him either the Admiral or the CAG title.</text>
+		<type>DISCARD</type>
+	</quorumcard>
+	<quorumcard>
+		<name>Resignation</name>
+		<text>Discard any number of Quorum Cards from your hand and then draw an equal number of new Quorum Cards.  Then choose another character, give him the President title.</text>
+		<type>DISCARD</type>
+	</quorumcard>
+</quorumcards>

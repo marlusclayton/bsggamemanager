@@ -30,6 +30,9 @@ import com.bsg.cards.destination.DestinationCard;
 import com.bsg.cards.loyalty.LoyaltyCard;
 import com.bsg.cards.loyalty.LoyaltyCardType;
 import com.bsg.cards.loyalty.LoyaltyDeck;
+import com.bsg.cards.quorum.QuorumCard;
+import com.bsg.cards.quorum.QuorumState;
+import com.bsg.cards.quorum.QuorumType;
 import com.bsg.cards.skill.DestinyDeck;
 import com.bsg.cards.skill.SkillCard;
 import com.bsg.cards.skill.SkillCardInitializer;
@@ -60,12 +63,14 @@ public class GameState {
 	List<CrisisCard> availableCrisisCards;
 	List<Location> availableLocations;
 	List<DestinationCard> availableDestinations;
+	List<QuorumCard> availableQuorumCards;
 	
 	List<DestinationCard> destinationsTravelledTo;
 	
 	LoyaltyDeck loyaltyDeck;
 	Deck<CrisisCard> crisisDeck;
 	Deck<DestinationCard> destinationDeck;
+	QuorumState quorum;
 	Map<SkillCardType, Deck<SkillCard>> skillCardDecks;
 	
 	Deck<SkillCard> polDeck;
@@ -99,13 +104,15 @@ public class GameState {
 			List<LoyaltyCard> availableLoyalty, 
 			List<CrisisCard> availableCrisisCards, 
 			List<Location> availableLocations,
-			List<DestinationCard> availableDestinaions) {
+			List<DestinationCard> availableDestinaions,
+			List<QuorumCard> availableQuorumCards) {
 		players = new ArrayList<Player>();
 		this.availableLoyalty = availableLoyalty;
 		this.availableCharacters = availableCharacters;
 		this.availableCrisisCards = availableCrisisCards;
 		this.availableLocations = availableLocations;
 		this.availableDestinations = availableDestinaions;
+		this.availableQuorumCards = availableQuorumCards;
 		
 		usedCharacters = new HashSet<Character>();
 		jumpTrack = new JumpTrack();
@@ -158,6 +165,7 @@ public class GameState {
 		availableCrisisCards = filter(expansionFilter, availableCrisisCards);
 		availableLocations = filter(expansionFilter, availableLocations);
 		availableDestinations = filter(expansionFilter, availableDestinations);
+		availableQuorumCards = filter(expansionFilter, availableQuorumCards);
 		
 		skillCardDecks.put(SkillCardType.POLITICS, new Deck<SkillCard>(SkillCardInitializer.getPoliticsCards(expansions)));
 		skillCardDecks.put(SkillCardType.LEADERSHIP, new Deck<SkillCard>(SkillCardInitializer.getLeadershipCards(expansions)));
@@ -388,6 +396,12 @@ public class GameState {
 	public void createDeck() {
 		crisisDeck = new Deck<CrisisCard>(availableCrisisCards);
 		destinationDeck = new Deck<DestinationCard>(availableDestinations);
+		quorum = new QuorumState(availableQuorumCards);
+		quorum.dealQuorumCard();
+	}
+	
+	public QuorumState getQuorumDeck() {
+		return quorum;
 	}
 	
 	public Deck<CrisisCard> getCrisisDeck() {
@@ -430,5 +444,24 @@ public class GameState {
 	
 	public void legendaryDiscovery() {
 		destinationsTravelledTo.add(new DestinationCard("Legendary Discovery", 1, 0, null, Expansion.BASE));
+	}
+
+	public void playQuorumCard(QuorumCard qc) throws DoesNotBelongInDeckException {
+		QuorumType type = qc.getType();
+		
+		switch (type) {
+		case DISCARD:
+			quorum.discardQuorumCard(qc);
+			break;
+		case GAME:
+		case PLAYER:
+			quorum.activateQuorumCard(qc);
+			break;
+		case REMOVE:
+			quorum.removeQuorumCard(qc);
+			break;
+		}
+		
+		
 	}
 }
