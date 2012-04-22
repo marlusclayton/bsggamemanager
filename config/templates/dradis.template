@@ -7,7 +7,7 @@
 
 [b][u]Fleet Status[/u][/b]
 
-[b]Fuel[/b]:       {{fuel}}/8        [b]Distance:[/b] 0/8{{#destination_list}} ({{destination_list}}){{/destination_list}}
+[b]Fuel[/b]:       {{fuel}}/8        [b]Distance:[/b] {{distance}}/8{{#destination_list}} ({{destination_list}}){{/destination_list}}
 [b]Food[/b]:       {{food}}/8        [b]Vipers:[/b]
 [b]Morale[/b]:     {{morale}}/10      [b]Mark VIIs:[/b]
 [b]Population[/b]: {{population}}/12      [b]Raptors:[/b]
