@@ -1156,8 +1156,6 @@ public class GamePanel extends JFrame {
 		playQuorumCardButton = new JButton();
 		discardActiveQuorumCardButton = new JButton();
 		discardQuorumCardButton = new JButton();
-		removeActiveQuorumCardButton = new JButton();
-		removeQuorumCardButton = new JButton();
 		loyaltyCardPanel = new JPanel();
 		loyaltyCardInnerPanel = new JPanel();
 		scrollPane5 = new JScrollPane();
@@ -2364,20 +2362,6 @@ public class GamePanel extends JFrame {
 						}
 					});
 					quorumCardPanel.add(discardQuorumCardButton, cc.xy(3, 11));
-
-					//---- removeActiveQuorumCardButton ----
-					removeActiveQuorumCardButton.setText("Remove Active Card");
-					removeActiveQuorumCardButton.addActionListener(new ActionListener() {
-						@Override
-						public void actionPerformed(ActionEvent e) {
-							removeActiveQuorumCardButtonActionPerformed(e);
-						}
-					});
-					quorumCardPanel.add(removeActiveQuorumCardButton, cc.xy(5, 11));
-
-					//---- removeQuorumCardButton ----
-					removeQuorumCardButton.setText("Remove Quorum Card");
-					quorumCardPanel.add(removeQuorumCardButton, cc.xy(3, 13));
 				}
 				crisisQuorumDeckPanel.add(quorumCardPanel, cc.xy(1, 3, CellConstraints.FILL, CellConstraints.FILL));
 			}
@@ -2634,8 +2618,6 @@ public class GamePanel extends JFrame {
 	private JButton playQuorumCardButton;
 	private JButton discardActiveQuorumCardButton;
 	private JButton discardQuorumCardButton;
-	private JButton removeActiveQuorumCardButton;
-	private JButton removeQuorumCardButton;
 	private JPanel loyaltyCardPanel;
 	private JPanel loyaltyCardInnerPanel;
 	private JScrollPane scrollPane5;
