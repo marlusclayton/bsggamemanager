@@ -29,6 +29,14 @@ public class QuorumCard extends Card implements Item {
 		return activeOn;
 	}
 	
+	public QuorumType getType() {
+		return type;
+	}
+	
+	public String getText() {
+		return text;
+	}
+	
 	@Override
 	public String toString() {
 		return String.format("%s%s", name, activeOn != null ? " (active on " + activeOn.getCharacter().getShortName() + ")" : "");

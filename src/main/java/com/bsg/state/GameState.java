@@ -32,6 +32,7 @@ import com.bsg.cards.loyalty.LoyaltyCardType;
 import com.bsg.cards.loyalty.LoyaltyDeck;
 import com.bsg.cards.quorum.QuorumCard;
 import com.bsg.cards.quorum.QuorumState;
+import com.bsg.cards.quorum.QuorumType;
 import com.bsg.cards.skill.DestinyDeck;
 import com.bsg.cards.skill.SkillCard;
 import com.bsg.cards.skill.SkillCardInitializer;
@@ -443,5 +444,24 @@ public class GameState {
 	
 	public void legendaryDiscovery() {
 		destinationsTravelledTo.add(new DestinationCard("Legendary Discovery", 1, 0, null, Expansion.BASE));
+	}
+
+	public void playQuorumCard(QuorumCard qc) throws DoesNotBelongInDeckException {
+		QuorumType type = qc.getType();
+		
+		switch (type) {
+		case DISCARD:
+			quorum.discardQuorumCard(qc);
+			break;
+		case GAME:
+		case PLAYER:
+			quorum.activateQuorumCard(qc);
+			break;
+		case REMOVE:
+			quorum.removeQuorumCard(qc);
+			break;
+		}
+		
+		
 	}
 }

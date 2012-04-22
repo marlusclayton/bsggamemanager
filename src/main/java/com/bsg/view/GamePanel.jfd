@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?> 
-<java version="1.6.0_29" class="java.beans.XMLDecoder"> 
+<java version="1.6.0_31" class="java.beans.XMLDecoder"> 
  <object class="com.jformdesigner.model.FormModel"> 
   <void property="contentType"> 
    <string>form/swing</string> 
@@ -4591,7 +4591,7 @@
              </void> 
              <void method="setProperty"> 
               <string>$rowSpecs</string> 
-              <string>default, linegap, 146dlu, linegap, default, linegap, default, linegap, default</string> 
+              <string>default, linegap, 73dlu, linegap, 9dlu, linegap, 62dlu, linegap, default, linegap, default, linegap, default</string> 
              </void> 
             </object> 
             <void method="setProperty"> 
@@ -4739,6 +4739,10 @@
                <string>vAlign</string> 
                <object class="com.jgoodies.forms.layout.CellConstraints" field="FILL"/> 
               </void> 
+              <void method="setProperty"> 
+               <string>gridHeight</string> 
+               <int>5</int> 
+              </void> 
              </object> 
             </void> 
             <void method="add"> 
@@ -4772,6 +4776,10 @@
               <void method="setProperty"> 
                <string>vAlign</string> 
                <object class="com.jgoodies.forms.layout.CellConstraints" field="FILL"/> 
+              </void> 
+              <void method="setProperty"> 
+               <string>gridHeight</string> 
+               <int>5</int> 
               </void> 
              </object> 
             </void> 
@@ -4811,6 +4819,10 @@
                <string>vAlign</string> 
                <object class="com.jgoodies.forms.layout.CellConstraints" field="FILL"/> 
               </void> 
+              <void method="setProperty"> 
+               <string>gridHeight</string> 
+               <int>5</int> 
+              </void> 
              </object> 
             </void> 
             <void method="add"> 
@@ -4849,6 +4861,65 @@
             </void> 
             <void method="add"> 
              <object class="com.jformdesigner.model.FormComponent"> 
+              <string>javax.swing.JLabel</string> 
+              <void method="setProperty"> 
+               <string>text</string> 
+               <string>Discarded</string> 
+              </void> 
+              <void property="name"> 
+               <string>discardedQuorumLabel</string> 
+              </void> 
+              <void method="auxiliary"> 
+               <void method="setProperty"> 
+                <string>JavaCodeGenerator.variableLocal</string> 
+                <boolean>true</boolean> 
+               </void> 
+              </void> 
+             </object> 
+             <object class="com.jformdesigner.model.FormLayoutConstraints"> 
+              <class>com.jgoodies.forms.layout.CellConstraints</class> 
+              <void method="setProperty"> 
+               <string>gridX</string> 
+               <int>7</int> 
+              </void> 
+              <void method="setProperty"> 
+               <string>gridY</string> 
+               <int>5</int> 
+              </void> 
+             </object> 
+            </void> 
+            <void method="add"> 
+             <object class="com.jformdesigner.model.FormContainer"> 
+              <string>javax.swing.JScrollPane</string> 
+              <object class="com.jformdesigner.model.FormLayoutManager"> 
+               <class>javax.swing.JScrollPane</class> 
+              </object> 
+              <void property="name"> 
+               <string>scrollPane12</string> 
+              </void> 
+              <void method="add"> 
+               <object class="com.jformdesigner.model.FormComponent"> 
+                <string>javax.swing.JList</string> 
+                <void property="name"> 
+                 <string>quorumCardDiscardedList</string> 
+                </void> 
+               </object> 
+              </void> 
+             </object> 
+             <object class="com.jformdesigner.model.FormLayoutConstraints"> 
+              <class>com.jgoodies.forms.layout.CellConstraints</class> 
+              <void method="setProperty"> 
+               <string>gridX</string> 
+               <int>7</int> 
+              </void> 
+              <void method="setProperty"> 
+               <string>gridY</string> 
+               <int>7</int> 
+              </void> 
+             </object> 
+            </void> 
+            <void method="add"> 
+             <object class="com.jformdesigner.model.FormComponent"> 
               <string>javax.swing.JButton</string> 
               <void method="setProperty"> 
                <string>text</string> 
@@ -4874,7 +4945,7 @@
               </void> 
               <void method="setProperty"> 
                <string>gridY</string> 
-               <int>5</int> 
+               <int>9</int> 
               </void> 
              </object> 
             </void> 
@@ -4888,6 +4959,14 @@
               <void property="name"> 
                <string>playQuorumCardButton</string> 
               </void> 
+              <void method="addEvent"> 
+               <object class="com.jformdesigner.model.FormEvent"> 
+                <string>java.awt.event.ActionListener</string> 
+                <string>actionPerformed</string> 
+                <string>playQuorumCardButtonActionPerformed</string> 
+                <boolean>true</boolean> 
+               </object> 
+              </void> 
              </object> 
              <object class="com.jformdesigner.model.FormLayoutConstraints"> 
               <class>com.jgoodies.forms.layout.CellConstraints</class> 
@@ -4897,7 +4976,7 @@
               </void> 
               <void method="setProperty"> 
                <string>gridY</string> 
-               <int>5</int> 
+               <int>9</int> 
               </void> 
              </object> 
             </void> 
@@ -4911,6 +4990,14 @@
               <void property="name"> 
                <string>discardActiveQuorumCardButton</string> 
               </void> 
+              <void method="addEvent"> 
+               <object class="com.jformdesigner.model.FormEvent"> 
+                <string>java.awt.event.ActionListener</string> 
+                <string>actionPerformed</string> 
+                <string>discardActiveQuorumCardButtonActionPerformed</string> 
+                <boolean>true</boolean> 
+               </object> 
+              </void> 
              </object> 
              <object class="com.jformdesigner.model.FormLayoutConstraints"> 
               <class>com.jgoodies.forms.layout.CellConstraints</class> 
@@ -4920,7 +5007,7 @@
               </void> 
               <void method="setProperty"> 
                <string>gridY</string> 
-               <int>5</int> 
+               <int>9</int> 
               </void> 
              </object> 
             </void> 
@@ -4934,6 +5021,14 @@
               <void property="name"> 
                <string>discardQuorumCardButton</string> 
               </void> 
+              <void method="addEvent"> 
+               <object class="com.jformdesigner.model.FormEvent"> 
+                <string>java.awt.event.ActionListener</string> 
+                <string>actionPerformed</string> 
+                <string>discardQuorumCardButtonActionPerformed</string> 
+                <boolean>true</boolean> 
+               </object> 
+              </void> 
              </object> 
              <object class="com.jformdesigner.model.FormLayoutConstraints"> 
               <class>com.jgoodies.forms.layout.CellConstraints</class> 
@@ -4943,7 +5038,7 @@
               </void> 
               <void method="setProperty"> 
                <string>gridY</string> 
-               <int>7</int> 
+               <int>11</int> 
               </void> 
              </object> 
             </void> 
@@ -4966,7 +5061,7 @@
               </void> 
               <void method="setProperty"> 
                <string>gridY</string> 
-               <int>7</int> 
+               <int>11</int> 
               </void> 
              </object> 
             </void> 
@@ -4989,7 +5084,7 @@
               </void> 
               <void method="setProperty"> 
                <string>gridY</string> 
-               <int>9</int> 
+               <int>13</int> 
               </void> 
              </object> 
             </void> 

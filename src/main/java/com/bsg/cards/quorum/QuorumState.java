@@ -19,7 +19,6 @@ public class QuorumState {
 		hand = new ArrayList<QuorumCard>();
 		active = new ArrayList<QuorumCard>();
 		removed = new ArrayList<QuorumCard>();
-
 	}
 	
 	public void dealQuorumCard() {
@@ -33,11 +32,10 @@ public class QuorumState {
 		
 	}
 	
-	public void activateQuorumCard(QuorumCard qc, Player p) {
+	public void activateQuorumCard(QuorumCard qc) {
 		checkHand(qc);
 		hand.remove(qc);
-		
-		qc.setActiveOn(p);
+
 		active.add(qc);
 	}
 	
@@ -68,6 +66,7 @@ public class QuorumState {
 	
 	public void removeQuorumCard(QuorumCard qc) {
 		checkHand(qc);
+		hand.remove(qc);
 		removed.add(qc);
 	}
 	
