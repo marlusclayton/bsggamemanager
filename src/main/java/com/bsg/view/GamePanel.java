@@ -203,6 +203,8 @@ public class GamePanel extends JFrame {
 				populationProgress.setValue(gs.getPopulation());
 				populationProgress.setString(String.format("%d/%d", gs.getPopulation(), 15));
 				
+				nukeCountLabel.setText(String.valueOf(gs.getNukeCount()));
+				
 				//jumptrack
 				jumpTrackStartBox.setSelected(false);
 				jumpTrackRed1Box.setSelected(false);
@@ -973,6 +975,18 @@ public class GamePanel extends JFrame {
 		new TextWindow(sw.toString()).setVisible(true);
 	}
 
+	private void useNukeButtonActionPerformed(ActionEvent e) {
+		gs.useNuke();
+		
+		refreshDisplay();
+	}
+
+	private void addNukeButtonActionPerformed(ActionEvent e) {
+		gs.buildNuke();
+		
+		refreshDisplay();
+	}
+
 	
 
 
@@ -1072,6 +1086,11 @@ public class GamePanel extends JFrame {
 		boarders_lose = new JTextField();
 		addBoarderButton = new JButton();
 		advanceBoardersButton = new JButton();
+		nukesPanel = new JPanel();
+		JLabel nukeCountTitleLabel = new JLabel();
+		nukeCountLabel = new JLabel();
+		useNukeButton = new JButton();
+		addNukeButton = new JButton();
 		skillCardPanel = new JPanel();
 		skillDeckQtyPanel = new JPanel();
 		JLabel politicsLabel = new JLabel();
@@ -1372,7 +1391,7 @@ public class GamePanel extends JFrame {
 			//======== gameStatePanel ========
 			{
 				gameStatePanel.setLayout(new FormLayout(
-					"144dlu, $lcgap, 231dlu",
+					"92dlu, $lcgap, 52dlu, $lcgap, 231dlu",
 					"38dlu, $lgap, 52dlu, $lgap, 98dlu, $lgap, 215dlu, $lgap, 79dlu"));
 
 				//======== mainStatePanel ========
@@ -1421,7 +1440,7 @@ public class GamePanel extends JFrame {
 					});
 					mainStatePanel.add(createDRADISButton, cc.xy(15, 1));
 				}
-				gameStatePanel.add(mainStatePanel, cc.xywh(1, 1, 3, 1, CellConstraints.FILL, CellConstraints.FILL));
+				gameStatePanel.add(mainStatePanel, cc.xywh(1, 1, 5, 1, CellConstraints.FILL, CellConstraints.FILL));
 
 				//======== resoucesPanel ========
 				{
@@ -1546,7 +1565,7 @@ public class GamePanel extends JFrame {
 					});
 					resoucesPanel.add(increasePopulationButton, cc.xy(5, 15));
 				}
-				gameStatePanel.add(resoucesPanel, cc.xywh(1, 3, 1, 3, CellConstraints.FILL, CellConstraints.FILL));
+				gameStatePanel.add(resoucesPanel, cc.xywh(1, 3, 3, 3, CellConstraints.FILL, CellConstraints.FILL));
 
 				//======== jumpTrackPanel ========
 				{
@@ -1605,7 +1624,7 @@ public class GamePanel extends JFrame {
 					});
 					jumpTrackPanel.add(increaseJumpTrackButton, cc.xywh(7, 3, 5, 1));
 				}
-				gameStatePanel.add(jumpTrackPanel, cc.xy(3, 3, CellConstraints.FILL, CellConstraints.FILL));
+				gameStatePanel.add(jumpTrackPanel, cc.xy(5, 3, CellConstraints.FILL, CellConstraints.FILL));
 
 				//======== distancePanel ========
 				{
@@ -1680,7 +1699,7 @@ public class GamePanel extends JFrame {
 					});
 					distancePanel.add(legendaryDiscovery, cc.xy(7, 7));
 				}
-				gameStatePanel.add(distancePanel, cc.xy(3, 5, CellConstraints.FILL, CellConstraints.FILL));
+				gameStatePanel.add(distancePanel, cc.xy(5, 5, CellConstraints.FILL, CellConstraints.FILL));
 
 				//======== playerTablePanel ========
 				{
@@ -1746,13 +1765,13 @@ public class GamePanel extends JFrame {
 					useOPGButton.setText("Use OPG");
 					playerTablePanel.add(useOPGButton, cc.xy(5, 7));
 				}
-				gameStatePanel.add(playerTablePanel, cc.xywh(1, 7, 3, 1, CellConstraints.FILL, CellConstraints.FILL));
+				gameStatePanel.add(playerTablePanel, cc.xywh(1, 7, 5, 1, CellConstraints.FILL, CellConstraints.FILL));
 
 				//======== boardingPartyPanel ========
 				{
 					boardingPartyPanel.setBorder(new TitledBorder("Boarding Party"));
 					boardingPartyPanel.setLayout(new FormLayout(
-						"4*(15dlu, $lcgap), 15dlu",
+						"3*(15dlu, $lcgap), 11dlu, $lcgap, 11dlu",
 						"2*(default, $lgap), default"));
 
 					//---- boarders_0 ----
@@ -1788,7 +1807,7 @@ public class GamePanel extends JFrame {
 							addBoarderButtonActionPerformed(e);
 						}
 					});
-					boardingPartyPanel.add(addBoarderButton, cc.xywh(1, 3, 7, 1));
+					boardingPartyPanel.add(addBoarderButton, cc.xywh(1, 3, 9, 1));
 
 					//---- advanceBoardersButton ----
 					advanceBoardersButton.setText("Advance Boarders");
@@ -1798,9 +1817,46 @@ public class GamePanel extends JFrame {
 							advanceBoardersButtonActionPerformed(e);
 						}
 					});
-					boardingPartyPanel.add(advanceBoardersButton, cc.xywh(1, 5, 7, 1));
+					boardingPartyPanel.add(advanceBoardersButton, cc.xywh(1, 5, 9, 1));
 				}
 				gameStatePanel.add(boardingPartyPanel, cc.xy(1, 9, CellConstraints.FILL, CellConstraints.FILL));
+
+				//======== nukesPanel ========
+				{
+					nukesPanel.setBorder(new TitledBorder("Nukes"));
+					nukesPanel.setLayout(new FormLayout(
+						"default, $lcgap, 21dlu",
+						"2*(default, $lgap), default"));
+
+					//---- nukeCountTitleLabel ----
+					nukeCountTitleLabel.setText("Count:");
+					nukesPanel.add(nukeCountTitleLabel, cc.xy(1, 1));
+
+					//---- nukeCountLabel ----
+					nukeCountLabel.setText("2");
+					nukesPanel.add(nukeCountLabel, cc.xy(3, 1, CellConstraints.RIGHT, CellConstraints.DEFAULT));
+
+					//---- useNukeButton ----
+					useNukeButton.setText("Use");
+					useNukeButton.addActionListener(new ActionListener() {
+						@Override
+						public void actionPerformed(ActionEvent e) {
+							useNukeButtonActionPerformed(e);
+						}
+					});
+					nukesPanel.add(useNukeButton, cc.xywh(1, 3, 3, 1));
+
+					//---- addNukeButton ----
+					addNukeButton.setText("Add");
+					addNukeButton.addActionListener(new ActionListener() {
+						@Override
+						public void actionPerformed(ActionEvent e) {
+							addNukeButtonActionPerformed(e);
+						}
+					});
+					nukesPanel.add(addNukeButton, cc.xywh(1, 5, 3, 1));
+				}
+				gameStatePanel.add(nukesPanel, cc.xy(3, 9, CellConstraints.DEFAULT, CellConstraints.FILL));
 			}
 			mainTabbedPane.addTab("Game State", gameStatePanel);
 
@@ -2565,6 +2621,10 @@ public class GamePanel extends JFrame {
 	private JTextField boarders_lose;
 	private JButton addBoarderButton;
 	private JButton advanceBoardersButton;
+	private JPanel nukesPanel;
+	private JLabel nukeCountLabel;
+	private JButton useNukeButton;
+	private JButton addNukeButton;
 	private JPanel skillCardPanel;
 	private JPanel skillDeckQtyPanel;
 	private JLabel politicsQty;

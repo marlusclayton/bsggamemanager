@@ -19,6 +19,8 @@ public class Dradis {
 	int morale;
 	int population;
 	
+	int nukes;
+	
 	int distance;
 	List<String> destinations;
 	String destination_list;
@@ -71,6 +73,8 @@ public class Dradis {
 		fuel = gs.getFuel();
 		morale = gs.getMorale();
 		population = gs.getPopulation();
+		
+		nukes = gs.getNukeCount();
 	}
 	
 	private void setPlayers(GameState gs) {

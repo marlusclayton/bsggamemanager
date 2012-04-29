@@ -90,6 +90,8 @@ public class GameState {
 	int morale;
 	int population;
 	
+	int nukes;
+	
 	static final int halfFood = 4;
 	static final int halfFuel = 4;
 	static final int halfMorale = 5;
@@ -125,6 +127,8 @@ public class GameState {
 		food = 8;
 		morale = 10;
 		population = 12;
+		
+		nukes = 2;
 		
 		turn = 1;
 		subturn = 1;
@@ -463,5 +467,17 @@ public class GameState {
 		}
 		
 		
+	}
+	
+	public int getNukeCount() {
+		return nukes;
+	}
+	
+	public void useNuke() {
+		nukes--;
+	}
+	
+	public void buildNuke() {
+		nukes++;
 	}
 }

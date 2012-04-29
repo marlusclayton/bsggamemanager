@@ -11,6 +11,7 @@
 [b]Food[/b]:       {{food}}/8        [b]Vipers:[/b]
 [b]Morale[/b]:     {{morale}}/10      [b]Mark VIIs:[/b]
 [b]Population[/b]: {{population}}/12      [b]Raptors:[/b]
+[b]Nukes Remaining[/b]: {{nukes}}
 
 [b]Jump Prep[/b]
 [ {{jp_start}} ] - [ {{jp_red1}} ] - [ {{jp_red2}} ] - [ {{jp_risk3}} Risk 3 ] - [ {{jp_risk1}} Risk 1 ] - [ {{jp_autojump}} Auto Jump ]
