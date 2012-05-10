@@ -30,6 +30,7 @@ import com.bsg.cards.destination.DestinationCard;
 import com.bsg.cards.loyalty.LoyaltyCard;
 import com.bsg.cards.loyalty.LoyaltyCardType;
 import com.bsg.cards.loyalty.LoyaltyDeck;
+import com.bsg.cards.loyalty.LoyaltyType;
 import com.bsg.cards.quorum.QuorumCard;
 import com.bsg.cards.quorum.QuorumState;
 import com.bsg.cards.quorum.QuorumType;
@@ -234,8 +235,14 @@ public class GameState {
 	}
 	
 	public void buildLoyaltyDeck(boolean usePersonalGoals, boolean useFinalFive) {
+		int playerSize = players.size();
+		
+		for (Player p : players)
+			if (p.getLoyalty() == LoyaltyType.CYLON_LEADER)
+				playerSize--;
+		
 		List<LoyaltyCard> loyaltyCards = filter(expansionFilter, availableLoyalty);
-		loyaltyDeck = new LoyaltyDeck(players.size(), loyaltyCards, expansions.contains(Expansion.EXODUS), useFinalFive, usePersonalGoals, 0);
+		loyaltyDeck = new LoyaltyDeck(playerSize, loyaltyCards, expansions.contains(Expansion.EXODUS), useFinalFive, usePersonalGoals, 0);
 	}
 	
 	public void removeCylonAttackCrisisCards() {
@@ -243,8 +250,12 @@ public class GameState {
 	}
 
 	public void dealLoyalty() {
-		for (Player p : players)
+		for (Player p : players) {
+			if (p.getLoyalty() == LoyaltyType.CYLON_LEADER)
+				continue; 
+			
 			p.giveLoyaltyCard(loyaltyDeck.dealTopCard());
+		}
 	}
 	
 	public void addSympathizer(LoyaltyCardType type) {
@@ -442,6 +453,8 @@ public class GameState {
 	
 	public void dealSleeper() {
 		for (Player p : getPlayers()) {
+			if (p.getLoyalty() == LoyaltyType.CYLON_LEADER)
+				continue;
 			p.giveLoyaltyCard(loyaltyDeck.dealTopCard());
 		}
 	}
