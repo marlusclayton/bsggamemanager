@@ -40,6 +40,8 @@ public class Dradis {
 	int boarders_3;
 	int boarders_lose;
 	
+	
+	
 	public Dradis(GameState gs) {
 		setTurn(gs);
 		setDistance(gs);
