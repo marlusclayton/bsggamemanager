@@ -21,7 +21,7 @@
 
 [b]Locations[/b]
 {{#locations}}
-{{name}}{{#players}} -- {{{character_name}}}{{/players}}
+{{name}}{{#players}} -- {{{character_short_name}}}{{/players}}
 {{/locations}}
 
 [/pre]

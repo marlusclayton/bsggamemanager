@@ -594,6 +594,7 @@ public class GamePanel extends JFrame {
 		customCheckbox.setEnabled(false);
 		useComplexDestinyCheckbox.setEnabled(false);
 		finishedStep1Button.setEnabled(false);
+		loadGameButton.setEnabled(false);
 		
 		refreshDisplay();
 	}
@@ -664,6 +665,9 @@ public class GamePanel extends JFrame {
 		int tabs = mainTabbedPane.getTabCount();
 		for (int i = 0; i < tabs; ++i)
 			mainTabbedPane.setEnabledAt(i, true);
+		
+		startGameButton.setEnabled(false);
+		mainTabbedPane.setSelectedIndex(1); // main game state pane
 		
 		refreshDisplay();
 	}
