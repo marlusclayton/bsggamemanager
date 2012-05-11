@@ -40,7 +40,7 @@ public class Dradis {
 	int boarders_3;
 	int boarders_lose;
 	
-	
+	List<DradisLocation> locations;
 	
 	public Dradis(GameState gs) {
 		setTurn(gs);
@@ -49,8 +49,14 @@ public class Dradis {
 		setJumpTrack(gs);
 		setPlayers(gs);
 		setBoarders(gs);
+		setLocations(gs);
 	}
 	
+	private void setLocations(GameState gs) {
+		// TODO Auto-generated method stub
+		
+	}
+
 	private void setBoarders(GameState gs) {
 		boarders_0 = gs.getNumBoardersAt(0);
 		boarders_1 = gs.getNumBoardersAt(1);
