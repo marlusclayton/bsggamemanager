@@ -1,13 +1,16 @@
 package com.bsg.state.dradis;
 
+import static ch.lambdaj.Lambda.extract;
+import static ch.lambdaj.Lambda.join;
+import static ch.lambdaj.Lambda.on;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import com.bsg.Player;
 import com.bsg.cards.destination.DestinationCard;
+import com.bsg.locations.Location;
 import com.bsg.state.GameState;
-
-import static ch.lambdaj.Lambda.*;
 
 public class Dradis {
 
@@ -53,8 +56,27 @@ public class Dradis {
 	}
 	
 	private void setLocations(GameState gs) {
-		// TODO Auto-generated method stub
+		this.locations = new ArrayList<DradisLocation>();
 		
+		List<Location> locations = gs.getLocations();
+		List<Player> players = gs.getPlayers();
+		
+		//this is going to be "slow" but is probably
+		//fast enough in practice
+		
+		for (Location curr : locations) {
+			DradisLocation dl = new DradisLocation();
+			dl.name = curr.getName();
+			dl.players = new ArrayList<DradisPlayer>();
+					
+			for (Player p : players) {
+				if (curr.getName().equals(p.getLocation())) {
+					dl.players.add(new DradisPlayer(p, false));
+				}
+			}
+			
+			this.locations.add(dl);
+		}
 	}
 
 	private void setBoarders(GameState gs) {

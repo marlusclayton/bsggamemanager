@@ -4,7 +4,7 @@ import java.util.List;
 
 public class DradisLocation {
 
-	public String location_name;
+	public String name;
 	public List<DradisPlayer> players;
 	
 	

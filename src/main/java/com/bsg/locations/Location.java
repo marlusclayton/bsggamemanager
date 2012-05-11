@@ -3,7 +3,7 @@ package com.bsg.locations;
 import com.bsg.Expansion;
 import com.bsg.Item;
 
-public class Location implements Item {
+public class Location implements Item, Comparable<Location> {
 
 	private String name;
 	private String area;
@@ -69,6 +69,14 @@ public class Location implements Item {
 	@Override
 	public Expansion getExpansion() {
 		return expansion;
+	}
+
+	@Override
+	public int compareTo(Location other) {
+		if (this.area.equals(other.area))
+			return this.name.compareTo(other.name);
+		
+		return this.area.compareTo(other.area);
 	}
 	
 	

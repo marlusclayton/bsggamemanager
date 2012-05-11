@@ -19,4 +19,9 @@
 [b]Boarding Party[/b]
 [ {{boarders_0}} ] - [ {{boarders_1}} ] - [ {{boarders_2}} ] - [ {{boarders_3}} ] - [ Humans Lose ]
 
+[b]Locations[/b]
+{{#locations}}
+{{name}}{{#players}} -- {{{character_name}}}{{/players}}
+{{/locations}}
+
 [/pre]
