@@ -278,8 +278,7 @@ public class GamePanel extends JFrame {
 		try {
 			handMustache.execute(sw, p).flush();
 		} catch (IOException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
+			JOptionPane.showMessageDialog(this, e1.toString(), "Uncaught Exception", JOptionPane.ERROR_MESSAGE);
 		}
 		new TextWindow(sw.toString()).setVisible(true);
 		
@@ -378,8 +377,7 @@ public class GamePanel extends JFrame {
 				try {
 					gs.getSkillCardDeck(c.getType()).discard(c);
 				} catch (DoesNotBelongInDeckException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
+					JOptionPane.showMessageDialog(this, e1.toString(), "Uncaught Exception", JOptionPane.ERROR_MESSAGE);
 				}
 			}
 		}
@@ -529,8 +527,7 @@ public class GamePanel extends JFrame {
 			TextWindow tw = new TextWindow(gs.getSkillCheck().getFullText());
 			tw.setVisible(true);
 		} catch (IOException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
+			JOptionPane.showMessageDialog(this, e1.toString(), "Uncaught Exception", JOptionPane.ERROR_MESSAGE);
 		}
 	}
 
@@ -775,8 +772,7 @@ public class GamePanel extends JFrame {
 		try {
 			dradisMustache.execute(sw, new Dradis(gs)).flush();
 		} catch (IOException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
+			JOptionPane.showMessageDialog(this, e1.toString(), "Uncaught Exception", JOptionPane.ERROR_MESSAGE);
 		}
 		new TextWindow(sw.toString()).setVisible(true);
 		
@@ -805,8 +801,7 @@ public class GamePanel extends JFrame {
 			try {
 				crisisMustache.execute(sw, cc).flush();
 			} catch (IOException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
+				JOptionPane.showMessageDialog(this, e1.toString(), "Uncaught Exception", JOptionPane.ERROR_MESSAGE);
 			}
 			new TextWindow(sw.toString()).setVisible(true);
 			
@@ -829,8 +824,7 @@ public class GamePanel extends JFrame {
 			try {
 				destinationMustache.execute(sw, dc).flush();
 			} catch (IOException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
+				JOptionPane.showMessageDialog(this, e1.toString(), "Uncaught Exception", JOptionPane.ERROR_MESSAGE);
 			}
 			new TextWindow(sw.toString()).setVisible(true);
 		}
@@ -909,8 +903,7 @@ public class GamePanel extends JFrame {
 		try {
 			gs.playQuorumCard(qc);
 		} catch (DoesNotBelongInDeckException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
+			JOptionPane.showMessageDialog(this, e1.toString(), "Uncaught Exception", JOptionPane.ERROR_MESSAGE);
 		}
 		
 		refreshDisplay();
@@ -939,8 +932,7 @@ public class GamePanel extends JFrame {
 		try {
 			gs.getQuorumDeck().deactivateQuorumCard(qc);
 		} catch (DoesNotBelongInDeckException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
+			JOptionPane.showMessageDialog(this, e1.toString(), "Uncaught Exception", JOptionPane.ERROR_MESSAGE);
 		}
 		
 		refreshDisplay();
@@ -955,8 +947,7 @@ public class GamePanel extends JFrame {
 			try {
 				quorumMustache.execute(sw, qc).flush();
 			} catch (IOException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
+				JOptionPane.showMessageDialog(this, e1.toString(), "Uncaught Exception", JOptionPane.ERROR_MESSAGE);
 			}
 			new TextWindow(sw.toString()).setVisible(true);
 		}

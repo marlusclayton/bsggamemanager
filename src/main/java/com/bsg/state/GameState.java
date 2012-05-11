@@ -14,6 +14,8 @@ import java.util.Map;
 import java.util.Random;
 import java.util.Set;
 
+import javax.swing.JOptionPane;
+
 import org.hamcrest.Matcher;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -433,8 +435,7 @@ public class GameState {
 		try {
 			destinationDeck.discard(dc);
 		} catch (DoesNotBelongInDeckException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			JOptionPane.showMessageDialog(null /*TODO: fix */, e.toString(), "Error jumping", JOptionPane.ERROR_MESSAGE);
 		}
 		
 	}
