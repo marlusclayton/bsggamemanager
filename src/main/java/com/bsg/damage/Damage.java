@@ -1,33 +1,43 @@
 package com.bsg.damage;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Damage {
 
-	List<String> damageGalacticaAvailable;
-	List<String> damagePegasusAvailable;
+	List<DamageToken> damageGalacticaAvailable;
+	List<DamageToken> damagePegasusAvailable;
 	
 	public Damage() {
-		damageGalacticaAvailable = new ArrayList<String>();
-		damagePegasusAvailable = new ArrayList<String>();
+		damageGalacticaAvailable = new ArrayList<DamageToken>();
+		damagePegasusAvailable = new ArrayList<DamageToken>();
 		
-		damageGalacticaAvailable.add("Hangar Deck");
-		damageGalacticaAvailable.add("Admiral's Quarters");
-		damageGalacticaAvailable.add("Armory");
-		damageGalacticaAvailable.add("FTL Control");
-		damageGalacticaAvailable.add("Food - Resource");
-		damageGalacticaAvailable.add("Command");
-		damageGalacticaAvailable.add("Weapons Control");
-		damageGalacticaAvailable.add("Fuel - Resource");
+		damageGalacticaAvailable.add(new DamageToken("Hangar Deck", false));
+		damageGalacticaAvailable.add(new DamageToken("Admiral's Quarters", false));
+		damageGalacticaAvailable.add(new DamageToken("Armory", false));
+		damageGalacticaAvailable.add(new DamageToken("FTL Control", false));
+		damageGalacticaAvailable.add(new DamageToken("Food - Resource", true));
+		damageGalacticaAvailable.add(new DamageToken("Command", false));
+		damageGalacticaAvailable.add(new DamageToken("Weapons Control", false));
+		damageGalacticaAvailable.add(new DamageToken("Fuel - Resource", true));
 		
-		damagePegasusAvailable.add("Engine Room");
-		damagePegasusAvailable.add("Airlock");
-		damagePegasusAvailable.add("Pegasus CIC");
-		damagePegasusAvailable.add("Main Batteries");
+		damagePegasusAvailable.add(new DamageToken("Engine Room", false));
+		damagePegasusAvailable.add(new DamageToken("Airlock", false));
+		damagePegasusAvailable.add(new DamageToken("Pegasus CIC", false));
+		damagePegasusAvailable.add(new DamageToken("Main Batteries", false));
 	}
 	
-	public String damageRandomGalactica() {
-		return "";
+	public void shuffleDamageTokens() {
+		Collections.shuffle(damageGalacticaAvailable);
+		Collections.shuffle(damagePegasusAvailable);
+	}
+	
+	public List<DamageToken> getAvailableGalacticaTokens() {
+		return new ArrayList<DamageToken>(damageGalacticaAvailable);
+	}
+	
+	public List<DamageToken> getAvailablePegasusTokens() {
+		return new ArrayList<DamageToken>(damagePegasusAvailable);
 	}
 }
