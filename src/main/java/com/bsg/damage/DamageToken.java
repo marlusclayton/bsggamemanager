@@ -17,4 +17,9 @@ public class DamageToken {
 	public boolean discardWhenPlayed() {
 		return discardWhenPlayed;
 	}
+	
+	@Override
+	public String toString() {
+		return name;
+	}
 }

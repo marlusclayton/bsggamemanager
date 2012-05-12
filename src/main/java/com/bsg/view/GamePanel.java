@@ -260,6 +260,9 @@ public class GamePanel extends JFrame {
 				boarders_3.setText(String.valueOf(gs.getNumBoardersAt(3)));
 				boarders_lose.setText(String.valueOf(gs.getNumBoardersAt(4)));
 				
+				//damage stuff
+				galacticaDamageList.setListData(gs.getDamage().getAvailableGalacticaTokens().toArray());
+				
 				//re-highlight
 				skillCardCharacterList.setSelectedIndex(skillCardCharSelectIdx);
 				loyaltyCardCharacterList.setSelectedIndex(loyaltyCardCharSelectIdx);
@@ -1086,6 +1089,11 @@ public class GamePanel extends JFrame {
 		nukeCountLabel = new JLabel();
 		useNukeButton = new JButton();
 		addNukeButton = new JButton();
+		damagePanel = new JPanel();
+		JLabel galacticaDamageLabel = new JLabel();
+		JLabel pegasusDamageLabel = new JLabel();
+		scrollPane13 = new JScrollPane();
+		galacticaDamageList = new JList();
 		skillCardPanel = new JPanel();
 		skillDeckQtyPanel = new JPanel();
 		JLabel politicsLabel = new JLabel();
@@ -1852,6 +1860,29 @@ public class GamePanel extends JFrame {
 					nukesPanel.add(addNukeButton, cc.xywh(1, 5, 3, 1));
 				}
 				gameStatePanel.add(nukesPanel, cc.xy(3, 9, CellConstraints.DEFAULT, CellConstraints.FILL));
+
+				//======== damagePanel ========
+				{
+					damagePanel.setBorder(new TitledBorder("Damage"));
+					damagePanel.setLayout(new FormLayout(
+						"53dlu, $lcgap, 61dlu",
+						"default, $lgap, 25dlu, $lgap, 18dlu"));
+
+					//---- galacticaDamageLabel ----
+					galacticaDamageLabel.setText("Galactica");
+					damagePanel.add(galacticaDamageLabel, cc.xy(1, 1));
+
+					//---- pegasusDamageLabel ----
+					pegasusDamageLabel.setText("Pegasus");
+					damagePanel.add(pegasusDamageLabel, cc.xy(3, 1));
+
+					//======== scrollPane13 ========
+					{
+						scrollPane13.setViewportView(galacticaDamageList);
+					}
+					damagePanel.add(scrollPane13, cc.xywh(1, 3, 1, 3));
+				}
+				gameStatePanel.add(damagePanel, cc.xy(5, 9, CellConstraints.DEFAULT, CellConstraints.FILL));
 			}
 			mainTabbedPane.addTab("Game State", gameStatePanel);
 
@@ -2620,6 +2651,9 @@ public class GamePanel extends JFrame {
 	private JLabel nukeCountLabel;
 	private JButton useNukeButton;
 	private JButton addNukeButton;
+	private JPanel damagePanel;
+	private JScrollPane scrollPane13;
+	private JList galacticaDamageList;
 	private JPanel skillCardPanel;
 	private JPanel skillDeckQtyPanel;
 	private JLabel politicsQty;
