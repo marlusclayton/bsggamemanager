@@ -6,6 +6,6 @@ public class DradisLocation {
 
 	public String name;
 	public List<DradisPlayer> players;
-	
+	public boolean is_damaged;
 	
 }

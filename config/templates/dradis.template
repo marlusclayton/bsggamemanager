@@ -21,7 +21,7 @@
 
 [b]Locations[/b]
 {{#locations}}
-{{name}}{{#players}} -- {{{character_short_name}}}{{/players}}
+{{#is_damaged}}[s]{{/is_damaged}}{{name}}{{#players}} -- {{{character_short_name}}}{{/players}}{{#is_damaged}} DAMAGED! [/s]{{/is_damaged}}
 {{/locations}}
 
 [/pre]

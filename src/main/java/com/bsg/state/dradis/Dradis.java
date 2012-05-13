@@ -68,7 +68,8 @@ public class Dradis {
 			DradisLocation dl = new DradisLocation();
 			dl.name = curr.getName();
 			dl.players = new ArrayList<DradisPlayer>();
-					
+			dl.is_damaged = curr.isDamaged();
+			
 			for (Player p : players) {
 				if (curr.getName().equals(p.getLocation())) {
 					dl.players.add(new DradisPlayer(p, false));

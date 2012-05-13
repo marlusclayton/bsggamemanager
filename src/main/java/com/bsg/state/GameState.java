@@ -42,6 +42,7 @@ import com.bsg.cards.skill.SkillCardInitializer;
 import com.bsg.cards.skill.SkillCardType;
 import com.bsg.characters.Character;
 import com.bsg.damage.Damage;
+import com.bsg.damage.DamageToken;
 import com.bsg.locations.Location;
 
 public class GameState {
@@ -502,5 +503,21 @@ public class GameState {
 	
 	public Damage getDamage() {
 		return damage;
+	}
+	
+	public void resolveDamage(DamageToken dt) {
+		if (dt.getName().startsWith("Resource")) {
+			//TODO: handle resource damage
+		}
+		
+		for (Location curr : availableLocations) {
+			//O(n) oh well
+			if (dt.getName().equals(curr.getName())) {
+				curr.setDamaged(true);
+				LOGGER.info("{} has been damaged!", curr.getName());
+				break;
+			}
+		}
+		
 	}
 }

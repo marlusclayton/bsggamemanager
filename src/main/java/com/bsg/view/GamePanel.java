@@ -52,10 +52,10 @@ import com.bsg.cards.loyalty.LoyaltyCardType;
 import com.bsg.cards.loyalty.LoyaltyType;
 import com.bsg.cards.quorum.QuorumCard;
 import com.bsg.cards.quorum.QuorumHandMustacheObject;
-import com.bsg.cards.quorum.QuorumType;
 import com.bsg.cards.skill.SkillCard;
 import com.bsg.cards.skill.SkillCardType;
 import com.bsg.characters.Character;
+import com.bsg.damage.DamageToken;
 import com.bsg.locations.Location;
 import com.bsg.state.DuplicateCharacterException;
 import com.bsg.state.GameState;
@@ -987,6 +987,16 @@ public class GamePanel extends JFrame {
 		refreshDisplay();
 	}
 
+	private void damageGalacticaButtonActionPerformed(ActionEvent e) {
+		DamageToken dt = (DamageToken) galacticaDamageList.getSelectedValue();
+		if (dt == null)
+			return;
+		
+		gs.resolveDamage(dt);
+		
+		refreshDisplay();
+	}
+
 	
 
 
@@ -1887,6 +1897,12 @@ public class GamePanel extends JFrame {
 
 					//---- damageGalacticaButton ----
 					damageGalacticaButton.setText("Damage Galactica");
+					damageGalacticaButton.addActionListener(new ActionListener() {
+						@Override
+						public void actionPerformed(ActionEvent e) {
+							damageGalacticaButtonActionPerformed(e);
+						}
+					});
 					damagePanel.add(damageGalacticaButton, cc.xy(1, 9));
 				}
 				gameStatePanel.add(damagePanel, cc.xy(5, 9, CellConstraints.DEFAULT, CellConstraints.FILL));
