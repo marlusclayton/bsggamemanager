@@ -261,7 +261,9 @@ public class GamePanel extends JFrame {
 				boarders_lose.setText(String.valueOf(gs.getNumBoardersAt(4)));
 				
 				//damage stuff
-				galacticaDamageList.setListData(gs.getDamage().getAvailableGalacticaTokens().toArray());
+				if (gs.getDamage() != null) {
+					galacticaDamageList.setListData(gs.getDamage().getAvailableGalacticaTokens().toArray());
+				}
 				
 				//re-highlight
 				skillCardCharacterList.setSelectedIndex(skillCardCharSelectIdx);
@@ -1094,6 +1096,7 @@ public class GamePanel extends JFrame {
 		JLabel pegasusDamageLabel = new JLabel();
 		scrollPane13 = new JScrollPane();
 		galacticaDamageList = new JList();
+		damageGalacticaButton = new JButton();
 		skillCardPanel = new JPanel();
 		skillDeckQtyPanel = new JPanel();
 		JLabel politicsLabel = new JLabel();
@@ -1395,7 +1398,7 @@ public class GamePanel extends JFrame {
 			{
 				gameStatePanel.setLayout(new FormLayout(
 					"92dlu, $lcgap, 52dlu, $lcgap, 231dlu",
-					"38dlu, $lgap, 52dlu, $lgap, 98dlu, $lgap, 215dlu, $lgap, 79dlu"));
+					"38dlu, $lgap, 52dlu, $lgap, 98dlu, $lgap, 190dlu, $lgap, 105dlu"));
 
 				//======== mainStatePanel ========
 				{
@@ -1709,7 +1712,7 @@ public class GamePanel extends JFrame {
 					playerTablePanel.setBorder(new TitledBorder("Players"));
 					playerTablePanel.setLayout(new FormLayout(
 						"39dlu, 2*($lcgap, 90dlu), $lcgap, 143dlu",
-						"136dlu, 3*($lgap, default)"));
+						"111dlu, 3*($lgap, default)"));
 
 					//======== scrollPane1 ========
 					{
@@ -1865,8 +1868,8 @@ public class GamePanel extends JFrame {
 				{
 					damagePanel.setBorder(new TitledBorder("Damage"));
 					damagePanel.setLayout(new FormLayout(
-						"53dlu, $lcgap, 61dlu",
-						"default, $lgap, 25dlu, $lgap, 18dlu"));
+						"2*(85dlu, $lcgap), 47dlu",
+						"default, $lgap, 13dlu, $lgap, 12dlu, 2*($lgap, default)"));
 
 					//---- galacticaDamageLabel ----
 					galacticaDamageLabel.setText("Galactica");
@@ -1880,7 +1883,11 @@ public class GamePanel extends JFrame {
 					{
 						scrollPane13.setViewportView(galacticaDamageList);
 					}
-					damagePanel.add(scrollPane13, cc.xywh(1, 3, 1, 3));
+					damagePanel.add(scrollPane13, cc.xywh(1, 3, 1, 5));
+
+					//---- damageGalacticaButton ----
+					damageGalacticaButton.setText("Damage Galactica");
+					damagePanel.add(damageGalacticaButton, cc.xy(1, 9));
 				}
 				gameStatePanel.add(damagePanel, cc.xy(5, 9, CellConstraints.DEFAULT, CellConstraints.FILL));
 			}
@@ -2654,6 +2661,7 @@ public class GamePanel extends JFrame {
 	private JPanel damagePanel;
 	private JScrollPane scrollPane13;
 	private JList galacticaDamageList;
+	private JButton damageGalacticaButton;
 	private JPanel skillCardPanel;
 	private JPanel skillDeckQtyPanel;
 	private JLabel politicsQty;

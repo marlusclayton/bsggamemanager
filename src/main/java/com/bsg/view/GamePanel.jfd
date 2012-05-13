@@ -917,7 +917,7 @@
            </void> 
            <void method="setProperty"> 
             <string>$rowSpecs</string> 
-            <string>38dlu, linegap, 52dlu, linegap, 98dlu, linegap, 215dlu, linegap, 79dlu</string> 
+            <string>38dlu, linegap, 52dlu, linegap, 98dlu, linegap, 190dlu, linegap, 105dlu</string> 
            </void> 
           </object> 
           <void property="name"> 
@@ -2161,7 +2161,7 @@
              </void> 
              <void method="setProperty"> 
               <string>$rowSpecs</string> 
-              <string>136dlu, linegap, default, linegap, default, linegap, default</string> 
+              <string>111dlu, linegap, default, linegap, default, linegap, default</string> 
              </void> 
             </object> 
             <void method="setProperty"> 
@@ -2796,11 +2796,11 @@
              <class>com.jgoodies.forms.layout.FormLayout</class> 
              <void method="setProperty"> 
               <string>$columnSpecs</string> 
-              <string>53dlu, labelcompgap, 61dlu</string> 
+              <string>85dlu, labelcompgap, 85dlu, labelcompgap, 47dlu</string> 
              </void> 
              <void method="setProperty"> 
               <string>$rowSpecs</string> 
-              <string>default, linegap, 25dlu, linegap, 18dlu</string> 
+              <string>default, linegap, 13dlu, linegap, 12dlu, linegap, default, linegap, default</string> 
              </void> 
             </object> 
             <void method="setProperty"> 
@@ -2896,7 +2896,30 @@
               </void> 
               <void method="setProperty"> 
                <string>gridHeight</string> 
-               <int>3</int> 
+               <int>5</int> 
+              </void> 
+             </object> 
+            </void> 
+            <void method="add"> 
+             <object class="com.jformdesigner.model.FormComponent"> 
+              <string>javax.swing.JButton</string> 
+              <void method="setProperty"> 
+               <string>text</string> 
+               <string>Damage Galactica</string> 
+              </void> 
+              <void property="name"> 
+               <string>damageGalacticaButton</string> 
+              </void> 
+             </object> 
+             <object class="com.jformdesigner.model.FormLayoutConstraints"> 
+              <class>com.jgoodies.forms.layout.CellConstraints</class> 
+              <void method="setProperty"> 
+               <string>gridX</string> 
+               <int>1</int> 
+              </void> 
+              <void method="setProperty"> 
+               <string>gridY</string> 
+               <int>9</int> 
               </void> 
              </object> 
             </void> 
