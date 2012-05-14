@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 import java.util.Set;
+import java.util.regex.Pattern;
 
 import javax.swing.JOptionPane;
 
@@ -56,6 +57,7 @@ public class GameState {
 		}
 	};
 	
+	private static final Pattern RESOURCE_DAMAGE_PATTERN = Pattern.compile("Resource - (\\w+)");
 	private static final Random RNG = new Random();
 	
 	Matcher<? extends Item> expansionFilter;
@@ -506,8 +508,22 @@ public class GameState {
 	}
 	
 	public void resolveDamage(DamageToken dt) {
+		
+		
 		if (dt.getName().startsWith("Resource")) {
-			//TODO: handle resource damage
+			java.util.regex.Matcher m = RESOURCE_DAMAGE_PATTERN.matcher(dt.getName());
+			if (!m.matches()) {
+				throw new IllegalStateException("DamageToken does not match resource pattern.");
+			}
+
+			String resource = m.group(1);
+			
+			if ("Food".equals(resource))
+				food--;
+			if ("Fuel".equals(resource))
+				fuel--;
+			
+			
 		}
 		
 		for (Location curr : availableLocations) {

@@ -17,10 +17,10 @@ public class Damage {
 		damageGalacticaAvailable.add(new DamageToken("Admiral's Quarters", false));
 		damageGalacticaAvailable.add(new DamageToken("Armory", false));
 		damageGalacticaAvailable.add(new DamageToken("FTL Control", false));
-		damageGalacticaAvailable.add(new DamageToken("Food - Resource", true));
+		damageGalacticaAvailable.add(new DamageToken("Resource - Food", true));
 		damageGalacticaAvailable.add(new DamageToken("Command", false));
 		damageGalacticaAvailable.add(new DamageToken("Weapons Control", false));
-		damageGalacticaAvailable.add(new DamageToken("Fuel - Resource", true));
+		damageGalacticaAvailable.add(new DamageToken("Resource - Fuel", true));
 		
 		damagePegasusAvailable.add(new DamageToken("Engine Room", false));
 		damagePegasusAvailable.add(new DamageToken("Airlock", false));
