@@ -1,13 +1,18 @@
 package com.bsg.damage;
 
-public class DamageToken {
+import com.bsg.Expansion;
+import com.bsg.Item;
 
-	public String name;
-	public boolean discardWhenPlayed;
+public class DamageToken implements Item {
 	
-	public DamageToken(String name, boolean discardWhenPlayed) {
+	private String name;
+	private boolean discardWhenPlayed;
+	private Expansion expansion;
+	
+	public DamageToken(String name, boolean discardWhenPlayed, Expansion expansion) {
 		this.name = name;
 		this.discardWhenPlayed = discardWhenPlayed;
+		this.expansion = expansion;
 	}
 	
 	public String getName() {
@@ -21,5 +26,10 @@ public class DamageToken {
 	@Override
 	public String toString() {
 		return name;
+	}
+
+	@Override
+	public Expansion getExpansion() {
+		return expansion;
 	}
 }
