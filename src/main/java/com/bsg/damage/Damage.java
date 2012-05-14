@@ -59,22 +59,7 @@ public class Damage {
 		return new TreeSet<DamageToken>(activeTokens);
 	}
 	
-	public void removeDamageToken(DamageToken dt) {
-		assert dt.discardWhenPlayed();
-		
-		boolean removed = false;
-		removed |= damageGalacticaAvailable.remove(dt);
-		removed |= damagePegasusAvailable.remove(dt);
-		
-		if (!removed) {
-			throw new IllegalStateException("Trying to remove damage token that doesn't exist");
-		}
-		
-		removedTokens.add(dt);
-	}
-	
 	public void activateToken(DamageToken dt) {
-		assert !dt.discardWhenPlayed();
 		
 		boolean removed = false;
 		removed |= damageGalacticaAvailable.remove(dt);
@@ -84,7 +69,8 @@ public class Damage {
 			throw new IllegalStateException("Trying to remove damage token that doesn't exist");
 		}
 		
-		activeTokens.add(dt);
+		(dt.discardWhenPlayed() ? removedTokens : activeTokens).add(dt);
+
 	}
 	
 	public void deactivateToken(DamageToken dt) {

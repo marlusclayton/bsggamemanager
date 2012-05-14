@@ -523,7 +523,6 @@ public class GameState {
 			if ("Fuel".equals(resource))
 				fuel--;
 			
-			
 		}
 		
 		for (Location curr : availableLocations) {
@@ -535,7 +534,7 @@ public class GameState {
 			}
 		}
 		
-		
+		damage.activateToken(dt);
 		
 	}
 }
