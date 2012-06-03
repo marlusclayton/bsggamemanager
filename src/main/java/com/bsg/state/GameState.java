@@ -537,4 +537,17 @@ public class GameState {
 		damage.activateToken(dt);
 		
 	}
+	
+	public void fixDamage(DamageToken dt) {
+		for (Location curr : availableLocations) {
+			//O(n) oh well
+			if (dt.getName().equals(curr.getName())) {
+				curr.setDamaged(false);
+				LOGGER.info("{} has been fixed!", curr.getName());
+				break;
+			}
+		}
+		
+		damage.deactivateToken(dt);
+	}
 }

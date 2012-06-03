@@ -263,6 +263,7 @@ public class GamePanel extends JFrame {
 				//damage stuff
 				if (gs.getDamage() != null) {
 					galacticaDamageList.setListData(gs.getDamage().getAvailableGalacticaTokens().toArray());
+					usedDamageList.setListData(gs.getDamage().getActiveTokens().toArray());
 				}
 				
 				//re-highlight
@@ -993,6 +994,16 @@ public class GamePanel extends JFrame {
 			return;
 		
 		gs.resolveDamage(dt);
+		
+		refreshDisplay();
+	}
+
+	private void fixButtonActionPerformed(ActionEvent e) {
+		DamageToken dt = (DamageToken) usedDamageList.getSelectedValue();
+		if (dt == null)
+			return;
+		
+		gs.fixDamage(dt);
 		
 		refreshDisplay();
 	}
@@ -1916,6 +1927,12 @@ public class GamePanel extends JFrame {
 
 					//---- fixButton ----
 					fixButton.setText("Fix");
+					fixButton.addActionListener(new ActionListener() {
+						@Override
+						public void actionPerformed(ActionEvent e) {
+							fixButtonActionPerformed(e);
+						}
+					});
 					damagePanel.add(fixButton, cc.xy(3, 9));
 				}
 				gameStatePanel.add(damagePanel, cc.xy(5, 9, CellConstraints.DEFAULT, CellConstraints.FILL));
