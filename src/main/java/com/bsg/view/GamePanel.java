@@ -1106,7 +1106,10 @@ public class GamePanel extends JFrame {
 		JLabel pegasusDamageLabel = new JLabel();
 		scrollPane13 = new JScrollPane();
 		galacticaDamageList = new JList();
+		scrollPane14 = new JScrollPane();
+		usedDamageList = new JList();
 		damageGalacticaButton = new JButton();
+		fixButton = new JButton();
 		skillCardPanel = new JPanel();
 		skillDeckQtyPanel = new JPanel();
 		JLabel politicsLabel = new JLabel();
@@ -1882,11 +1885,11 @@ public class GamePanel extends JFrame {
 						"default, $lgap, 13dlu, $lgap, 12dlu, 2*($lgap, default)"));
 
 					//---- galacticaDamageLabel ----
-					galacticaDamageLabel.setText("Galactica");
+					galacticaDamageLabel.setText("Locations");
 					damagePanel.add(galacticaDamageLabel, cc.xy(1, 1));
 
 					//---- pegasusDamageLabel ----
-					pegasusDamageLabel.setText("Pegasus");
+					pegasusDamageLabel.setText("Used");
 					damagePanel.add(pegasusDamageLabel, cc.xy(3, 1));
 
 					//======== scrollPane13 ========
@@ -1895,8 +1898,14 @@ public class GamePanel extends JFrame {
 					}
 					damagePanel.add(scrollPane13, cc.xywh(1, 3, 1, 5));
 
+					//======== scrollPane14 ========
+					{
+						scrollPane14.setViewportView(usedDamageList);
+					}
+					damagePanel.add(scrollPane14, cc.xywh(3, 3, 1, 5));
+
 					//---- damageGalacticaButton ----
-					damageGalacticaButton.setText("Damage Galactica");
+					damageGalacticaButton.setText("Damage");
 					damageGalacticaButton.addActionListener(new ActionListener() {
 						@Override
 						public void actionPerformed(ActionEvent e) {
@@ -1904,6 +1913,10 @@ public class GamePanel extends JFrame {
 						}
 					});
 					damagePanel.add(damageGalacticaButton, cc.xy(1, 9));
+
+					//---- fixButton ----
+					fixButton.setText("Fix");
+					damagePanel.add(fixButton, cc.xy(3, 9));
 				}
 				gameStatePanel.add(damagePanel, cc.xy(5, 9, CellConstraints.DEFAULT, CellConstraints.FILL));
 			}
@@ -2677,7 +2690,10 @@ public class GamePanel extends JFrame {
 	private JPanel damagePanel;
 	private JScrollPane scrollPane13;
 	private JList galacticaDamageList;
+	private JScrollPane scrollPane14;
+	private JList usedDamageList;
 	private JButton damageGalacticaButton;
+	private JButton fixButton;
 	private JPanel skillCardPanel;
 	private JPanel skillDeckQtyPanel;
 	private JLabel politicsQty;

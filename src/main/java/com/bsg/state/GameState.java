@@ -187,7 +187,7 @@ public class GameState {
 		skillCardDecks.put(SkillCardType.ENGINEERING, new Deck<SkillCard>(SkillCardInitializer.getEngineeringCards(expansions)));
 		skillCardDecks.put(SkillCardType.TRECHERY, new Deck<SkillCard>(SkillCardInitializer.getTrecheryCards(expansions)));
 		
-		damage = new Damage();
+		damage = new Damage(expansions);
 		
 		initDestiny();
 	}

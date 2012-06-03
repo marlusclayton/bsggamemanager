@@ -11,44 +11,41 @@ import com.bsg.Expansion;
 
 public class Damage {
 
-	List<DamageToken> damageGalacticaAvailable;
-	List<DamageToken> damagePegasusAvailable;
+	List<DamageToken> damageAvailable;
 	
 	Set<DamageToken> activeTokens;
 	Set<DamageToken> removedTokens;
 	
-	public Damage() {
-		damageGalacticaAvailable = new ArrayList<DamageToken>();
-		damagePegasusAvailable = new ArrayList<DamageToken>();
+	public Damage(Set<Expansion> expansion) {
+		damageAvailable = new ArrayList<DamageToken>();
 		activeTokens = new TreeSet<DamageToken>();
 		removedTokens = new HashSet<DamageToken>();
 		
-		damageGalacticaAvailable.add(new DamageToken("Hangar Deck", false, Expansion.BASE));
-		damageGalacticaAvailable.add(new DamageToken("Admiral's Quarters", false, Expansion.BASE));
-		damageGalacticaAvailable.add(new DamageToken("Armory", false, Expansion.BASE));
-		damageGalacticaAvailable.add(new DamageToken("FTL Control", false, Expansion.BASE));
-		damageGalacticaAvailable.add(new DamageToken("Resource - Food", true, Expansion.BASE));
-		damageGalacticaAvailable.add(new DamageToken("Command", false, Expansion.BASE));
-		damageGalacticaAvailable.add(new DamageToken("Weapons Control", false, Expansion.BASE));
-		damageGalacticaAvailable.add(new DamageToken("Resource - Fuel", true, Expansion.BASE));
+		if (expansion.contains(Expansion.BASE)) {
+			damageAvailable.add(new DamageToken("Hangar Deck", false, Expansion.BASE));
+			damageAvailable.add(new DamageToken("Admiral's Quarters", false, Expansion.BASE));
+			damageAvailable.add(new DamageToken("Armory", false, Expansion.BASE));
+			damageAvailable.add(new DamageToken("FTL Control", false, Expansion.BASE));
+			damageAvailable.add(new DamageToken("Resource - Food", true, Expansion.BASE));
+			damageAvailable.add(new DamageToken("Command", false, Expansion.BASE));
+			damageAvailable.add(new DamageToken("Weapons Control", false, Expansion.BASE));
+			damageAvailable.add(new DamageToken("Resource - Fuel", true, Expansion.BASE));
+		}
 		
-		damagePegasusAvailable.add(new DamageToken("Engine Room", false, Expansion.PEGASUS));
-		damagePegasusAvailable.add(new DamageToken("Airlock", false, Expansion.PEGASUS));
-		damagePegasusAvailable.add(new DamageToken("Pegasus CIC", false, Expansion.PEGASUS));
-		damagePegasusAvailable.add(new DamageToken("Main Batteries", false, Expansion.PEGASUS));
+		if (expansion.contains(Expansion.PEGASUS)) {
+			damageAvailable.add(new DamageToken("Engine Room", false, Expansion.PEGASUS));
+			damageAvailable.add(new DamageToken("Airlock", false, Expansion.PEGASUS));
+			damageAvailable.add(new DamageToken("Pegasus CIC", false, Expansion.PEGASUS));
+			damageAvailable.add(new DamageToken("Main Batteries", false, Expansion.PEGASUS));
+		}
 	}
 	
 	public void shuffleDamageTokens() {
-		Collections.shuffle(damageGalacticaAvailable);
-		Collections.shuffle(damagePegasusAvailable);
+		Collections.shuffle(damageAvailable);
 	}
 	
 	public List<DamageToken> getAvailableGalacticaTokens() {
-		return new ArrayList<DamageToken>(damageGalacticaAvailable);
-	}
-	
-	public List<DamageToken> getAvailablePegasusTokens() {
-		return new ArrayList<DamageToken>(damagePegasusAvailable);
+		return new ArrayList<DamageToken>(damageAvailable);
 	}
 	
 	public Set<DamageToken> getRemovedTokens() {
@@ -61,9 +58,7 @@ public class Damage {
 	
 	public void activateToken(DamageToken dt) {
 		
-		boolean removed = false;
-		removed |= damageGalacticaAvailable.remove(dt);
-		removed |= damagePegasusAvailable.remove(dt);
+		boolean removed = damageAvailable.remove(dt);
 		
 		if (!removed) {
 			throw new IllegalStateException("Trying to remove damage token that doesn't exist");
@@ -78,10 +73,6 @@ public class Damage {
 			throw new IllegalStateException("Trying to deactivate inactive token");
 		
 		activeTokens.remove(dt);
-		
-		if (dt.getExpansion() == Expansion.PEGASUS)
-			damagePegasusAvailable.add(dt);
-		else
-			damageGalacticaAvailable.add(dt);
+		damageAvailable.add(dt);
 	}
 }

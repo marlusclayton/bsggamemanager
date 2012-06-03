@@ -3,7 +3,7 @@ package com.bsg.damage;
 import com.bsg.Expansion;
 import com.bsg.Item;
 
-public class DamageToken implements Item {
+public class DamageToken implements Item, Comparable<DamageToken> {
 	
 	private String name;
 	private boolean discardWhenPlayed;
@@ -31,5 +31,12 @@ public class DamageToken implements Item {
 	@Override
 	public Expansion getExpansion() {
 		return expansion;
+	}
+
+	@Override
+	public int compareTo(DamageToken other) {
+		if (this.expansion != other.expansion)
+			return this.expansion.compareTo(other.expansion);
+		return this.name.compareTo(other.name);
 	}
 }
